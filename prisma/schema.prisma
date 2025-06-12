@@ -1,0 +1,225 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"       // or "postgresql" / "mysql" as needed
+  url      = "file:./dev.db"
+}
+
+///
+/// ENUM for Review Type
+///
+enum ReviewType {
+  NON_TECH_TO_TECH       // “Non tech to tech”
+  SERVICE_TO_PRODUCT     // “service to product”
+  LANDED_THE_FIRST_JOB   // “Landed The first job”
+  OTHERS                 // “others”
+}
+
+model Student {
+  id                     Int          @id @default(autoincrement())
+  name                   String
+  email                  String       @unique 
+  enrollments            Enrollment[]
+  blogs                  Blog[]       @relation("StudentBlogs")
+  passwordResetTokens    PasswordResetToken[]
+  reviews                Review[]     // ← one-to-many: a student can write multiple reviews
+  image                  String? 
+  @@index([name])
+}
+
+model PasswordResetToken {
+  token     String   @id
+  userId    Int     
+  student   Student  @relation(fields: [userId], references: [id]) 
+  expiresAt DateTime
+
+  @@index([userId])
+}
+
+model Professor {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    
+  courses   Course[]
+  blogs     Blog[]    @relation("ProfessorBlogs")
+
+  @@index([name])
+}
+
+model Course {
+  id           Int          @id @default(autoincrement())
+  title        String
+  category     String
+  description  String?
+  professorId  Int
+  professor    Professor    @relation(fields: [professorId], references: [id])
+
+  enrollments  Enrollment[]
+  reviews      Review[]     // ← one-to-many: a course can have multiple reviews
+  placementRate  Int
+  companiesHiring Int
+  averageHike  Int
+  learner      Int
+
+  highlightedOn  String?
+
+  ExpertFrom  String?
+
+  noOfStudents Int          @default(0)
+  hours        Int          @default(0)
+  imageUrl     String?
+  projects     String?
+
+  /// Many-to-many through CourseTag and CourseKeySkills:
+  courseTags   CourseTag[]
+  courseKeySkills CourseKeySkills[]
+
+  @@index([title])
+  @@index([professorId])
+}
+
+model Enrollment {
+  studentId Int
+  courseId  Int
+
+  student   Student @relation(fields: [studentId], references: [id])
+  course    Course  @relation(fields: [courseId], references: [id])
+
+  @@id([studentId, courseId])
+}
+
+model Blog {
+  id          Int        @id @default(autoincrement())
+  title       String
+  content     String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  studentId   Int?
+  professorId Int?
+  student     Student?   @relation("StudentBlogs",   fields: [studentId],   references: [id])
+  professor   Professor? @relation("ProfessorBlogs", fields: [professorId], references: [id])
+
+  @@index([createdAt])
+  @@index([studentId])
+  @@index([professorId])
+}
+
+model Company {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  logoUrl   String?  // URL or path for the company’s logo
+  address   String?  // Physical or mailing address
+  reviews   Review[] // one-to-many: a company can have multiple reviews
+
+  @@index([name])
+}
+
+/// **REVIEW** now points to *both* `Student` and `Company` *and* `Course`.  
+model Review {
+  id               Int         @id @default(autoincrement())
+  reviewerName     String
+  reviewerJobTitle String?
+  reviewerPicture  String?      // URL or path to the reviewer’s picture
+  reviewText       String
+  reviewType       ReviewType   // The type of review, based on the enum
+
+  studentId  Int       // foreign key → Student
+  companyId  Int       // foreign key → Company
+  courseId   Int       // foreign key → Course
+
+  student    Student   @relation(fields: [studentId], references: [id])
+  company    Company   @relation(fields: [companyId], references: [id])
+  course     Course    @relation(fields: [courseId],   references: [id])
+
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([studentId])
+  @@index([companyId])
+  @@index([courseId])
+}
+
+/// One simple Tag table
+model Tag {
+  id         Int         @id @default(autoincrement())
+  name       String      @unique
+  image       String      
+
+  // back-relation to join model:
+  courseTags CourseTag[]
+  @@index([name])
+}
+
+
+
+/// Join table for Course ↔ Tag (many-to-many)
+model CourseTag {
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+  tag      Tag    @relation(fields: [tagId],    references: [id])
+  tagId    Int
+
+  @@id([courseId, tagId])
+  @@index([tagId])
+  @@index([courseId])
+}
+
+model homePage {
+  id              Int       @id @default(autoincrement())
+
+  heroTitle       String
+  heroSubtitle    String?
+  heroImageUrl    String?
+  FirstCourseId   String?
+  SecondCourseId  String?
+  ThirdCourseId   String?
+
+
+  CategoriesTitle String?
+  TopCoursesTitle String?
+  WhyChooseUs     String?
+
+  AboutUsTitle    String?
+  AboutUsContent  String?
+  AboutUsImageUrl String?
+  AboutUsImageUrl2 String?
+  AboutUsImageUrl3 String?
+
+
+  Personalized    String?
+  ReviewsTitle    String?
+  PopularPost     String?
+  LogoUrl         String?
+  ContactUsPrompt String?
+  Phone           BigInt?
+  Email           String?
+  Location        String?
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model KeySkill {
+  id         Int         @id @default(autoincrement())
+  name       String      @unique
+  image       String      
+
+  // back-relation to join model:
+  courseKeySkills CourseKeySkills[]
+  @@index([name])
+}
+
+model CourseKeySkills {
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+  keySkill      KeySkill    @relation(fields: [keyId],    references: [id])
+  keyId    Int
+
+  @@id([courseId, keyId])
+  @@index([keyId])
+  @@index([courseId])
+}
