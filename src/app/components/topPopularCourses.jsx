@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import TagContainer from './TagContainer';
+import Link from 'next/link';
 
 const CourseCard = ({ course }) => {
   return (
@@ -29,42 +30,44 @@ const CourseCard = ({ course }) => {
       </div>
       <div className="mt-auto">
         <span className="text-sm text-gray-500 block mb-2">By {course.professor.name}</span>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors w-full">
-          Enroll Now
-        </button>
+        <Link href={`/coursepage/${course.id}`}>
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors w-full">
+            Enroll Now
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default function TopPopularCourses() {
+export default function TopPopularCourses({data}) {
   const [courses, setCourses] = useState([
     {
-      id: 1,
-      title: "Web Development Bootcamp",
+      id: 8,
+      title: "Morder Web Dev 2",
       description: "Learn full-stack web development from scratch",
-      professor: { name: "John Doe" },
+      professor: { name: "Arun Dip" },
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      hours: 48,
-      students: 1234
+      hours: 85,
+      students: 123
     },
     {
-      id: 2,
-      title: "Data Science Fundamentals", 
-      description: "Introduction to data science and machine learning",
-      professor: { name: "Jane Smith" },
+      id: 9,
+      title: "UI/UX", 
+      description: "A hands‑on UI/UX design journey ",
+      professor: { name: "Amresh Rao" },
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692",
-      hours: 36,
-      students: 856
+      hours: 26,
+      students: 126
     },
     {
-      id: 3,
+      id: 10,
       title: "UI/UX Design Masterclass",
       description: "Master the principles of user interface design",
-      professor: { name: "Mike Johnson" },
+      professor: { name: "Amresh Rao" },
       image: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0",
-      hours: 24,
-      students: 2103
+      hours: 27,
+      students: 123
     },
     
   ]);
@@ -88,7 +91,7 @@ export default function TopPopularCourses() {
 
       </div>
       <div className="text-center mb-12 mt-10">
-        <h2 className="text-3xl font-bold mb-4">Why Choose Our Courses</h2>
+        <h2 className="text-3xl font-bold mb-4">{data.TopCoursesTitle}</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Discover our most popular courses, carefully curated to help you achieve your learning goals
         </p>

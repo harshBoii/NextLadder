@@ -69,6 +69,7 @@ export default function Cards() {
           description={course.description}
           lessons={course.lessons}
           students={course.students}
+          
         />
       ))}
     </div>

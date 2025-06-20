@@ -5,7 +5,7 @@ export function NavbarDefault({icon}) {
   return (
     <Navbar fluid rounded>
       <NavbarBrand href="https://flowbite-react.com">
-        <img src={icon || null} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+        <img src={icon || null} className="mr-3 h-6 h-[6vh]" alt="Flowbite React Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
       </NavbarBrand>
       <div className="flex md:order-2">

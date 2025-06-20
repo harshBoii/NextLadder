@@ -10,7 +10,14 @@ const CourseTag = ({tag, icon}) => {
             color: 'rgb(255, 255, 255)'
           }}
         >
-          {icon && <span className="text-base">{icon}</span>}
+          {/* {icon && <span className="text-base">{icon}</span>} */}
+          {icon && (
+            <img 
+              src={icon} 
+              alt="tag icon" 
+              className="w-4 h-4"
+            />
+          )}
           {tag}
         </div>
     </div>

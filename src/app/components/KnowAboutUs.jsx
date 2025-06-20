@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const KnowAboutUs = () => {
+const KnowAboutUs = ({daata}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -74,15 +74,15 @@ const KnowAboutUs = () => {
 
             </div>
 
-          <h2 className="text-4xl font-bold mb-[6vh] text-left">Know About Histudy Learning Platform </h2>
+          <h2 className="text-4xl font-bold mb-[6vh] text-left">{daata.AboutUsTitle}</h2>
           <div className="space-y-4">
 
-            <p className="text-lg text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p className="text-lg text-gray-700">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p className="text-lg text-gray-700">{daata.AboutUsContent}</p>
+            {/* <p className="text-lg text-gray-700">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             
-            <p className="text-lg text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p className="text-lg text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> */}
           
-          <div className="flex items-start gap-3 mb-4">
+          <div className="flex items-start gap-3 mt-[5vh] mb-4">
             <div 
               className="w-[35px] h-[35px] rounded-full opacity-70 flex-shrink-0 mt-[1vh]"
               style={{ backgroundColor: 'rgba(219, 112, 147, 0.6)' }}

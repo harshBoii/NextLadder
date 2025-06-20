@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { FaUser, FaChartLine, FaCog, FaBell } from 'react-icons/fa';
 import gsap from 'gsap';
 import TagContainer from './TagContainer';
+import { data } from 'autoprefixer';
 
-const FourCards = () => {
+const FourCards = ({data}) => {
   const cardsRef = useRef([]);
   const circlesRef = useRef([]);
   const linesRef = useRef([]);
@@ -83,7 +84,7 @@ const FourCards = () => {
       <div className="flex flex-col items-center gap-4">
         <TagContainer tag="WHY CHOOSE US" />
         <h2 className="font-sans text-5xl text-extrabold width-[20vw] text-center">
-          Creating A Community Of Life Long Learners
+          {data.WhyChooseUs}
         </h2>
       </div>
     <div style={{

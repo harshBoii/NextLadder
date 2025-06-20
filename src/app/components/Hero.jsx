@@ -118,17 +118,17 @@ useEffect(() => {
         <div className='text-[1.3vw]'>🏆 The Leader In Online Learning</div>
     </div>
 
-    <h1 className=' text-5xl pl-[2.7vw] mt-[5vh] text-zinc-700 font-bold font-sans'>
+    <h1 className=' text-[4vh] pl-[2.7vw] mt-[5vh] text-zinc-700 font-bold font-sans w-[35vw]'>
       {heroData.heroTitle}
     </h1>
 
-    <div className='text-5xl pl-[4.1vw] text-zinc-700 font-bold font-sans'>
-      {heroData.heroSubtitle}
+    <div className='text-5xl ml-[4vw] text-zinc-700 font-bold font-sans'>
+
     </div>
     <div>
       
-    <div className="pl-[4.1vw] mt-[8vh] text-zinc-600 w-[37vw] text-[1.3vw] h-[12vh] max-w-[40vw]">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <div className="pl-[4.1vw] mt-[5vh] text-zinc-600 w-[37vw]  text-[2vh] h-[12vh]">
+    {heroData.heroSubtitle}    
     </div>
     </div>
 <div className='-mt-[35.8vh]'>
@@ -149,36 +149,24 @@ useEffect(() => {
 {/* Third image in a separate container, larger, and overlapping the first two */}
 <div className="relative w-[50vw] h-[60vh] -mt-[53vh] ml-[28vw] z-20">
   <img
-    src="/c46a24ab3b786d907fa774c685140c38babcfcb3.png"
+    src={heroData.heroImageUrl}
     alt=""
-    className="absolute inset-0 w-full h-full object-contain"
+    className="absolute inset-0 w-full h-[60vh] overflow-hidden object-contain"
   />
 </div>
 </div>
 </div>
-<div className='right-[14vw] top-[-25vh] absolute rotate-6'>
-   <SwipeableCardDeck/>
+<div className='absolute rotate-6 right-[15vw] top-[-25vh] '>
+  <SwipeableCardDeck />
 </div>
 </div>
 
-<div className='h-[25vh] w-[100vw] mt-[-13.4vh] rounded-[100%] bg-white absolute'>
+<div className='h-[25vh] w-[100vw] mt-[-13.4vh] rounded-[100%] z-50 bg-white absolute'>
     <div className="ml-[45vw] h-full pt-[3vh]">
       <TagContainer tag={"Categories"}/>
-      <div className='text-4xl font-sans text-center ml-[-50vw] font-bold pt-[3vh]'>Explore Top Courses Caterories
-      That Change Yourself</div>
+      <div className='text-4xl font-sans text-center ml-[-45vw] font-bold pt-[3vh]'>Explore Top Courses Caterories That Change Yourself</div>
     </div>
-    <div className='pl-[40vw]'>
-        <p>ᐯ</p>
-        <p>ᐯ</p>
-        <p>ᐯ</p>
-  </div>
-
 </div>
-  <div className='pl-[40vw]'>
-        <p>ᐯ</p>
-        <p>ᐯ</p>
-        <p>ᐯ</p>
-  </div>
 </div>
 
 </>

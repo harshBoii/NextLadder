@@ -11,6 +11,9 @@ import Blog from './components/Blog';
 
 import { useState, useEffect } from 'react';
 
+
+
+
 export default function HomePageDisplay() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -41,12 +44,12 @@ export default function HomePageDisplay() {
     <NavbarDefault icon={data.LogoUrl}/>
     <Hero/>
     <Categories/>
-    <TopPopularCourses/>
-    <FourCards/>
-    <KnowAboutUs/>
-    <GuidanceCard/>
-    <MovingCarousel/>
-    <Blog/>
+    <TopPopularCourses data={data}/>
+    <FourCards data={data}/>
+    <KnowAboutUs daata={data}/>
+    <GuidanceCard data={data}/>
+    <MovingCarousel data={data}/>
+    <Blog data={data}/>
 
   </>
   );

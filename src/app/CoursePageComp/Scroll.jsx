@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const Scroll = () => {
+const Scroll = ({courseData}) => {
     const lineRef = useRef(null);
     const lineRefLeft = useRef(null);
     const scrollRef = useRef(null);
@@ -61,7 +61,7 @@ useEffect(() => {
       emoji: "🎯", 
       title: "Industry-aligned curriculum",
       description: [
-        "Designed by industry experts",
+        `Designed by ${courseData.professor.name}`,
         "Updated with latest trends",
         "Comprehensive coverage"
       ],

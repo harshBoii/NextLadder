@@ -1,4 +1,4 @@
-const Bootcamp = () => {
+const Bootcamp = ({courseData}) => {
   const cardData = [
     {
       icon: "/BootcampIcons/C1.png", // Update with actual image paths
@@ -8,7 +8,7 @@ const Bootcamp = () => {
     {
       icon: "/BootcampIcons/C2.png",
       title: "Expert Mentorship", 
-      description: "Get guidance from industry professionals with years of experience"
+      description: `Get guidance from ${courseData.ExpertFrom} faculties with years of experience`
     },
     {
       icon: "/BootcampIcons/C3.png",
@@ -26,6 +26,8 @@ const Bootcamp = () => {
       description: "Join a community of learners and professionals for networking and support"
     }
   ];
+
+
 
   return (
     <div className="w-full min-h-screen" style={{ backgroundColor: 'black' }}>

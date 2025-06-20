@@ -1,8 +1,46 @@
 import CourseTag from "./CourseTag";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
-const Intro = () => {
-  // Array of tag names and icons to display
+const Intro = ({ 
+courseData
+}) => {
+  const [tags, setTags]     = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!courseData.id) {
+      setLoading(false);
+      return;
+    }
+
+    const fetchTags = async () => {
+      try {
+        const res = await fetch(`/api/courses/${courseData.id}/tags`);
+        if (!res.ok) throw new Error('Failed to fetch tags');
+        const data = await res.json();
+        console.log("data")
+        console.log(data)
+
+        setTags(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTags();
+  }, [courseData.id]);       // ← dependency is now just `id`
+
+
+  const segments = [
+    { title: "Placement rate",      value: `${courseData.placementRate}%` },
+    { title: "Average Hike",        value: `${courseData.averageHike}%` },
+    { title: "Number of Students",  value: `${courseData.learner}+` },    
+    { title: "Companies Hiring",    value: `${courseData.companiesHiring}+` },
+    { title: "Total Hours",         value: `${courseData.hours}+` },
+  ];
   const tagData = [
     { name: "Web Development", icon: "🌐" },
     { name: "MERN Stack", icon: "⚛️" },
@@ -12,14 +50,6 @@ const Intro = () => {
     { name: "Job Ready", icon: "🎯" }
   ];
 
-  // Array of segment data
-  const segments = [
-    { title: "Placement rate", value: "95%" },
-    { title: "Projects", value: "12+" },
-    { title: "Live Classes", value: "180+" },
-    { title: "Placement", value: "100%" },
-    { title: "Salary", value: "6-15 LPA" }
-  ];
 
   return (
     <div 
@@ -45,26 +75,26 @@ const Intro = () => {
           }}
         >
           <div className="opacity-80"> 
-          ✨ For Professionals
+          ✨ {courseData.category}
           </div>
         </div>
 
         {/* Header below professional tag */}
         <div className="mt-6">
           <h1 className="text-[3.8vh] font-bold font-sans text-white">
-            Full Stack Web Development Job Bootcamp with GenAI
+            {courseData.title}
           </h1>
         </div>
         <div className="mt-[5vh]">
           <h1 className="text-[1.8vh] font-sans opacity-50 text-white">
-            Choose MERN stack or Spring Boot and acquire expertise
-            through practical application and real-world projects.
-          </h1>
+{
+  courseData.description
+}          </h1>
         </div>
 
         {/* Tags Container */}
         <div className="mt-[6vh] grid grid-cols-3 gap-4">
-          {tagData.map((tag, index) => (
+          {tags.map((tag, index) => (
             <div key={index} className="text-white">
                 <CourseTag tag={tag.name} icon={tag.icon} />
             </div>
@@ -72,15 +102,15 @@ const Intro = () => {
         </div>
 
         {/* Segments Container with Vertical Lines */}
-        <div className="mt-[6vh] w-[40vw] bg-white/5 backdrop-blur-sm rounded-xl p-8 h-[10vh]">
+        <div className="mt-[6vh] w-[40vw] bg-white/5 backdrop-blur-sm rounded-xl pt-[3.5vh] pl-[1vh] h-[10vh]">
           <div className="flex items-center justify-between">
             {segments.map((segment, index) => (
               <div key={index} className="flex items-center">
                 <div className="flex mt-[-1vh] flex-col items-center text-white mr-[1vw]">
-                  <div className="text-xl font-mono font-bold rounded-lg text-center">
+                  <div className="text-[1.7vh] font-mono font-bold rounded-lg text-center">
                     {segment.value}
                   </div>
-                  <div className="text-xs font-mono text-center mt-1.5 opacity-80">
+                  <div className="text-[1.25vh] font-mono text-center mt-1.5 opacity-80">
                     {segment.title}
                   </div>
                 </div>
