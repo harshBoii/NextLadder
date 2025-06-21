@@ -4,9 +4,14 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// datasource db {
+//   provider = "sqlite"       // or "postgresql" / "mysql" as needed
+//   url      = "file:./dev.db"
+// }
+
 datasource db {
-  provider = "sqlite"       // or "postgresql" / "mysql" as needed
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = "postgresql://neondb_owner:npg_RoTd9FNQm1rD@ep-summer-bird-a8f7xb8e-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
 }
 
 ///

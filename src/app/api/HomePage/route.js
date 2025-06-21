@@ -1,6 +1,8 @@
 // app/api/HomePage/route.js
 import { NextResponse } from 'next/server'
-import prisma from '../../../../lib/prisma'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 // ───────────────────────────────────────────────────────────────
 // GET: return the existing HomePage row (or an empty object if none)

@@ -3,9 +3,10 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function GET(request, { params }) {
+export async function GET(request,context) {
   try {
-    const courseId = parseInt(params.id);
+    const params  = await context.params;
+    const courseId =  parseInt(params.id);
 
     if (isNaN(courseId)) {
       return NextResponse.json(
