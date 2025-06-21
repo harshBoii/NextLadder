@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "flowbite-react patch"
+    "postinstall": "flowbite-react patch && prisma generate"
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
