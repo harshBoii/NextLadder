@@ -7,6 +7,7 @@ import Link from 'next/link';
 const CourseCard = ({ course }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 text-center flex flex-col h-full">
+      <Link href={`/coursepage/${course.id}`}>
       <img 
         src={course.image} 
         alt={course.title}
@@ -30,13 +31,15 @@ const CourseCard = ({ course }) => {
       </div>
       <div className="mt-auto">
         <span className="text-sm text-gray-500 block mb-2">By {course.professor.name}</span>
-        <Link href={`/coursepage/${course.id}`}>
+        {/* <Link href={`/coursepage/${course.id}`}>
           <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors w-full">
             Enroll Now
           </button>
-        </Link>
+        </Link> */}
       </div>
+      </Link>
     </div>
+    
   );
 };
 
