@@ -13,9 +13,6 @@ export function NavbarDefault({icon}) {
         <NavbarToggle />
       </div>
       <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
-        </NavbarLink>
         <NavbarLink href="#">Home</NavbarLink>
         <NavbarLink href="#">Courses</NavbarLink>
         <NavbarLink href="#">Compiler</NavbarLink>
@@ -23,3 +20,4 @@ export function NavbarDefault({icon}) {
     </Navbar>
   );
 }
+
