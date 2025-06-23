@@ -28,6 +28,10 @@ const MovingCarousel = () => {
         </div>
       </div>
 
+      <div className='text-[5vh] my-[5vh] mb-[10vh]  font-sans text-center font-bold'>
+      People like histudy education. No joking - here's the proof!
+      </div>
+
       {/* First row - moving left */}
       <div className="flex gap-4 mb-8 overflow-hidden">
         <motion.div
@@ -44,11 +48,11 @@ const MovingCarousel = () => {
           {cards.slice(0, 10).map((card) => (
             <div
               key={card.id}
-              className="flex-shrink-0 w-80 p-8 rounded-lg transition-all duration-300 relative"
+              className="flex-shrink-0 w-100 p-8 rounded-lg transition-all duration-300 relative"
               style={{
                 backgroundColor: card.isBlue ? 'rgba(65, 175, 255, 1)' : 'white',
                 color: card.isBlue ? 'rgb(250, 251, 255)' : 'black',
-                clipPath: "polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)",
+                clipPath: "polygon(0 0, 100% 0, 100% 98%, 99% 100%, 0 100%)",
                 boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1)',
                 border: '1px solid rgba(0, 0, 0, 0.1)',
                 backdropFilter: 'blur(10px)'
@@ -90,11 +94,11 @@ const MovingCarousel = () => {
           {cards.slice(10, 20).map((card) => (
             <div
               key={card.id}
-              className="flex-shrink-0 w-80 p-8 rounded-lg transition-all duration-300 relative"
+              className="flex-shrink-0 w-100 p-8 rounded-lg transition-all duration-300 relative"
               style={{
                 backgroundColor: card.isBlue ? 'rgba(65, 175, 255, 1)' : 'white',
                 color: card.isBlue ? 'rgb(250, 251, 255)' : 'black',
-                clipPath: "polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)",
+                clipPath: "polygon(0 0, 100% 0, 100% 99%, 99% 100%, 0 100%)",
                 boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1)',
                 border: '1px solid rgba(0, 0, 0, 0.1)',
                 backdropFilter: 'blur(10px)'

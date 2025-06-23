@@ -13,7 +13,7 @@ const GuidanceCard = () => {
       icon: "🎯",
       color: "rgba(47, 87, 239, 0.13)",
       textColor: "rgba(47, 87, 239, 1)",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FyZWVyJTIwZ3VpZGFuY2V8ZW58MHx8MHx8fDA%3D"
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
       id: 2, 
@@ -22,7 +22,7 @@ const GuidanceCard = () => {
       icon: "📚",
       color: "rgba(185, 102, 231, 0.13)",
       textColor: "rgba(185, 102, 231, 1)",
-      image: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y291cnNlfGVufDB8fDB8fHww"
+      video: "https://www.youtube.com/embed/9bZkp7q19f0"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const GuidanceCard = () => {
       icon: "🗺️",
       color: "rgba(233, 150, 122, 0.13)", 
       textColor: "rgba(233, 150, 122, 1)",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhcm5pbmd8ZW58MHx8MHx8fDA%3D"
+      video: "https://www.youtube.com/embed/jNQXAC9IVRw"
     },
     {
         id: 4, 
@@ -40,7 +40,7 @@ const GuidanceCard = () => {
         icon: "📚",
         color: "rgba(185, 102, 231, 0.13)",
         textColor: "rgba(185, 102, 231, 1)",
-        image: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y291cnNlfGVufDB8fDB8fHww"
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
   ];
 
@@ -69,29 +69,48 @@ const GuidanceCard = () => {
         {guidanceData.map((card) => (
           <div 
             key={card.id}
-            className="relative bg-white rounded-lg p-6 hover:shadow-2xl transition-all duration-300 border border-black backdrop-blur-sm"
+            className="relative ml-[4vw] h-[25vh] w-[40vw] bg-white rounded-lg p-6 hover:shadow-2xl transition-all duration-300 backdrop-blur-sm"
             style={{
-              clipPath: "polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)",
-              boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1)"
+              clipPath: "polygon(0 0, 100% 0, 100% 99%, 99% 100%, 0 100%)",
+              boxShadow: '0 5px 5px -55px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.1)',
+              border: '1px solid rgba(0, 0, 0, 0.1)',
+              backdropFilter: 'blur(10px)',
+              boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 0 3px rgba(0, 0, 0, 0.05), 0 0 50px rgba(0, 0, 0, 0.1)"
             }}
           >
+            <div 
+              className="absolute inset-0 rounded-lg"
+              style={{
+                background: "radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.05) 0%, transparent 70%)",
+                pointerEvents: "none"
+              }}
+            />
             <TagContainer className="pb-[2vh]" tag="New Collection"/>
-                <div className="flex flex-row">
+                <div className="flex flex-row h-full relative z-10">
                 
-              <div className="flex-1">
+              <div className="flex-1 flex flex-col justify-center">
                 <h3 className="text-2xl font-serif mb-2">{card.title}</h3>
                 <p className="font-serif opacity-80">{card.description}</p>
-                <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">Learn More</button>
               </div>
-              <div className="flex-1">
-                <img src={card.image} alt={card.title} className="w-full h-full object-cover rounded" />
+              <div className="flex-1 flex items-center justify-center">
+                <iframe 
+                  src={card.video} 
+                  title={card.title}
+                  className="w-full h-full rounded shadow-lg"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
             <div 
-              className="absolute bottom-0 right-0 w-16 h-16"
+              className="absolute bottom-0 right-0 w-16 h-16 shadow-lg"
               style={{
                 backgroundColor: card.color,
-                clipPath: "polygon(100% 0, 0 0, 100% 100%)"
+                clipPath: "polygon(0 0, 100% 0, 100% 99%, 99% 100%, 0 100%)",
+                boxShadow: '0 100px 60px -55px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.1)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+                backdropFilter: 'blur(10px)'
               }}
             />
           </div>

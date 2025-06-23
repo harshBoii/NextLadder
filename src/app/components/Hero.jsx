@@ -156,15 +156,15 @@ useEffect(() => {
 </div>
 </div>
 </div>
-<div className='absolute rotate-6 right-[15vw] top-[-25vh] '>
+<div className='absolute rotate-6 right-[15vw] top-[-20vh] '>
   <SwipeableCardDeck />
 </div>
 </div>
 
-<div className='h-[25vh] w-[100vw] mt-[-13.4vh] rounded-[100%] z-50 bg-white absolute'>
-    <div className="ml-[45vw] h-full pt-[3vh]">
+<div className='h-[25vh] w-[100vw] mt-[-13.4vh] mb-[2vh] rounded-[100%] z-50 bg-white absolute'>
+    <div className="ml-[45vw] h-[10vh] pt-[3vh]">
       <TagContainer tag={"Categories"}/>
-      <div className='text-4xl font-sans text-center ml-[-45vw] font-bold pt-[3vh]'>Explore Top Courses Caterories That Change Yourself</div>
+      <div className='text-3xl font-sans text-center ml-[-45vw] font-bold mt-[2vh] mb-[2vh]'>Explore Top Courses Categories That Change Yourself</div>
     </div>
 </div>
 </div>

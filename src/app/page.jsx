@@ -10,6 +10,7 @@ import FourCards from './components/4Cards';
 import Blog from './components/Blog';
 import TechNicalCategories from './components/TechNicalCategories';
 import { useState, useEffect } from 'react';
+import FooterComponent from './components/FooterComponent';
 
 
 
@@ -51,7 +52,7 @@ export default function HomePageDisplay() {
     <GuidanceCard data={data}/>
     <MovingCarousel data={data}/>
     <Blog data={data}/>
-
+    <FooterComponent/>
   </>
   );
 }

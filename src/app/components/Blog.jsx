@@ -28,32 +28,30 @@ const Blog = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-16 bg-[rgba(227,243,255,1)]">
-      <div className="flex justify-between items-center mb-8">
-      <div className="flex flex-wrap gap-2">
-     
-     <div
-       className="px-3 py-1 text-sm rounded-full transition-colors text-sm"
-       style={{
-         backgroundColor: 'rgba(219, 112, 147, 0.13)',
-         color: 'rgba(219, 112, 147, 1)'
-       }}
-     >
-       Blog Post
-     </div>
-
- </div>
-        <h2 className="font-sans text-3xl font-bold">Popular Post</h2>
+    <div className="w-full h-[100vh] bg-[rgba(227,243,255,1)] px-4">
+      <div className="flex justify-between items-center mb-8 mt-[2vh]">
+        <div className="flex flex-wrap gap-2">
+          <div
+            className="px-3 py-1 text-sm rounded-full transition-colors text-sm absolute mt-[1vh]"
+            style={{
+              backgroundColor: 'rgba(219, 112, 147, 0.13)',
+              color: 'rgba(219, 112, 147, 1)'
+            }}
+          >
+            Blog Post
+          </div>
+        </div>
+        <h2 className="font-sans text-3xl absolute mt-[15vh]  font-bold">Post Popular Post</h2>
         <Link 
           href="/blog"
-          className="font-sans bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors duration-300"
+          className="font-sans bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 mt-[5vh] transition-colors duration-300"
         >
           View All Articles
         </Link>
       </div>
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 mt-[10vh]">
         {/* Main Blog Card */}
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 h-[45vh]">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="relative h-[41.8vh]">
               <img 
@@ -67,18 +65,12 @@ const Blog = () => {
               <p className="font-sans text-gray-600 mb-4">
                 Discover how cutting-edge technology is revolutionizing the way we learn and teach in the modern world.
               </p>
-              <Link 
-                href="/blog/evolution-of-edtech"
-                className="font-sans inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors duration-300"
-              >
-                Read More
-              </Link>
             </div>
           </div>
         </div>
 
         {/* Side Blog Cards */}
-        <div className="md:w-1/2 flex flex-col gap-15">
+        <div className="md:w-1/2 flex flex-col h-[60vh] gap-15">
           {blogPosts.map((post) => (
             <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <div className="flex">
@@ -91,7 +83,6 @@ const Blog = () => {
                 </div>
                 <div className="w-2/3 p-4">
                   <h3 className="font-sans text-xl font-semibold mb-2">{post.title}</h3>
-                  <p className="font-sans text-gray-600 text-sm mb-3">{post.description}</p>
                   <Link 
                     href={post.link}
                     className="font-sans text-blue-600 hover:text-blue-800 font-medium"

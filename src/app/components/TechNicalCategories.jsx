@@ -51,7 +51,7 @@ const TechNicalCategories = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 justify-center items-center">
+    <div className="flex flex-col gap-6 mt-[5vh] justify-center items-center">
       {renderCategories()}
     </div>
   );

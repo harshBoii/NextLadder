@@ -120,7 +120,7 @@ const FourCards = ({data}) => {
             style={{
               position: 'absolute',
               top: '-0.8vh',
-              left: `${15 + (index * 23)}%`,
+              left: `${13.5 + (index * 24.5)}%`,
               transform: 'translate(-50%, -50%)',
               width: '2vh',
               height: '2vh',
@@ -138,7 +138,7 @@ const FourCards = ({data}) => {
             style={{
               position: 'absolute',
               top: '-0.8vh',
-              left: `${15 + (index * 23)}%`,
+              left: `${13.5 + (index * 24.5)}%`,
               transform: 'translate(-50%, 0)',
               width: '0.5vh',
               height: '10vh',
@@ -159,7 +159,7 @@ const FourCards = ({data}) => {
           ref={el => cardsRef.current[index] = el}
           key={index}
           style={{
-            marginTop:'10vh',
+            marginTop:'20vh',
             position: 'relative',
             backgroundColor: '#ffffff',
             borderRadius: '1.5vh',
@@ -169,13 +169,14 @@ const FourCards = ({data}) => {
             cursor: 'pointer',
             overflow: 'hidden',
             width: '20vw',
+            height: '45vh',
             transform: `translateY(${index % 2 === 0 ? '-2vh' : '2vh'})`,
             borderBottom: '0.5vh solid rgba(199, 24, 230, 0.35)',
           }}
         >
-          <div style={{
+          {/* <div style={{
             position: 'absolute',
-            top: '-20vh',
+            top: '-30vh',
             right: '0vw',
             width: '21vw',
             height: '21vw',
@@ -183,27 +184,32 @@ const FourCards = ({data}) => {
             borderRadius: '50%',
             opacity: 0.5,
             borderBottom: '0.5vh solid rgba(141, 24, 230, 0.29)',
+            backgroundColor: 'white',
           }}></div>
-
+ */}
           <div style={{
             position: 'absolute',
-            top: '34%',
+            top: '32%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            width: '10vw',
-            height: '10vw',
-            borderRadius: '80%',
+            width: '7vw',
+            height: '7vw',
+            borderRadius: '100%',
             opacity: 1,
             zIndex: 0,
-            background: `url(${card.image}) center/98%`,
-            border: '0.5vh solid rgba(255, 255, 255, 0.8)',
+            background: `url(${card.image}) center/160%`,
+            border: '0.1vh solid rgba(255, 255, 255, 0.8)',
             boxShadow: '0 0.4vh 0.6vh rgba(0, 0, 0, 0.2)',
           }}></div>
+
+          <div className='absolute left-[13vw] transform -translate-x-1/2 w-full'>
+            <img src="/Background.png" alt="" />
+          </div>
           
           <div style={{
             position: 'relative',
             zIndex: 1,
-            paddingTop: '20vh'
+            marginTop: '25vh'
           }}>
             <h3 style={{
               color: '#333',
@@ -216,7 +222,7 @@ const FourCards = ({data}) => {
           </div>
           
           <div style={{
-            marginTop: '2vh',
+            marginTop: '10vh',
             display: 'flex',
             justifyContent: 'flex-end'
           }}>
