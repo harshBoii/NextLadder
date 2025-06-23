@@ -150,7 +150,7 @@ useEffect(() => {
             WebkitTextFillColor: 'transparent'
           }}
         >
-            It's a An Experience.
+            It's An Experience.
         </div>
 
         <button 

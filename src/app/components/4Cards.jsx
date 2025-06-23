@@ -210,7 +210,7 @@ const FourCards = ({data}) => {
               textAlign: 'center'
             }} className='text-serif text-3xl font-bold'>{card.title}</h3>
 
-            <h3 className='text-sans text-center text-md opacity-60 zinc-800 font-bold'>
+            <h3 className='text-sans text-center text-md opacity-80 zinc-800'>
               {card.description}
             </h3>
           </div>

@@ -118,7 +118,7 @@ useEffect(() => {
         <div className='text-[1.3vw]'>🏆 The Leader In Online Learning</div>
     </div>
 
-    <h1 className=' text-[4vh] pl-[2.7vw] mt-[5vh] text-zinc-700 font-bold font-sans w-[35vw]'>
+    <h1 className=' text-[4vh] ml-[3.7vw] mt-[5vh] text-zinc-700 font-bold font-sans w-[35vw]'>
       {heroData.heroTitle}
     </h1>
 

@@ -4,44 +4,44 @@ const Placement = () => {
   const benefits = [
     {
       image: "/PlacementIcons/B1.png", // Add your image paths
-      title: "Resume Building",
-      description: "Professional resume crafting with industry experts"
+      title: "Profiles highlighted on hirist.com",
+      description: "Get access to an abundance of job openings"
     },
     {
       image: "/PlacementIcons/B2.png",
-      title: "Interview Prep", 
-      description: "Mock interviews and technical assessment training"
+      title: "1200+ Companies Hiring", 
+      description: "Expanded job search with a vast network of companies hiring."
     },
     {
       image: "/PlacementIcons/B3.png",
-      title: "Networking",
-      description: "Connect with industry professionals and alumni"
+      title: "Profiles highlighted on naukri.com",
+      description: "Make a distinct mark for yourself on India's leading job portal."
     },
     {
       image: "/PlacementIcons/B4.png",
-      title: "Job Portal",
-      description: "Access to exclusive job opportunities"
+      title: "Dedicated placement team",
+      description: "Guiding and motivating you every step of the way."
     },
     {
       image: "/PlacementIcons/B5.png",
-      title: "Career Guidance",
-      description: "Personalized career path planning"
+      title: "50+ Members placement team",
+      description: "A dedicated team to help you get placed in your dream company."
     },
     {
       image: "/PlacementIcons/B6.png",
-      title: "Placement Support",
-      description: "End-to-end placement assistance"
+      title: "Job openings shared every daySupport",
+      description: "We send job openings daily to your WhatsApp directly"
     }
   ];
 
   return (
     <div className="w-full min-h-screen h-[60vh] overflow-hidden flex flex-col items-center justify-center" style={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}>
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <h1 className="text-[3.5vh] mb-[15vh] font-extrabold text-center my-[5vh] text-black rounded-lg">
+        <h1 className="text-[3.5vh] mb-[10vh] font-extrabold text-center mt-[5vh] text-black rounded-lg">
           Placement Benefits
         </h1>
 
-        <div className="grid grid-cols-3 gap-x-16 gap-y-20 mt-8 w-[80vw] justify-items-center">
+        <div className="grid grid-cols-3 gap-x-16 gap-y-20 mt-[2vh] w-[80vw] justify-items-center">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex flex-col items-center text-center w-[20vw]">
               <div className="w-[4vw] h-[4vw] mb-6 flex justify-center">
@@ -51,10 +51,10 @@ const Placement = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-[2.3vh] font-bold mb-3 text-black">
+              <h3 className="text-[1.7vh] font-bold mb-3 text-black">
                 {benefit.title}
               </h3>
-              <p className="text-[1.8vh] text-gray-600">
+              <p className="text-[1.5vh] text-gray-600">
                 {benefit.description}
               </p>
             </div>

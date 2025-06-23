@@ -1,27 +1,27 @@
 const Bootcamp = ({courseData}) => {
   const cardData = [
     {
-      icon: "/BootcampIcons/C1.png", // Update with actual image paths
+      icon: "https://ik.imagekit.io/2ouowzy7v/C1.png?updatedAt=1750673945077",
       title: "Industry Projects",
       description: "Work on real-world projects that mirror industry challenges and requirements"
     },
     {
-      icon: "/BootcampIcons/C2.png",
+      icon: "https://ik.imagekit.io/2ouowzy7v/C2.png?updatedAt=1750673945154",
       title: "Expert Mentorship", 
       description: `Get guidance from ${courseData.ExpertFrom} faculties with years of experience`
     },
     {
-      icon: "/BootcampIcons/C3.png",
+      icon: "https://ik.imagekit.io/2ouowzy7v/C3.png?updatedAt=1750673945134",
       title: "Comprehensive Curriculum",
       description: "Learn the latest technologies and frameworks used in modern web development"
     },
     {
-      icon: "/BootcampIcons/C4.png",
+      icon: "https://ik.imagekit.io/2ouowzy7v/C4.png?updatedAt=1750673945149",
       title: "Career Support",
       description: "Get assistance with resume building, interview preparation and job placement"
     },
     {
-      icon: "/BootcampIcons/C5.png",
+      icon: "https://ik.imagekit.io/2ouowzy7v/C5.png?updatedAt=1750673945120",
       title: "Community Access",
       description: "Join a community of learners and professionals for networking and support"
     }

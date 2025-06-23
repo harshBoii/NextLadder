@@ -97,11 +97,11 @@ const Review = () => {
               </div>
 
               {/* Name and Role */}
-              <h3 className="mt-[4vh] text-[2vh] opacity-60 font-bold text-white ">{review.name}</h3>
-              <p className="text-[1.4vh] text-white opacity-70 mb-4">{review.role} at {review.company}</p>
+              <h3 className="mt-[4vh] text-[2vh] opacity-80 font-bold text-white ">{review.name}</h3>
+              <p className="text-[1.4vh] text-white opacity-80 mb-4">{review.role} at {review.company}</p>
 
               {/* Review Text */}
-              <p className="text-[1.6vh] font-semibold font-sans rounded-lg mt-[2vh] text-white opacity-90 italic flex-grow">
+              <p className="text-[1.6vh] font-sans rounded-lg mt-[2vh] text-white opacity-90 h-[15vh] italic flex-grow ">
                 "{review.review}"
               </p>
 
@@ -109,7 +109,7 @@ const Review = () => {
               <img src="/reviewcontainer.png" alt="" className="w-full h-full absolute -top-[3.3vh] h-[14vh] left-[0vw] " />
 
               {/* Post, Coding Ninjas, Arrow and Company Logo */}
-              <div className="absolute top-[45vh] left-[0vw] w-[28vw] flex items-center">
+              <div className="absolute top-[38vh] left-[0vw] w-[28vw] flex items-center">
                 <div className="text-left">
                   <p className="text-[0.8vw] text-white opacity-70">Post</p>
                   <p className="text-[0.8vw] font-semibold text-white mt-1">Coding Ninjas</p>

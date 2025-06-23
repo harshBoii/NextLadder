@@ -8,7 +8,7 @@ import GuidanceCard from './components/GuidanceCard';
 import MovingCarousel from './components/MovingCarousel';
 import FourCards from './components/4Cards';
 import Blog from './components/Blog';
-
+import TechNicalCategories from './components/TechNicalCategories';
 import { useState, useEffect } from 'react';
 
 
@@ -43,7 +43,8 @@ export default function HomePageDisplay() {
   <>
     <NavbarDefault icon={data.LogoUrl}/>
     <Hero/>
-    <Categories/>
+    {/* <Categories/> */}
+    <TechNicalCategories/>
     <TopPopularCourses data={data}/>
     <FourCards data={data}/>
     <KnowAboutUs daata={data}/>

@@ -4,7 +4,7 @@ import { Button, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle }
 export function NavbarDefault({icon}) {
   return (
     <Navbar fluid rounded>
-      <NavbarBrand href="https://flowbite-react.com">
+      <NavbarBrand href="/">
         <img src={icon || null} className="mr-3 h-6 h-[6vh]" alt="Flowbite React Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
       </NavbarBrand>

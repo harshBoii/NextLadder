@@ -52,7 +52,7 @@ const CoursePage = () => {
     <>
       <NavbarDefault icon={icon} />
       <Intro courseData={courseData} />
-      <Sky courseData={courseData} />
+      {/* <Sky courseData={courseData} /> */}
       <Scroll courseData={courseData} />
       <Placement courseData={courseData} />
       <Bootcamp courseData={courseData} />
