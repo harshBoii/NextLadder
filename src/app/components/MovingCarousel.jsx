@@ -28,7 +28,7 @@ const MovingCarousel = () => {
         </div>
       </div>
 
-      <div className='text-[5vh] my-[5vh] mb-[10vh]  font-sans text-center font-bold'>
+      <div className='text-2xl sm:text-3xl md:text-4xl lg:text-[5vh] my-8 lg:my-[5vh] mb-8 lg:mb-[10vh] font-sans text-center font-bold px-4'>
       People like histudy education. No joking - here's the proof!
       </div>
 
@@ -48,7 +48,7 @@ const MovingCarousel = () => {
           {cards.slice(0, 10).map((card) => (
             <div
               key={card.id}
-              className="flex-shrink-0 w-100 p-8 rounded-lg transition-all duration-300 relative"
+              className="flex-shrink-0 w-80 lg:w-100 p-4 lg:p-8 rounded-lg transition-all duration-300 relative"
               style={{
                 backgroundColor: card.isBlue ? 'rgba(65, 175, 255, 1)' : 'white',
                 color: card.isBlue ? 'rgb(250, 251, 255)' : 'black',
@@ -60,16 +60,16 @@ const MovingCarousel = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 rounded-lg" />
               <div className="relative z-10">
-                <div className="text-5xl mb-6 flex justify-center">{card.icon}</div>
+                <div className="text-3xl lg:text-5xl mb-4 lg:mb-6 flex justify-center">{card.icon}</div>
                 <div className="flex flex-col h-full">
-                  <p className="text-base italic mb-6 flex-grow">{card.review}</p>
+                  <p className="text-sm lg:text-base italic mb-4 lg:mb-6 flex-grow">{card.review}</p>
                   <div className="flex items-center justify-center gap-3">
                     <img 
                       src={card.avatar} 
                       alt={card.name}
-                      className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md"
+                      className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover border-2 border-white shadow-md"
                     />
-                    <p className="font-semibold">{card.name}</p>
+                    <p className="font-semibold text-sm lg:text-base">{card.name}</p>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ const MovingCarousel = () => {
           {cards.slice(10, 20).map((card) => (
             <div
               key={card.id}
-              className="flex-shrink-0 w-100 p-8 rounded-lg transition-all duration-300 relative"
+              className="flex-shrink-0 w-80 lg:w-100 p-4 lg:p-8 rounded-lg transition-all duration-300 relative"
               style={{
                 backgroundColor: card.isBlue ? 'rgba(65, 175, 255, 1)' : 'white',
                 color: card.isBlue ? 'rgb(250, 251, 255)' : 'black',
@@ -106,16 +106,16 @@ const MovingCarousel = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 rounded-lg" />
               <div className="relative z-10">
-                <div className="text-5xl mb-6 flex justify-center">{card.icon}</div>
+                <div className="text-3xl lg:text-5xl mb-4 lg:mb-6 flex justify-center">{card.icon}</div>
                 <div className="flex flex-col h-full">
-                  <p className="text-base italic mb-6 flex-grow">{card.review}</p>
+                  <p className="text-sm lg:text-base italic mb-4 lg:mb-6 flex-grow">{card.review}</p>
                   <div className="flex items-center justify-center gap-3">
                     <img 
                       src={card.avatar} 
                       alt={card.name}
-                      className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-md"
+                      className="w-8 h-8 lg:w-10 lg:h-10 rounded-full object-cover border-2 border-white shadow-md"
                     />
-                    <p className="font-semibold">{card.name}</p>
+                    <p className="font-semibold text-sm lg:text-base">{card.name}</p>
                   </div>
                 </div>
               </div>

@@ -26,12 +26,12 @@ const KnowAboutUs = ({daata}) => {
   }, []);
 
   return (
-    <div className="container px-4 py-75">
-      <div className="flex flex-row ">
+    <div className="container mx-auto px-4 py-16 lg:py-20">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
         {/* Left half with images */}
-        <div className="w-full ">
-          <div className="">
-            <div className="absolute h-[40vh] z-1 ml-[10vw] -mt-[27vh] w-[20vw]">
+        <div className="w-full lg:w-1/2 relative">
+          <div className="relative h-64 sm:h-80 lg:h-96">
+            <div className="absolute top-0 left-0 h-32 sm:h-40 lg:h-[40vh] w-32 sm:w-40 lg:w-[20vw] z-10">
               <Image
                 src="/3d1.png"
                 alt="About Us Image 1"
@@ -39,7 +39,7 @@ const KnowAboutUs = ({daata}) => {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div className="absolute h-[40vh] z-2 ml-[20vw] mt-[6vh] w-[24vw]">
+            <div className="absolute top-16 sm:top-20 lg:top-[6vh] left-16 sm:left-20 lg:left-[20vw] h-32 sm:h-40 lg:h-[40vh] w-40 sm:w-48 lg:w-[24vw] z-20">
               <Image
                 src="/3d2.png"
                 alt="About Us Image 2"
@@ -47,7 +47,7 @@ const KnowAboutUs = ({daata}) => {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div className="absolute h-[20vh] z-3 ml-[34vw] -mt-[20vh] w-[14vw]">
+            <div className="absolute top-0 right-0 h-20 sm:h-24 lg:h-[20vh] w-20 sm:w-24 lg:w-[14vw] z-30">
               <Image
                 src="/3d3.png"
                 alt="About Us Image 3"
@@ -59,50 +59,44 @@ const KnowAboutUs = ({daata}) => {
         </div>
 
         {/* Right half with text */}
-        <div className="w-full h-full justify-center pl-[23vw] mt-[-20vh]">
-            <div className="flex flex-wrap gap-2 pb-[5vh]">
-        
+        <div className="w-full lg:w-1/2 flex flex-col justify-center">
+          <div className="flex flex-wrap gap-2 pb-4 lg:pb-[5vh]">
             <div
-            className="px-3 py-1 text-sm rounded-full transition-colors"
-            style={{
+              className="px-3 py-1 text-sm rounded-full transition-colors"
+              style={{
                 backgroundColor: 'rgba(233, 150, 122, 0.13)',
                 color: 'rgba(233, 150, 122, 1)'
-            }}
+              }}
             >
-            KNOW ABOUT US
+              KNOW ABOUT US
             </div>
+          </div>
 
-            </div>
-
-          <h2 className="text-4xl font-bold mb-[6vh] text-left">{daata.AboutUsTitle}</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 lg:mb-[6vh] text-left">{daata.AboutUsTitle}</h2>
           <div className="space-y-4">
-
-            <p className="text-lg text-gray-700">{daata.AboutUsContent}</p>
-            {/* <p className="text-lg text-gray-700">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p className="text-base lg:text-lg text-gray-700">{daata.AboutUsContent}</p>
             
-            <p className="text-lg text-gray-700">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> */}
-          
-          <div className="flex items-start gap-3 mt-[5vh] mb-4">
-            <div 
-              className="w-[35px] h-[35px] rounded-full opacity-70 flex-shrink-0 mt-[1vh]"
-              style={{ backgroundColor: 'rgba(219, 112, 147, 0.6)' }}
-            />
-            <div>
-              <h3 className="font-sans text-lg font-medium mb-1">Expert Instructors</h3>
-              <p className="font-sans text-sm text-gray-700">Learn from industry professionals with years of real-world experience</p>
+            <div className="flex items-start gap-3 mt-8 lg:mt-[5vh] mb-4">
+              <div 
+                className="w-8 h-8 lg:w-[35px] lg:h-[35px] rounded-full opacity-70 flex-shrink-0 mt-1 lg:mt-[1vh]"
+                style={{ backgroundColor: 'rgba(219, 112, 147, 0.6)' }}
+              />
+              <div>
+                <h3 className="font-sans text-base lg:text-lg font-medium mb-1">Expert Instructors</h3>
+                <p className="font-sans text-sm text-gray-700">Learn from industry professionals with years of real-world experience</p>
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-start gap-3">
-            <div 
-              className="w-[35px] h-[35px] rounded-full opacity-70 flex-shrink-0 mt-[1vh]"
-              style={{ backgroundColor: 'rgba(47, 87, 239, 0.08)' }}
-            />
-            <div>
-              <h3 className="font-sans text-lg font-medium mb-1">Flexible Learning</h3>
-              <p className="font-sans text-sm text-gray-700">Study at your own pace with 24/7 access to course materials</p>
+            <div className="flex items-start gap-3">
+              <div 
+                className="w-8 h-8 lg:w-[35px] lg:h-[35px] rounded-full opacity-70 flex-shrink-0 mt-1 lg:mt-[1vh]"
+                style={{ backgroundColor: 'rgba(47, 87, 239, 0.08)' }}
+              />
+              <div>
+                <h3 className="font-sans text-base lg:text-lg font-medium mb-1">Flexible Learning</h3>
+                <p className="font-sans text-sm text-gray-700">Study at your own pace with 24/7 access to course materials</p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

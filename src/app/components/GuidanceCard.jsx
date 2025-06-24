@@ -65,11 +65,11 @@ const GuidanceCard = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[75vw] ml-[3vw]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full max-w-6xl mx-auto">
         {guidanceData.map((card) => (
           <div 
             key={card.id}
-            className="relative ml-[6.5vw] h-[30vh] w-[35vw] bg-white rounded-lg p-6 hover:shadow-2xl transition-all duration-300 backdrop-blur-sm"
+            className="relative h-64 sm:h-72 lg:h-[30vh] w-full bg-white rounded-lg p-4 lg:p-6 hover:shadow-2xl transition-all duration-300 backdrop-blur-sm"
             style={{
               clipPath: "polygon(0 0, 100% 0, 100% 99%, 99% 100%, 0 100%)",
               boxShadow: '0 5px 5px -55px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.1)',
@@ -85,18 +85,18 @@ const GuidanceCard = () => {
                 pointerEvents: "none"
               }}
             />
-            <TagContainer className="pb-[2vh]" tag="New Collection"/>
-                <div className="flex flex-row h-full relative z-10">
+            <TagContainer className="pb-2 lg:pb-[2vh]" tag="New Collection"/>
+                <div className="flex flex-col lg:flex-row h-full relative z-10">
                 
-              <div className="flex-1 flex flex-col justify-center">
-                <h3 className="text-2xl font-serif mb-2">{card.title}</h3>
-                <p className="font-serif opacity-80">{card.description}</p>
+              <div className="flex-1 flex flex-col justify-center mb-4 lg:mb-0">
+                <h3 className="text-xl lg:text-2xl font-serif mb-2">{card.title}</h3>
+                <p className="font-serif opacity-80 text-sm lg:text-base">{card.description}</p>
               </div>
               <div className="flex-1 flex items-center justify-center">
                 <iframe 
                   src={card.video} 
                   title={card.title}
-                  className="w-full h-full rounded shadow-lg"
+                  className="w-full h-32 sm:h-40 lg:h-full rounded shadow-lg"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -104,7 +104,7 @@ const GuidanceCard = () => {
               </div>
             </div>
             <div 
-              className="absolute bottom-0 right-0 w-16 h-16 shadow-lg"
+              className="absolute bottom-0 right-0 w-12 h-12 lg:w-16 lg:h-16 shadow-lg"
               style={{
                 backgroundColor: card.color,
                 clipPath: "polygon(0 0, 100% 0, 100% 99%, 99% 100%, 0 100%)",

@@ -79,161 +79,91 @@ const FourCards = ({data}) => {
   }, []);
 
   return (
-    <div className='flex flex-col h-[85vh]'>
+    <div className='flex flex-col min-h-screen lg:h-[85vh] py-8 lg:py-0'>
 
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-4 px-4">
         <TagContainer tag="WHY CHOOSE US" />
-        <h2 className="font-sans text-5xl text-extrabold width-[20vw] text-center">
+        <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center max-w-4xl">
           {data.WhyChooseUs}
         </h2>
       </div>
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: '2vh',
-      padding: '2vh',
-      maxWidth: '90vw',
-      margin:'10vh auto',
-      height: "40vh",
-      position: 'relative'
-    }}>
       
-      {/* Line with gradient */}
-      <div style={{
-        position: 'absolute',
-        top: '-1vh',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '70vw',
-        height: '0.5vh',
-        background: 'radial-gradient(circle at center, rgba(47, 87, 239, 1) 0%, rgba(255, 255, 255, 0) 100%)',
-        zIndex: 2,
-      }}></div>
-
-      {/* Circles above the line and connecting lines */}
-      {[0, 1, 2, 3].map((index) => (
-        <React.Fragment key={`circle-${index}`}>
-          {/* Circle */}
+      {/* Mobile Layout */}
+      <div className='lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 mt-8'>
+        {[
+          { title: '800+', description: 'Learners & counting', image: '/WhyChooseUs/Learners.png' },
+          { title: '1.2K+', description: 'Courses & Video', image: '/WhyChooseUs/watch.png' },
+          { title: '500+', description: 'Certified Students', image: '/WhyChooseUs/scholar.png' },
+          { title: '2.5K+', description: 'Registered Enrolls', image: '/WhyChooseUs/Enrolls.png' }
+        ].map((card, index) => (
           <div
-            ref={el => circlesRef.current[index] = el}
-            style={{
-              position: 'absolute',
-              top: '-0.8vh',
-              left: `${13.5 + (index * 24.5)}%`,
-              transform: 'translate(-50%, -50%)',
-              width: '2vh',
-              height: '2vh',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(47, 85, 239, 0.86)',
-              border: '0.3vh solid white',
-              boxShadow: '0 0.2vh 0.4vh rgba(0, 0, 0, 0.2)',
-              zIndex: 3,
-            }}
-          ></div>
-          
-          {/* Connecting line */}
+            key={index}
+            className="bg-white rounded-lg p-6 shadow-lg border-b-2 border-purple-300 hover:shadow-xl transition-all duration-300 cursor-pointer relative overflow-hidden"
+          >
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cover bg-center border border-white shadow-lg"
+                 style={{ backgroundImage: `url(${card.image})` }}>
+            </div>
+            
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">{card.title}</h3>
+              <p className="text-sm text-gray-600">{card.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop Layout */}
+      <div className='hidden lg:flex justify-center items-center gap-4 p-4 max-w-7xl mx-auto mt-16 relative'>
+      
+        {/* Line with gradient */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4/5 h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent z-10"></div>
+
+        {/* Circles above the line and connecting lines */}
+        {[0, 1, 2, 3].map((index) => (
+          <React.Fragment key={`circle-${index}`}>
+            {/* Circle */}
+            <div
+              ref={el => circlesRef.current[index] = el}
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-blue-600 border-2 border-white shadow-md z-20"
+              style={{ left: `${13.5 + (index * 24.5)}%` }}
+            ></div>
+            
+            {/* Connecting line */}
+            <div
+              ref={el => linesRef.current[index] = el}
+              className="absolute top-0 w-1 h-20 bg-gradient-to-b from-blue-600 to-transparent z-10"
+              style={{ left: `${13.5 + (index * 24.5)}%` }}
+            ></div>
+          </React.Fragment>
+        ))}
+
+        {[
+          { title: '800+', description: 'Learners & counting', image: '/WhyChooseUs/Learners.png' },
+          { title: '1.2K+', description: 'Courses & Video', image: '/WhyChooseUs/watch.png' },
+          { title: '500+', description: 'Certified Students', image: '/WhyChooseUs/scholar.png' },
+          { title: '2.5K+', description: 'Registered Enrolls', image: '/WhyChooseUs/Enrolls.png' }
+        ].map((card, index) => (
           <div
-            ref={el => linesRef.current[index] = el}
-            style={{
-              position: 'absolute',
-              top: '-0.8vh',
-              left: `${13.5 + (index * 24.5)}%`,
-              transform: 'translate(-50%, 0)',
-              width: '0.5vh',
-              height: '10vh',
-              background: 'linear-gradient(to bottom, rgba(47, 87, 239, 1), rgba(255, 255, 255, 0))',
-              zIndex: 2,
-            }}
-          ></div>
-        </React.Fragment>
-      ))}
+            ref={el => cardsRef.current[index] = el}
+            key={index}
+            className="relative bg-white rounded-lg p-6 shadow-lg transition-all duration-300 cursor-pointer overflow-hidden w-64 h-80 transform hover:scale-105 border-b-2 border-purple-300"
+            style={{ transform: `translateY(${index % 2 === 0 ? '-8px' : '8px'})` }}
+          >
+            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-cover bg-center border border-white shadow-lg z-0"
+                 style={{ backgroundImage: `url(${card.image})` }}>
+            </div>
 
-      {[
-        { title: '800+', description: 'Learners & counting', image: '/WhyChooseUs/Learners.png' },
-        { title: '1.2K+', description: 'Courses & Video', image: '/WhyChooseUs/watch.png' },
-        { title: '500+', description: 'Certified Students', image: '/WhyChooseUs/scholar.png' },
-        { title: '2.5K+', description: 'Registered Enrolls', image: '/WhyChooseUs/Enrolls.png' }
-      ].map((card, index) => (
-        <div
-          ref={el => cardsRef.current[index] = el}
-          key={index}
-          style={{
-            marginTop:'20vh',
-            position: 'relative',
-            backgroundColor: '#ffffff',
-            borderRadius: '1.5vh',
-            padding: '2vh',
-            boxShadow: '0 0.4vh 0.6vh rgba(0, 0, 0, 0.1)',
-            transition: 'transform 0.3s ease',
-            cursor: 'pointer',
-            overflow: 'hidden',
-            width: '20vw',
-            height: '45vh',
-            transform: `translateY(${index % 2 === 0 ? '-2vh' : '2vh'})`,
-            borderBottom: '0.5vh solid rgba(199, 24, 230, 0.35)',
-          }}
-        >
-          {/* <div style={{
-            position: 'absolute',
-            top: '-30vh',
-            right: '0vw',
-            width: '21vw',
-            height: '21vw',
-            border: '3vh solid rgba(210, 163, 222, 0.44)',
-            borderRadius: '50%',
-            opacity: 0.5,
-            borderBottom: '0.5vh solid rgba(141, 24, 230, 0.29)',
-            backgroundColor: 'white',
-          }}></div>
- */}
-          <div style={{
-            position: 'absolute',
-            top: '32%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '7vw',
-            height: '7vw',
-            borderRadius: '100%',
-            opacity: 1,
-            zIndex: 0,
-            background: `url(${card.image}) center/160%`,
-            border: '0.1vh solid rgba(255, 255, 255, 0.8)',
-            boxShadow: '0 0.4vh 0.6vh rgba(0, 0, 0, 0.2)',
-          }}></div>
-
-          <div className='absolute left-[13vw] transform -translate-x-1/2 w-full'>
-            <img src="/Background.png" alt="" />
+            <div className='absolute left-1/2 transform -translate-x-1/2 w-full'>
+              <img src="/Background.png" alt="" />
+            </div>
+            
+            <div className="relative z-10 mt-32">
+              <h3 className="text-2xl font-bold text-gray-800 text-center mb-2">{card.title}</h3>
+              <p className="text-sm text-gray-600 text-center">{card.description}</p>
+            </div>
           </div>
-          
-          <div style={{
-            position: 'relative',
-            zIndex: 1,
-            marginTop: '25vh'
-          }}>
-            <h3 style={{
-              color: '#333',
-              textAlign: 'center'
-            }} className='text-serif text-3xl font-bold'>{card.title}</h3>
-
-            <h3 className='text-sans text-center text-md opacity-80 zinc-800'>
-              {card.description}
-            </h3>
-          </div>
-          
-          <div style={{
-            marginTop: '10vh',
-            display: 'flex',
-            justifyContent: 'flex-end'
-          }}>
-            <div style={{
-              fontSize: '1.5rem',
-              color: '#666'
-            }}>{card.icon}</div>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
   );
 };

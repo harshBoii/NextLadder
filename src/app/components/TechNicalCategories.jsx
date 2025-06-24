@@ -24,35 +24,28 @@ const TechNicalCategories = () => {
     }
   ];
 
-  const renderCategories = () => {
-    const rows = [];
-    for (let i = 0; i < categories.length; i += 4) {
-      const rowCategories = categories.slice(i, i + 4);
-      rows.push(
-        <div key={i}  className="mt-[5vh] flex flex-row gap-6 justify-center w-[70%]">
-          {rowCategories.map((category, index) => (
-            <div key={i + index} className="relative h-[40vh] w-[25vh] rounded-[8%] overflow-hidden group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.9)] transition-shadow duration-300">
-              <img 
-                src={category.image} 
-                alt={category.name}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="font-poppins absolute inset-0 bg-gradient-to-b from-transparent to-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-end justify-center">
-                <h3 className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-15 group-hover:translate-y-0 px-2 pb-4">
-                  {category.name}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-    }
-    return rows;
-  };
-
   return (
-    <div className="flex flex-col gap-6 mt-[5vh] justify-center items-center">
-      {renderCategories()}
+    <div className="flex flex-col gap-6 mt-8 lg:mt-[5vh] justify-center items-center px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 w-full max-w-6xl">
+        {categories.map((category, index) => (
+          <div 
+            key={index} 
+            className="relative h-48 sm:h-56 lg:h-[40vh] w-full lg:w-[25vh] rounded-lg lg:rounded-[8%] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-300 mx-auto"
+            style={{ boxShadow: '0 0 20px rgba(168,85,247,0.5)' }}
+          >
+            <img 
+              src={category.image} 
+              alt={category.name}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="font-poppins absolute inset-0 bg-gradient-to-b from-transparent to-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-end justify-center">
+              <h3 className="text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0 px-2 pb-4 text-center">
+                {category.name}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

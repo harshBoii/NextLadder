@@ -105,7 +105,7 @@ const FooterComponent = () => {
   return (
     <div 
       ref={containerRef}
-      className="w-full bg-black text-white py-16 h-[60vh] relative overflow-hidden"
+      className="w-full bg-black text-white py-8 lg:py-16 min-h-screen lg:h-[60vh] relative overflow-hidden"
     >
       {/* Radial Neon Background */}
       <div 
@@ -129,17 +129,17 @@ const FooterComponent = () => {
       />
       
       <div ref={contentRef} className="container mx-auto px-4 relative z-10">
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
           {/* Left Half */}
-          <div className="w-1/2 mt-[13vh] flex flex-col items-center justify-center">
+          <div className="w-full lg:w-1/2 mt-8 lg:mt-[13vh] flex flex-col items-center justify-center">
             {logoUrl && (
               <img 
                 src={logoUrl} 
                 alt="Company Logo" 
-                className="h-[10vh] object-contain mb-6"
+                className="h-16 lg:h-[10vh] object-contain mb-6"
               />
             )}
-            <p className="text-center text-gray-300 max-w-md leading-relaxed mb-6">
+            <p className="text-center text-gray-300 max-w-md leading-relaxed mb-6 px-4 lg:px-0">
               We're always in search for talented and motivated people. Don't be shy introduce yourself!
             </p>
             <Link 
@@ -156,11 +156,11 @@ const FooterComponent = () => {
           </div>
           
           {/* Right Half */}
-          <div className="w-1/2 flex mt-[13vh]">
+          <div className="w-full lg:w-1/2 flex flex-col lg:flex-row mt-8 lg:mt-[13vh]">
             {/* First div with equal width */}
-            <div className="w-1/2 p-6">
-              <h3 className="text-xl font-bold text-cyan-400 mb-4">Our Company</h3>
-              <div className="flex flex-col space-y-2">
+            <div className="w-full lg:w-1/2 p-4 lg:p-6">
+              <h3 className="text-lg lg:text-xl font-bold text-cyan-400 mb-4 text-center lg:text-left">Our Company</h3>
+              <div className="flex flex-col space-y-2 text-center lg:text-left">
                 <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Contact Us</a>
                 <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Placement</a>
                 <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Log</a>
@@ -170,9 +170,9 @@ const FooterComponent = () => {
             </div>
             
             {/* Second div with equal width */}
-            <div className="w-1/2 p-6">
-              <h3 className="text-xl font-bold text-cyan-400 mb-4">Get Contact</h3>
-              <div className="flex flex-col space-y-2">
+            <div className="w-full lg:w-1/2 p-4 lg:p-6">
+              <h3 className="text-lg lg:text-xl font-bold text-cyan-400 mb-4 text-center lg:text-left">Get Contact</h3>
+              <div className="flex flex-col space-y-2 text-center lg:text-left">
                 <p className="text-gray-300">Phone: +91 9876543210</p>
                 <p className="text-gray-300">Email: info@nextladder.com</p>
                 <p className="text-gray-300">Location: Mumbai, India</p>
