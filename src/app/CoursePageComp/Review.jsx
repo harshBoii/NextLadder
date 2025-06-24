@@ -67,11 +67,11 @@ const Review = () => {
         ))}
       </div>
 
-      <div className="grid mt-[7vh] grid-cols-3 gap-8">
+      <div className="grid mt-[7vh] h-[80vh] grid-cols-3 gap-8">
         {filteredReviews.map((review, index) => (
           <div 
             key={index}
-            className="flex flex-col items-center p-8 rounded-xl relative card-hover h-[500px]"
+            className="flex flex-col items-center p-8 rounded-xl relative card-hover h-[55vh]"
             style={{
               background: 'radial-gradient(circle at center, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
               boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
@@ -109,7 +109,7 @@ const Review = () => {
               <img src="/reviewcontainer.png" alt="" className="w-full h-full absolute -top-[3.3vh] h-[14vh] left-[0vw] " />
 
               {/* Post, Coding Ninjas, Arrow and Company Logo */}
-              <div className="absolute top-[38vh] left-[0vw] w-[28vw] flex items-center">
+              <div className="relative bottom-[-12vh] left-[2vw] w-[28vw] flex items-center">
                 <div className="text-left">
                   <p className="text-[0.8vw] text-white opacity-70">Post</p>
                   <p className="text-[0.8vw] font-semibold text-white mt-1">Coding Ninjas</p>
@@ -136,14 +136,14 @@ const Review = () => {
         ))}
         
       </div>
-      <div className="flex gap-4 ml-[23vw] mt-[8vh]">
+      <div className="flex gap-4 ml-[23vw] mt-[4vh]">
               <button 
-                className="px-6 py-2 w-[23vw] h-[5vh] rounded-lg border-2 border-white text-white font-semibold hover:bg-gray-800 transition-colors duration-200"
+                className="px-6 py-2 w-[23vw] h-[8vh] rounded-lg border-2 border-white text-white font-semibold hover:bg-gray-800 transition-colors duration-200"
               >
                 Read All Success Stories
               </button>
               <button 
-                className="px-6 py-2 w-[15vw] h-[5vh] rounded-lg bg-[rgba(65,175,255,1)] text-white font-semibold hover:bg-[rgba(197, 197, 197, 0.9)] transition-colors duration-200"
+                className="px-6 py-2 w-[15vw] h-[8vh] rounded-lg bg-[rgba(65,175,255,1)] text-white font-semibold hover:bg-[rgba(197, 197, 197, 0.9)] transition-colors duration-200"
               >
                 Book a free webinar
               </button>

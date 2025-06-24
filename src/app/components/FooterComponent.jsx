@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import ParticlesBackground from './particlesBg';
 
 const FooterComponent = () => {
   const [logoUrl, setLogoUrl] = useState('');
@@ -21,6 +22,9 @@ const FooterComponent = () => {
 
   return (
     <div className="w-full bg-white-900 text-white py-16 h-[60vh]">
+      {/* <div >
+        <ParticlesBackground />
+      </div> */}
       <div className="container mx-auto px-4">
         <div className="flex">
           {/* Left Half */}

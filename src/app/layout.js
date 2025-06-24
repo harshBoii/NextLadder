@@ -31,7 +31,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${geistSans.variable}  ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${geistSans.variable}  ${geistMono.variable} antialiased "light"`}>
       <body
         className={`${geistSans.variable} ${poppins.variable} ${geistMono.variable} antialiased`}
       >

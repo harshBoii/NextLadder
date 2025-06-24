@@ -31,7 +31,7 @@ const TechNicalCategories = () => {
       rows.push(
         <div key={i}  className="mt-[5vh] flex flex-row gap-6 justify-center w-[70%]">
           {rowCategories.map((category, index) => (
-            <div key={i + index} className="relative h-100 w-60 rounded-[8%] overflow-hidden group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.9)] transition-shadow duration-300">
+            <div key={i + index} className="relative h-[40vh] w-[25vh] rounded-[8%] overflow-hidden group shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.9)] transition-shadow duration-300">
               <img 
                 src={category.image} 
                 alt={category.name}

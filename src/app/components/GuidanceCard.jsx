@@ -65,11 +65,11 @@ const GuidanceCard = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-8xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[75vw] ml-[3vw]">
         {guidanceData.map((card) => (
           <div 
             key={card.id}
-            className="relative ml-[4vw] h-[25vh] w-[40vw] bg-white rounded-lg p-6 hover:shadow-2xl transition-all duration-300 backdrop-blur-sm"
+            className="relative ml-[6.5vw] h-[30vh] w-[35vw] bg-white rounded-lg p-6 hover:shadow-2xl transition-all duration-300 backdrop-blur-sm"
             style={{
               clipPath: "polygon(0 0, 100% 0, 100% 99%, 99% 100%, 0 100%)",
               boxShadow: '0 5px 5px -55px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.1)',

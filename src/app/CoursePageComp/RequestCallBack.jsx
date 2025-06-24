@@ -10,7 +10,7 @@ const RequestCallBack = () => {
           className="w-full h-full object-contain"
         />
       </div>
-      <div className="w-[60%] flex flex-col font-sans justify-center px-16">
+      <div className="w-[45%] flex flex-col font-sans justify-center px-16">
         <h2 className="text-3xl font-semibold mb-8">
           Have questions?<br/>
           Request a call from our counselors.

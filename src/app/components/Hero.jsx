@@ -114,8 +114,12 @@ useEffect(() => {
     <div className="bg-[url('/ad85a9a524b4ba1dbd7e4848760a355157925a49.jpg')] bg-cover bg-center w-[100vw] h-[80vh] overflow-hidden border-t-2 border-t-zinc-800">
 
 
-    <div className='h-[5.5vh] w-[20vw] bg-white relative mt-[14vh] ml-[7vw] rounded-[1vh] whitespace-nowrap font-serif text-black text-center pt-3'>
+    <div className='h-[5.5vh] w-[20vw] bg-white relative mt-[14vh] ml-[7vw] rounded-[1vh] whitespace-nowrap font-poppins text-black z-10 flex items-center justify-center'>
         <div className='text-[1.3vw]'>🏆 The Leader In Online Learning</div>
+    </div>
+
+    <div className='absolute top-[14.5vh] left-[5.5vw]  z-5'>
+      <img src="https://ik.imagekit.io/2ouowzy7v/Mask%20Group.png?updatedAt=1750753310344" alt="" className='w-[23vw] h-[5vh]' />
     </div>
 
     <h1 className=' text-[4vh] ml-[3.7vw] mt-[5vh] text-zinc-700 font-bold font-sans w-[35vw]'>

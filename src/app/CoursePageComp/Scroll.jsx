@@ -12,8 +12,8 @@ useEffect(() => {
 
     gsap.fromTo(lineRef.current,{
         width: "0%",
-        borderTop: "0px solid rgba(98, 73, 197, 0.3)",
-        backgroundColor: "rgba(98, 73, 197, 0.3)",
+        borderTop: "0px solid rgb(178, 0, 0)",
+        backgroundColor: "rgba(255, 0, 0, 0.84)",
         height: "2px"        // give it a visible thickness
         },
          {
@@ -26,7 +26,7 @@ useEffect(() => {
             onUpdate: (self) => {
                 const progress = self.progress;
                 gsap.set(lineRef.current, {
-                    width: `${progress * 10}%`
+                    width: `${progress * 15}%`
                 });
             }
         }
@@ -121,7 +121,7 @@ useEffect(() => {
 
   return (
     <div 
-      className="flex w-full h-[90vh]"
+      className="flex w-full h-[100vh]"
       style={{
         backgroundColor: 'rgba(246, 244, 251, 1)'
       }}
@@ -154,7 +154,7 @@ useEffect(() => {
         </div>
 
         <button 
-          className="px-8 py-3 rounded-lg text-white font-extrabold text-[1.8vh] ml-[15vw] mt-[2vh] shadow-lg hover:shadow-xl transition-shadow duration-300 font-sans"
+          className="px-8 py-3 rounded-lg text-white font-extrabold text-[1.8vh] ml-[12vw] mt-[2vh] shadow-lg hover:shadow-xl transition-shadow duration-300 font-sans"
           style={{
             backgroundColor: 'rgba(65, 175, 255, 1)',
             textShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)'
@@ -176,7 +176,7 @@ useEffect(() => {
         />
 
         <div 
-          className="absolute left-[15vw] ml-[10vw] top-[10vh] bottom-[10vh] w-[2px]"
+          className="absolute left-[15vw] ml-[10vw] top-[10vh] bottom-[10vh]  w-[2px]"
           style={{
             borderLeft: '2px solid rgba(0, 0, 0, 0.98)'
           }}

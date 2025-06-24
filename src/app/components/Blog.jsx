@@ -29,7 +29,7 @@ const Blog = () => {
 
   return (
     <div className="w-full h-[100vh] bg-[rgba(227,243,255,1)] px-4">
-      <div className="flex justify-between items-center mb-8 mt-[2vh]">
+      <div className="flex justify-between items-center ml-[10vw] mb-8 mt-[2vh]">
         <div className="flex flex-wrap gap-2">
           <div
             className="px-3 py-1 text-sm rounded-full transition-colors text-sm absolute mt-[1vh]"
@@ -41,7 +41,7 @@ const Blog = () => {
             Blog Post
           </div>
         </div>
-        <h2 className="font-sans text-3xl absolute mt-[15vh]  font-bold">Post Popular Post</h2>
+        <h2 className="font-sans text-4xl absolute mt-[24vh]  font-bold">Post Popular Post</h2>
         <Link 
           href="/blog"
           className="font-sans bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 mt-[5vh] transition-colors duration-300"
@@ -49,9 +49,9 @@ const Blog = () => {
           View All Articles
         </Link>
       </div>
-      <div className="flex flex-col md:flex-row gap-8 mt-[10vh]">
+      <div className="flex flex-col md:flex-row gap-8 mt-[15vh]">
         {/* Main Blog Card */}
-        <div className="md:w-1/2 h-[45vh]">
+        <div className=" h-[55vh] w-[40vw] mt-[3vh] ml-[10vw]">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="relative h-[41.8vh]">
               <img 
@@ -70,7 +70,7 @@ const Blog = () => {
         </div>
 
         {/* Side Blog Cards */}
-        <div className="md:w-1/2 flex flex-col h-[60vh] gap-15">
+        <div className="w-[35vw] mt-[3vh] flex flex-col h-[64vh] gap-15">
           {blogPosts.map((post) => (
             <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <div className="flex">

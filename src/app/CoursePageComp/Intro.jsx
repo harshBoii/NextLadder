@@ -138,7 +138,12 @@ courseData
 
       {/* Right side - Container */}
       <div className="w-1/2 flex items-center justify-end pr-[5%]">
-        <div className="w-[80%] h-[80vh] rounded-3xl bg-white/10 backdrop-blur-sm shadow-2xl">
+        <div className="w-[80%] h-[80vh] rounded-3xl bg-white/10 backdrop-blur-sm shadow-2xl overflow-hidden">
+          <img 
+          src="https://chatgpt.com/backend-api/public_content/enc/eyJpZCI6Im1fNjg1YTZmM2I4ZjcwODE5MTk2ODBjYzM3MDQwODkyNzM6ZmlsZV8wMDAwMDAwMDc1Nzg2MjJmOWFjNmY2MzRiYTljY2U1MCIsInRzIjoiNDg2MzIxIiwicCI6InB5aSIsInNpZyI6IjEzMWVkNjllODA0ZGVjYWU5ZTg4Nzk0ZTdjNWU0NmE2YzY2MTZiM2M3MjA2NzA5OTQ2MGRiM2Y5Y2Q4YzE2OTIiLCJ2IjoiMCIsImdpem1vX2lkIjpudWxsfQ=="
+            alt="" 
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>
