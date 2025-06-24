@@ -106,14 +106,14 @@ useEffect(() => {
     <div className='flex flex-col lg:flex-row'>
     <div className="bg-[url('/ad85a9a524b4ba1dbd7e4848760a355157925a49.jpg')] bg-cover bg-center w-full h-[60vh] lg:h-[80vh] overflow-hidden border-t-2 border-t-zinc-800 relative">
 
-    <div className='justify-center text-center align-middle'>
+    <div className='flex justify-center text-center align-middle'>
         {/* Mobile Badge */}
-        <div className='h-12 w-48 ml-40 lg:h-[5.5vh] lg:w-[20vw] bg-white relative mt-8 lg:mt-[14vh] sm:ml-60 lg:ml-[7vw] rounded-lg lg:rounded-[1vh] whitespace-nowrap font-poppins text-black z-10 flex items-center justify-center'>
+        <div className='h-12 w-48 ml-0 lg:h-[5.5vh] lg:w-[20vw] bg-white relative mt-8 lg:mt-[14vh] sm:ml-60 lg:-ml-275 rounded-lg lg:rounded-[1vh] whitespace-nowrap font-poppins text-black z-10 flex items-center justify-center'>
             <div className='text-xs lg:text-[1.3vw]'>🏆 The Leader In Online Learning</div>
         </div>
 
         {/* Mobile Logo */}
-        <div className='absolute sm:ml-20 top-9 lg:top-[14.5vh] w-60 ml-34 lg:left-[0.7vw] lg:w-[100vw] z-1 lg:z-1'>
+        <div className='absolute sm:ml-20 top-9 lg:top-[14.5vh] w-60 ml-0 lg:left-[0.7vw] lg:w-[100vw] z-1 lg:z-1'>
           <img src="https://ik.imagekit.io/2ouowzy7v/Mask%20Group.png?updatedAt=1750753310344" alt="" className='w-60 h-10 lg:w-[23vw] h-8 lg:h-[5vh]' />
         </div>
     </div>
