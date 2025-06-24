@@ -101,14 +101,14 @@ const Review = () => {
               <p className="text-sm lg:text-[1.4vh] text-white opacity-80 mb-4">{review.role} at {review.company}</p>
 
               {/* Review Text */}
-              <p className="text-sm lg:text-[1.6vh] font-sans rounded-lg mt-4 lg:mt-[5vh] text-white opacity-90 h-32 lg:h-[15vh] italic flex-grow">
+              <p className="text-xs lg:text-[1.6vh] font-sans rounded-lg mt-4 lg:mt-[5vh] text-white opacity-90 h-32 lg:h-[15vh] italic flex-grow">
                 "{review.review}"
               </p>
 
               <img src="/reviewcontainer.png" alt="" className="w-full h-full absolute -top-4 lg:-top-[3.3vh] h-16 lg:h-[14vh] left-0" />
 
               {/* Post, Coding Ninjas, Arrow and Company Logo */}
-              <div className="relative bottom-[-6rem] lg:bottom-[-12vh] mt-[-5vh] lg:mt-[-1vh] left-0 lg:left-[2vw] w-full lg:w-[25vw] flex items-center justify-between">
+              <div className="relative bottom-[-13vh] lg:bottom-[-12vh] mt-[-5vh] lg:mt-[-1vh] left-0 lg:left-[2vw] w-full lg:w-[25vw] flex items-center justify-between">
                 <div className="text-left">
                   <p className="text-xs lg:text-[0.8vw] text-white opacity-70">Post</p>
                   <p className="text-xs lg:text-[0.8vw] font-semibold text-white mt-1">Coding Ninjas</p>
