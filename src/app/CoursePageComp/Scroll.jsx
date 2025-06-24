@@ -196,7 +196,7 @@ useEffect(() => {
               </div>
               {/* Tag */}
               <div 
-                className="absolute -bottom-2 lg:mt-[-6.6vh] sm:ml-[6vw] lg:ml-[-3vw] lg:left-[5vw] px-2 py-1 text-xs lg:text-[1.2vh] font-extrabold whitespace-nowrap font-sans text-center lg:text-left"
+                className="absolute -bottom-2 lg:mt-[-6.6vh] ml-[6vw] lg:ml-[-3vw] lg:left-[5vw] px-2 py-1 text-xs lg:text-[1.2vh] font-extrabold whitespace-nowrap font-sans text-center lg:text-left"
                 style={{
                   backgroundColor: feature.tagColor,
                   color: feature.textColor,

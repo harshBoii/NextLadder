@@ -102,11 +102,11 @@ courseData
         </div>
 
         {/* Segments Container with Vertical Lines */}
-        <div className="mt-6 lg:mt-[6vh] w-full lg:w-[40vw] bg-white/5 backdrop-blur-sm rounded-xl pt-4 lg:pt-[3.5vh] pl-2 lg:pl-[1vh] h-20 lg:h-[10vh]">
-          <div className="flex items-center justify-between overflow-x-auto lg:overflow-visible">
+        <div className="mt-6 lg:mt-[6vh] w-full lg:w-[40vw] bg-white/5 backdrop-blur-sm rounded-xl p-4 lg:p-[2vh] min-h-[5rem] lg:min-h-[8vh]">
+          <div className="flex items-center justify-between gap-2 lg:gap-[1vw]">
             {segments.map((segment, index) => (
-              <div key={index} className="flex items-center min-w-max lg:min-w-0">
-                <div className="flex lg:mt-[-1vh] flex-col items-center text-white mr-2 lg:mr-[1vw]">
+              <div key={index} className="flex items-center flex-1">
+                <div className="flex flex-col items-center text-white w-full">
                   <div className="text-sm lg:text-[1.7vh] font-mono font-bold rounded-lg text-center">
                     {segment.value}
                   </div>
@@ -115,7 +115,7 @@ courseData
                   </div>
                 </div>
                 {index < segments.length - 1 && (
-                  <div className="h-12 lg:h-[8vh] lg:mt-[-2.8vh] w-[1px] bg-white/20 rounded-full hidden lg:block"></div>
+                  <div className="h-8 lg:h-[6vh] w-[1px] bg-white/20 rounded-full hidden lg:block ml-2 lg:ml-[1vw]"></div>
                 )}
               </div>
             ))}

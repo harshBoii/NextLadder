@@ -67,11 +67,11 @@ const Review = () => {
         ))}
       </div>
 
-      <div className="grid mt-6 lg:mt-[7vh] min-h-[80vh] sm:py-[5vh] lg:h-[80vh] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+      <div className="grid mt-6 lg:mt-[7vh] min-h-[80vh] py-[5vh] lg:h-[80vh] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
         {filteredReviews.map((review, index) => (
           <div 
             key={index}
-            className="flex flex-col items-center p-6 lg:p-8 sm:mt-10 rounded-xl relative card-hover min-h-[55vh] lg:h-[55vh]"
+            className="flex flex-col items-center p-6 lg:p-8 mt-10 rounded-xl relative card-hover min-h-[55vh] lg:mt[5vh] lg:h-[60vh]"
             style={{
               background: 'radial-gradient(circle at center, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
               boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
@@ -97,18 +97,18 @@ const Review = () => {
               </div>
 
               {/* Name and Role */}
-              <h3 className="mt-8 lg:mt-[4vh] text-lg lg:text-[2vh] opacity-80 font-bold text-white">{review.name}</h3>
+              <h3 className="mt-8 lg:mt-[6vh] text-lg lg:text-[2vh] opacity-80 font-bold text-white">{review.name}</h3>
               <p className="text-sm lg:text-[1.4vh] text-white opacity-80 mb-4">{review.role} at {review.company}</p>
 
               {/* Review Text */}
-              <p className="text-sm lg:text-[1.6vh] font-sans rounded-lg mt-4 lg:mt-[2vh] text-white opacity-90 h-32 lg:h-[15vh] italic flex-grow">
+              <p className="text-sm lg:text-[1.6vh] font-sans rounded-lg mt-4 lg:mt-[5vh] text-white opacity-90 h-32 lg:h-[15vh] italic flex-grow">
                 "{review.review}"
               </p>
 
               <img src="/reviewcontainer.png" alt="" className="w-full h-full absolute -top-4 lg:-top-[3.3vh] h-16 lg:h-[14vh] left-0" />
 
               {/* Post, Coding Ninjas, Arrow and Company Logo */}
-              <div className="relative bottom-[-6rem] lg:bottom-[-12vh] sm:mt-[-5vh] left-0 lg:left-[2vw] w-full lg:w-[28vw] flex items-center justify-between">
+              <div className="relative bottom-[-6rem] lg:bottom-[-12vh] mt-[-5vh] lg:mt-[-1vh] left-0 lg:left-[2vw] w-full lg:w-[25vw] flex items-center justify-between">
                 <div className="text-left">
                   <p className="text-xs lg:text-[0.8vw] text-white opacity-70">Post</p>
                   <p className="text-xs lg:text-[0.8vw] font-semibold text-white mt-1">Coding Ninjas</p>
