@@ -26,7 +26,7 @@ const KnowAboutUs = ({daata}) => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-16 lg:py-20">
+    <div className="container mx-auto px-4 py-16 mt-30 lg:py-20">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
         {/* Left half with images */}
         <div className="w-full lg:w-1/2 relative">
