@@ -76,7 +76,7 @@ export default function TopPopularCourses({data}) {
   ]);
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto lg:mt-50 px-4 py-16">
       <div>
       <div className="flex flex-wrap gap-2 justify-center">
      
@@ -94,8 +94,8 @@ export default function TopPopularCourses({data}) {
 
       </div>
       <div className="text-center mb-12 mt-10">
-        <h2 className="text-3xl font-bold mb-4">{data.TopCoursesTitle}</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <h2 className="text-5xl font-bold mb-4">{data.TopCoursesTitle}</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-2xl">
           Discover our most popular courses, carefully curated to help you achieve your learning goals
         </p>
       </div>
