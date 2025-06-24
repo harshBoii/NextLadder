@@ -2,6 +2,7 @@ import { Geist, Geist_Mono , Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrollWrapper from "./components/SmoothScrollerWrapper";
 import AuthProvider from "./authProvider";
+import TechCursor from "./components/techCursor";
 
 const geistSans = Poppins({
   variable: "--font-poppins",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${poppins.variable} ${geistMono.variable} antialiased`}
       >
         <AuthProvider>
+          <TechCursor />
           <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
         </AuthProvider>
       </body>
