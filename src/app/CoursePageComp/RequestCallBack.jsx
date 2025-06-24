@@ -2,7 +2,7 @@ import React from 'react';
 
 const RequestCallBack = () => {
   return (
-    <div className="w-full h-[100vh] flex" style={{ backgroundColor: 'rgba(255, 246, 243, 1)' }}>
+    <div className="w-full h-[80vh] flex" style={{ backgroundColor: 'rgba(255, 246, 243, 1)' }}>
       <div className="w-[50%] h-[50%] mt-[20%] flex items-center justify-center">
         <img 
           src="/Phone.png"
@@ -10,7 +10,7 @@ const RequestCallBack = () => {
           className="w-full h-full object-contain"
         />
       </div>
-      <div className="w-[45%] flex flex-col font-sans justify-center px-16">
+      <div className="w-[43%] flex flex-col font-sans justify-center px-16">
         <h2 className="text-3xl font-semibold mb-8">
           Have questions?<br/>
           Request a call from our counselors.

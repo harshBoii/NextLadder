@@ -10,6 +10,7 @@ import Bootcamp from '../../CoursePageComp/Bootcamp';
 import Review from '../../CoursePageComp/Review';
 import RequestCallBack from '../../CoursePageComp/RequestCallBack';
 import FooterComponent from '@/app/components/FooterComponent';
+import JapanComponent from '@/app/CoursePageComp/japan';
 
 const CoursePage = () => {
   const params = useParams();
@@ -58,6 +59,7 @@ const CoursePage = () => {
       <Placement courseData={courseData} />
       <Bootcamp courseData={courseData} />
       <Review courseData={courseData} />
+      <JapanComponent/>
       <RequestCallBack courseData={courseData} />
       <FooterComponent/>
     </>
