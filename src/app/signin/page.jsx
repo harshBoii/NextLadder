@@ -207,6 +207,8 @@ const SignIn = () => {
                 </button>
               </div>
 
+              <div className="ml-[2.3vw]">
+    
               {/* Divider “Or Login With Email” */}
               <div className="relative flex items-center justify-center w-full max-w-sm mt-6 mb-6">
                 <div className="flex-grow border-t border-gray-300"></div>
@@ -264,6 +266,8 @@ const SignIn = () => {
                 <a href="#" className="hover:text-gray-600">Privacy Policy</a>
                 <span>Copyright © 2025</span>
               </div>
+
+              </div>.
             </div>
           </div>
           

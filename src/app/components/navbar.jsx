@@ -9,7 +9,7 @@ export function NavbarDefault({icon}) {
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
       </NavbarBrand>
       <div className="flex md:order-2">
-        <Button>Login</Button>
+        <Button href="/signin">Login</Button>
         <NavbarToggle />
       </div>
       <NavbarCollapse>
