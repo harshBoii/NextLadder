@@ -30,8 +30,8 @@ const KnowAboutUs = ({daata}) => {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
         {/* Left half with images */}
         <div className="w-full lg:w-1/2 relative">
-          <div className="relative h-64 sm:h-80 lg:h-150">
-            <div className="absolute top-0 sm:ml-20 left-0 h-32 sm:h-40 lg:h-[35vh] w-32 sm:w-40 lg:w-[15vw] z-10">
+          <div className="relative h-64 h-80 lg:h-150">
+            <div className="absolute top-0 ml-10 left-0 h-48 h-40 lg:h-[35vh] w-32 w-40 lg:w-[15vw] z-10">
               <Image
                 src="/3d1.png"
                 alt="About Us Image 1"
@@ -39,7 +39,7 @@ const KnowAboutUs = ({daata}) => {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div className="absolute top-16 sm:top-20 lg:top-[27vh] left-16 sm:mt-10 sm:left-50 lg:left-[10vw] h-32 sm:h-40 lg:h-[40vh] w-40 sm:w-48 lg:w-[24vw] z-20">
+            <div className="absolute top-16 lg:top-[27vh] -ml-5 mt-25 left-50 lg:mt-10 lg:left-68 h-32 h-40 lg:h-[40vh] w-40 w-48 lg:w-[24vw] z-20">
               <Image
                 src="/3d2.png"
                 alt="About Us Image 2"
@@ -47,7 +47,7 @@ const KnowAboutUs = ({daata}) => {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div className="absolute top-0 right-0 h-20  sm:top-10 sm:h-32 lg:h-[20vh] sm:mr-20 w-20 sm:w-32 lg:w-[14vw] lg:mr-[10vw] z-30">
+            <div className="absolute top-0 right-0 h-20 lg:-mr-15 top-15 h-32 lg:h-[20vh] mr-5 w-20 w-32 lg:w-[14vw] lg:mr-[7vw] z-30">
               <Image
                 src="/3d3.png"
                 alt="About Us Image 3"
@@ -59,7 +59,7 @@ const KnowAboutUs = ({daata}) => {
         </div>
 
         {/* Right half with text */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center">
+        <div className="w-full lg:w-1/3 flex flex-col justify-center">
           <div className="flex flex-wrap gap-2 pb-4 lg:pb-[5vh]">
             <div
               className="px-3 py-1 text-sm rounded-full transition-colors"
