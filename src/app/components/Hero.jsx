@@ -106,25 +106,25 @@ useEffect(() => {
     <div className='flex flex-col lg:flex-row'>
     <div className="bg-[url('/ad85a9a524b4ba1dbd7e4848760a355157925a49.jpg')] bg-cover bg-center w-full h-[60vh] lg:h-[80vh] overflow-hidden border-t-2 border-t-zinc-800 relative">
 
-    <div className='justify-center text-center align-middle'>
+    <div className='text-center'>
         {/* Mobile Badge */}
-        <div className='h-12 w-48 lg:h-[5.5vh] lg:w-80 bg-white relative mt-8 lg:mt-30 sm:ml-60 lg:ml-15 rounded-lg lg:rounded-[1vh] whitespace-nowrap font-poppins text-black z-10 flex items-center justify-center'>
+        <div className='h-12 w-48 lg:h-[5.5vh] lg:w-80 bg-white relative mt-8 lg:mt-30 mx-auto lg:ml-15 rounded-lg lg:rounded-[1vh] whitespace-nowrap font-poppins text-black z-10 flex items-center justify-center'>
             <div className='text-xs lg:text-xl'>🏆 The Leader In Online Learning</div>
         </div>
 
         {/* Mobile Logo */}
-        <div className='absolute sm:ml-20 top-9 lg:mt-21 w-60 ml-0 lg:-left-12 lg:w-120 z-1 lg:z-1'>
+        <div className='absolute top-9 lg:mt-21 w-60 left-1/2 transform -translate-x-1/2 lg:left-68 lg:w-120 z-1 lg:z-1'>
           <img src="https://ik.imagekit.io/2ouowzy7v/Mask%20Group.png?updatedAt=1750753310344" alt="" className='w-60 h-10 lg:w-95 h-8 lg:h-11' />
         </div>
     </div>
 
     {/* Hero Title */}
-    <h1 className='text-1xl sm:text-3xl md:text-4xl lg:text-[4vh] ml-4 lg:ml-[3.7vw] mt-4 lg:mt-[5vh] text-zinc-700 font-bold font-sans w-full lg:w-[35vw] px-4 lg:px-0'>
+    <h1 className='text-2xl sm:text-4xl md:text-5xl lg:text-[4vh] ml-2 lg:ml-[3.7vw] mt-4 lg:mt-[5vh] text-zinc-700 font-bold font-sans w-full lg:w-[35vw] px-4 lg:px-0'>
       {heroData.heroTitle}
     </h1>
 
     {/* Hero Subtitle */}
-    <div className="pl-4 lg:pl-[4.1vw] mt-4 lg:mt-[5vh] text-zinc-600 w-full lg:w-[37vw] text-sm sm:text-base lg:text-[2vh] h-auto lg:h-[12vh] pr-4 lg:pr-0">
+    <div className="pl-4 lg:pl-[4.1vw] mt-4 lg:mt-[5vh] text-zinc-600 w-[70%] lg:w-[37vw] text-sm sm:text-base lg:text-[2vh] h-auto lg:h-[12vh] pr-4 lg:pr-0 mx-auto lg:mx-0 text-center lg:text-left">
     {heroData.heroSubtitle}    
     </div>
 
