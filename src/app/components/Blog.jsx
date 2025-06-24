@@ -44,7 +44,7 @@ const Blog = () => {
         <h2 className="font-sans text-4xl absolute mt-[24vh]  font-bold">Post Popular Post</h2>
         <Link 
           href="/blog"
-          className="font-sans bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 mt-[5vh] transition-colors duration-300"
+          className="font-sans bg-[rgba(65,175,255,1)] text-white px-6 py-2 rounded-md hover:bg-blue-700 mt-[5vh] transition-colors duration-300"
         >
           View All Articles
         </Link>

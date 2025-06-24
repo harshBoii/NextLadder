@@ -9,13 +9,13 @@ export function NavbarDefault({icon}) {
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"></span>
       </NavbarBrand>
       <div className="flex md:order-2">
-        <Button href="/signin">Login</Button>
+        <Button className="bg-[rgba(65,175,255,1)] text-white" href="/signin">Login</Button>
         <NavbarToggle />
       </div>
-      <NavbarCollapse>
-        <NavbarLink href="#">Home</NavbarLink>
-        <NavbarLink href="#">Courses</NavbarLink>
-        <NavbarLink href="#">Compiler</NavbarLink>
+      <NavbarCollapse className="text-white px-20 ">
+        <NavbarLink className="text-black mx-7 text-lg font-poppins font-bold" href="/">Home</NavbarLink>
+        <NavbarLink className="text-black mx-7 text-lg font-poppins font-bold" href="#">Courses</NavbarLink>
+        <NavbarLink className="text-black mx-7 text-lg font-poppins font-bold" href="#">Compiler</NavbarLink>
       </NavbarCollapse>
     </Navbar>
   );
