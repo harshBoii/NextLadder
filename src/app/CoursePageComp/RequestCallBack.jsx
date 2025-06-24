@@ -2,16 +2,16 @@ import React from 'react';
 
 const RequestCallBack = () => {
   return (
-    <div className="w-full h-[80vh] flex" style={{ backgroundColor: 'rgba(255, 246, 243, 1)' }}>
-      <div className="w-[50%] h-[50%] mt-[20%] flex items-center justify-center">
+    <div className="w-full min-h-screen lg:h-[80vh] flex flex-col lg:flex-row" style={{ backgroundColor: 'rgba(255, 246, 243, 1)' }}>
+      <div className="w-full lg:w-[50%] h-64 lg:h-[50%] lg:mt-[20%] flex items-center justify-center p-4 lg:p-0">
         <img 
           src="/Phone.png"
           alt="Request Callback"
           className="w-full h-full object-contain"
         />
       </div>
-      <div className="w-[43%] flex flex-col font-sans justify-center px-16">
-        <h2 className="text-3xl font-semibold mb-8">
+      <div className="w-full lg:w-[43%] flex flex-col font-sans justify-center px-4 lg:px-16 py-8 lg:py-0">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-6 lg:mb-8">
           Have questions?<br/>
           Request a call from our counselors.
         </h2>

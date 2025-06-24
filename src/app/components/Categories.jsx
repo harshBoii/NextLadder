@@ -65,7 +65,7 @@ export default function Categories() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 -mt-8">
       <div className="flex justify-center">
         <div className="grid grid-cols-4 gap-12">
           {categories.map((category, index) => (

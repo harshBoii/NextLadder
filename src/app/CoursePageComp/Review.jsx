@@ -41,9 +41,9 @@ const Review = () => {
     : reviews.filter(review => review.category === activeFilter);
 
   return (
-    <div className="w-full bg-black py-[10vh] -mt-[10vh] px-[5vw]">
+    <div className="w-full bg-black py-8 lg:py-[10vh] lg:-mt-[10vh] px-4 lg:px-[5vw]">
       <h2 
-        className="text-[2.8vh] font-extrabold text-white text-center mb-[4vh]"
+        className="text-2xl sm:text-3xl lg:text-[2.8vh] font-extrabold text-white text-center mb-6 lg:mb-[4vh]"
         style={{
           textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)'
         }}
@@ -52,12 +52,12 @@ const Review = () => {
       </h2>
 
       {/* Filter Tags */}
-      <div className="flex justify-center gap-4 mt-[7vh] mb-[6vh]">
+      <div className="flex flex-wrap justify-center gap-2 lg:gap-4 sm:mb-[10vh] mt-6 lg:mt-[7vh] mb-6 lg:mb-[6vh]">
         {["All", "Non tech to Tech", "service to product", "Landed The First Job"].map((filter) => (
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`px-6 py-2 rounded-full text-[1.6vh] font-medium transition-all duration-300
+            className={`px-4 lg:px-6 py-2 rounded-full text-sm lg:text-[1.6vh] font-medium transition-all duration-300
               ${activeFilter === filter 
                 ? 'bg-white text-black' 
                 : 'bg-gray-800 text-white hover:bg-gray-700'}`}
@@ -67,11 +67,11 @@ const Review = () => {
         ))}
       </div>
 
-      <div className="grid mt-[7vh] h-[80vh] grid-cols-3 gap-8">
+      <div className="grid mt-6 lg:mt-[7vh] min-h-[80vh] sm:py-[5vh] lg:h-[80vh] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
         {filteredReviews.map((review, index) => (
           <div 
             key={index}
-            className="flex flex-col items-center p-8 rounded-xl relative card-hover h-[55vh]"
+            className="flex flex-col items-center p-6 lg:p-8 sm:mt-10 rounded-xl relative card-hover min-h-[55vh] lg:h-[55vh]"
             style={{
               background: 'radial-gradient(circle at center, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
               boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
@@ -84,7 +84,7 @@ const Review = () => {
 
             <div className="relative z-10 flex flex-col items-center text-center">
               {/* Circular Image */}
-              <div className="w-18 h-18 rounded-full absolute z-20 overflow-hidden mt-[-8vh] border-4 border-gray-700">
+              <div className="w-16 h-16 lg:w-18 lg:h-18 rounded-full absolute z-20 overflow-hidden lg:mt-[-8vh] mt-[-4rem] border-4 border-gray-700">
                 <img 
                   src={review.image}
                   alt={review.name}
@@ -97,27 +97,26 @@ const Review = () => {
               </div>
 
               {/* Name and Role */}
-              <h3 className="mt-[4vh] text-[2vh] opacity-80 font-bold text-white ">{review.name}</h3>
-              <p className="text-[1.4vh] text-white opacity-80 mb-4">{review.role} at {review.company}</p>
+              <h3 className="mt-8 lg:mt-[4vh] text-lg lg:text-[2vh] opacity-80 font-bold text-white">{review.name}</h3>
+              <p className="text-sm lg:text-[1.4vh] text-white opacity-80 mb-4">{review.role} at {review.company}</p>
 
               {/* Review Text */}
-              <p className="text-[1.6vh] font-sans rounded-lg mt-[2vh] text-white opacity-90 h-[15vh] italic flex-grow ">
+              <p className="text-sm lg:text-[1.6vh] font-sans rounded-lg mt-4 lg:mt-[2vh] text-white opacity-90 h-32 lg:h-[15vh] italic flex-grow">
                 "{review.review}"
               </p>
 
-
-              <img src="/reviewcontainer.png" alt="" className="w-full h-full absolute -top-[3.3vh] h-[14vh] left-[0vw] " />
+              <img src="/reviewcontainer.png" alt="" className="w-full h-full absolute -top-4 lg:-top-[3.3vh] h-16 lg:h-[14vh] left-0" />
 
               {/* Post, Coding Ninjas, Arrow and Company Logo */}
-              <div className="relative bottom-[-12vh] left-[2vw] w-[28vw] flex items-center">
+              <div className="relative bottom-[-6rem] lg:bottom-[-12vh] sm:mt-[-5vh] left-0 lg:left-[2vw] w-full lg:w-[28vw] flex items-center justify-between">
                 <div className="text-left">
-                  <p className="text-[0.8vw] text-white opacity-70">Post</p>
-                  <p className="text-[0.8vw] font-semibold text-white mt-1">Coding Ninjas</p>
+                  <p className="text-xs lg:text-[0.8vw] text-white opacity-70">Post</p>
+                  <p className="text-xs lg:text-[0.8vw] font-semibold text-white mt-1">Coding Ninjas</p>
                 </div>
-                <div className="ml-[22%] text-[2vh] h-[2vh] font-semibold text-white">
+                <div className="text-lg lg:text-[2vh] h-6 lg:h-[2vh] font-semibold text-white">
                  <img src="/arrow.png" alt="" className="w-full h-full" />
                 </div>
-                <div className="ml-[7%] h-[5vh] w-[20vh]  rounded-md overflow-hidden flex items-center justify-center">
+                <div className="h-12 lg:h-[5vh] w-16 lg:w-[20vh] rounded-md overflow-hidden flex items-center justify-center">
                   <img 
                     src={review.companyLogo} 
                     alt={`${review.company} logo`}
@@ -136,14 +135,14 @@ const Review = () => {
         ))}
         
       </div>
-      <div className="flex gap-4 ml-[23vw] mt-[4vh]">
+      <div className="flex flex-col sm:flex-row gap-4 lg:ml-[23vw] mt-6 lg:mt-[4vh] justify-center lg:justify-start">
               <button 
-                className="px-6 py-2 w-[23vw] h-[8vh] rounded-lg border-2 border-white text-white font-semibold hover:bg-gray-800 transition-colors duration-200"
+                className="px-6 py-3 lg:py-2 w-full sm:w-auto lg:w-[23vw] h-12 lg:h-[8vh] rounded-lg border-2 border-white text-white font-semibold hover:bg-gray-800 transition-colors duration-200"
               >
                 Read All Success Stories
               </button>
               <button 
-                className="px-6 py-2 w-[15vw] h-[8vh] rounded-lg bg-[rgba(65,175,255,1)] text-white font-semibold hover:bg-[rgba(197, 197, 197, 0.9)] transition-colors duration-200"
+                className="px-6 py-3 lg:py-2 w-full sm:w-auto lg:w-[15vw] h-12 lg:h-[8vh] rounded-lg bg-[rgba(65,175,255,1)] text-white font-semibold hover:bg-[rgba(197, 197, 197, 0.9)] transition-colors duration-200"
               >
                 Book a free webinar
               </button>

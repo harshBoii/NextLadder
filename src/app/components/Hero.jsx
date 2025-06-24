@@ -107,17 +107,17 @@ useEffect(() => {
     <div className="bg-[url('/ad85a9a524b4ba1dbd7e4848760a355157925a49.jpg')] bg-cover bg-center w-full h-[60vh] lg:h-[80vh] overflow-hidden border-t-2 border-t-zinc-800 relative">
 
     {/* Mobile Badge */}
-    <div className='h-12 w-48 lg:h-[5.5vh] lg:w-[20vw] bg-white relative mt-8 lg:mt-[14vh] ml-4 lg:ml-[7vw] rounded-lg lg:rounded-[1vh] whitespace-nowrap font-poppins text-black z-10 flex items-center justify-center'>
-        <div className='text-sm lg:text-[1.3vw]'>🏆 The Leader In Online Learning</div>
+    <div className='h-12 w-48 lg:h-[5.5vh] lg:w-[20vw] bg-white relative mt-8 lg:mt-[14vh] sm:ml-60 lg:ml-[7vw] rounded-lg lg:rounded-[1vh] whitespace-nowrap font-poppins text-black z-10 flex items-center justify-center'>
+        <div className='text-xs lg:text-[1.3vw]'>🏆 The Leader In Online Learning</div>
     </div>
 
     {/* Mobile Logo */}
-    <div className='absolute top-16 lg:top-[14.5vh] left-4 lg:left-[5.5vw] z-5'>
-      <img src="https://ik.imagekit.io/2ouowzy7v/Mask%20Group.png?updatedAt=1750753310344" alt="" className='w-32 lg:w-[23vw] h-8 lg:h-[5vh]' />
+    <div className='absolute top-9 lg:top-[14.5vh] w-60 ml-55 lg:left-[-7.7vw] lg:w-[100vw] z-5 lg:z-1'>
+      <img src="https://ik.imagekit.io/2ouowzy7v/Mask%20Group.png?updatedAt=1750753310344" alt="" className='w-60 h-10 lg:w-[23vw] h-8 lg:h-[5vh]' />
     </div>
 
     {/* Hero Title */}
-    <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-[4vh] ml-4 lg:ml-[3.7vw] mt-4 lg:mt-[5vh] text-zinc-700 font-bold font-sans w-full lg:w-[35vw] px-4 lg:px-0'>
+    <h1 className='text-1xl sm:text-3xl md:text-4xl lg:text-[4vh] ml-4 lg:ml-[3.7vw] mt-4 lg:mt-[5vh] text-zinc-700 font-bold font-sans w-full lg:w-[35vw] px-4 lg:px-0'>
       {heroData.heroTitle}
     </h1>
 
@@ -169,12 +169,12 @@ useEffect(() => {
     </div>
 
     {/* Categories Section */}
-    <div className='h-32 lg:h-[25vh] w-full mt-[-6vh] lg:mt-[-13.4vh] mb-4 lg:mb-[2vh] rounded-[100%] z-50 bg-white absolute'>
-      <div className="flex flex-col lg:flex-row items-center justify-center h-full lg:ml-[45vw] lg:h-[10vh] lg:pt-[3vh]">
+    <div className='h-32 lg:h-[25vh] w-full mt-[-6vh] lg:mt-[-13.4vh] mb-4 lg:mb-[2vh] rounded-[100%] z-50 bg-white relative'>
+      <div className="flex flex-col items-center justify-center h-full">
         <div className='mt-4 lg:mt-0'>
           <TagContainer tag={"Categories"}/>
         </div>
-        <div className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-sans text-center font-bold mt-2 lg:mt-[2vh] mb-2 lg:mb-[2vh] px-4 lg:px-0 lg:ml-[-45vw]'>
+        <div className='text-lg sm:text-xl md:text-2xl lg:text-5xl font-sans text-center font-bold mt-2 lg:mt-[7vh] mb-2 lg:mb-[2vh] px-4 lg:px-0'>
           Explore Top Courses Categories That Change Yourself
         </div>
       </div>

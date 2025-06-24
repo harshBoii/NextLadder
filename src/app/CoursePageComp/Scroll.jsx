@@ -121,16 +121,16 @@ useEffect(() => {
 
   return (
     <div 
-      className="flex w-full h-[100vh]"
+      className="flex flex-col lg:flex-row w-full min-h-screen lg:h-[120vh]"
       style={{
         backgroundColor: 'rgba(246, 244, 251, 1)'
       }}
       ref={scrollRef}
     >
-      {/* Left section - 35vw */}
-      <div className="w-[45vw] pl-[10vw] ml-[-5vw] flex flex-col items-center justify-center">
+      {/* Left section - Mobile: full width, Desktop: 45vw */}
+      <div className="w-full lg:w-[45vw] px-4 lg:pl-[10vw] lg:ml-[-5vw] flex flex-col items-center justify-center py-8 lg:py-0">
         <h1 
-          className="text-[1.9vh] ml-[5.5vw] mb-[3vh] font-extrabold font-sans"
+          className="text-lg lg:text-[1.9vh] lg:ml-[5.5vw] mb-4 lg:mb-[3vh] font-extrabold font-sans text-center lg:text-left"
           style={{
             color: 'rgba(98, 73, 197, 1)'
           }}
@@ -138,12 +138,12 @@ useEffect(() => {
           Bootcamp Journey
         </h1>
 
-        <div className='text-[4.6vh] text-black font-sans font-extrabold ml-[15vw] mb-[2vh]'>
+        <div className='text-2xl sm:text-3xl md:text-4xl lg:text-[4.6vh] text-black font-sans font-extrabold lg:ml-[15vw] mb-2 lg:mb-[2vh] text-center lg:text-left'>
             It's Not Just a Course;
         </div>
 
         <div 
-          className='text-[4.6vh] font-sans font-extrabold ml-[15vw] mb-[2vh]'
+          className='text-2xl sm:text-3xl md:text-4xl lg:text-[4.6vh] font-sans font-extrabold lg:ml-[15vw] mb-4 lg:mb-[2vh] text-center lg:text-left'
           style={{
             background: 'linear-gradient(to right, rgba(0, 71, 255, 1), rgba(0, 194, 255, 1))',
             WebkitBackgroundClip: 'text',
@@ -154,7 +154,7 @@ useEffect(() => {
         </div>
 
         <button 
-          className="px-8 py-3 rounded-lg text-white font-extrabold text-[1.8vh] ml-[12vw] mt-[2vh] shadow-lg hover:shadow-xl transition-shadow duration-300 font-sans"
+          className="px-6 lg:px-8 py-3 rounded-lg text-white font-extrabold text-base lg:text-[1.8vh] lg:ml-[12vw] mt-4 lg:mt-[2vh] shadow-lg hover:shadow-xl transition-shadow duration-300 font-sans"
           style={{
             backgroundColor: 'rgba(65, 175, 255, 1)',
             textShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)'
@@ -164,41 +164,39 @@ useEffect(() => {
         </button>
       </div>
 
-      {/* Right section - 65vw */}
-      <div className=" w-[55vw] flex flex-col justify-center pr-[5vw] ml-[3vw] relative"
-      >
-        {/* Vertical dotted line connecting boxes */}
+      {/* Right section - Mobile: full width, Desktop: 55vw */}
+      <div className="w-full lg:w-[55vw] flex flex-col justify-center px-4 lg:pr-[5vw] lg:ml-[3vw] relative py-8 lg:py-0">
+        {/* Vertical dotted line connecting boxes - Hidden on mobile */}
         <div 
-          className="absolute left-[15vw] ml-[10vw] top-[10vh] bottom-[10vh] w-[2px]"
+          className="hidden lg:block absolute left-[15vw] ml-[10vw] top-[10vh] bottom-[10vh] w-[2px]"
           style={{
             borderLeft: '2px dotted rgba(98, 73, 197, 0.3)'
           }}
         />
 
         <div 
-          className="absolute left-[15vw] ml-[10vw] top-[10vh] bottom-[10vh]  w-[2px]"
+          className="hidden lg:block absolute left-[15vw] ml-[10vw] top-[10vh] bottom-[10vh] w-[2px]"
           style={{
             borderLeft: '2px solid rgba(0, 0, 0, 0.98)'
           }}
           ref={lineRefLeft}
         />
 
-
         {features.map((feature, index) => (
-          <div key={index} className="flex items-center mb-8 relative">
+          <div key={index} className="flex flex-col lg:flex-row items-start lg:items-center mb-6 lg:mb-8 relative">
             {/* Circle with emoji and tag */}
-            <div className="relative">
+            <div className="relative mb-4 lg:mb-0">
               <div 
-                className="w-15 h-15 ml-[5vw] mb-[1.1vh] rounded-full flex items-center justify-center mr-6 shadow-md relative z-10"
+                className="w-12 h-12 lg:w-15 lg:h-15 lg:ml-[5vw] lg:mb-[1.1vh] rounded-full flex items-center justify-center lg:mr-6 shadow-md relative z-10 mx-auto lg:mx-0"
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.9)',
                 }}
               >
-                <span className="text-2xl">{feature.emoji}</span>
+                <span className="text-xl lg:text-2xl">{feature.emoji}</span>
               </div>
               {/* Tag */}
               <div 
-                className="absolute -bottom-2 mt-[-6.6vh] ml-[-3vw] left-[5vw] px-2 py-1 text-[1.2vh] font-extrabold whitespace-nowrap font-sans"
+                className="absolute -bottom-2 lg:mt-[-6.6vh] sm:ml-[6vw] lg:ml-[-3vw] lg:left-[5vw] px-2 py-1 text-xs lg:text-[1.2vh] font-extrabold whitespace-nowrap font-sans text-center lg:text-left"
                 style={{
                   backgroundColor: feature.tagColor,
                   color: feature.textColor,
@@ -209,44 +207,42 @@ useEffect(() => {
               </div>
             </div>
             
-            {/* Horizontal dotted line connecting circle to box */}
+            {/* Horizontal dotted line connecting circle to box - Hidden on mobile */}
             <div 
-              className=" absolute left-[calc(1vw+7rem)] top-[50%] w-[8vw] h-[4vh]"
+              className="hidden lg:block absolute left-[calc(1vw+7rem)] top-[50%] w-[8vw] h-[4vh]"
               style={{
                 borderTop: '0.3vh dotted rgba(98, 73, 197, 0.3)'
               }}
             />
 
-
             <div 
-              className=" absolute left-[calc(1vw+7rem)] top-[50%] w-[8vw] h-[4vh]"
+              className="hidden lg:block absolute left-[calc(1vw+7rem)] top-[50%] w-[8vw] h-[4vh]"
               ref={lineRef}
               style={{
                 borderTop: '0.3vh solid rgba(73, 64, 151, 0)'
               }}
             />
 
-            
             {/* Rectangular box with text */}
             <div 
-              className="flex-1 p-4 mb-[2vh] rounded-lg shadow-md ml-[5vw] w-[40vw] h-[12vh] relative z-10"
+              className="flex-1 p-4 lg:mb-[2vh] rounded-lg shadow-md lg:ml-[5vw] w-full lg:w-[40vw] min-h-[8rem] lg:h-[12vh] relative z-10"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.9)',
               }}
             >
-              <div className="flex h-full">
+              <div className="flex flex-col lg:flex-row h-full">
                 {/* Left half - Title */}
-                <div className="w-1/2 flex items-center justify-center border-r border-gray-200">
-                  <h3 className="text-[1.6vh] font-sans rounded-lgfont-semibold text-gray-700">
+                <div className="w-full lg:w-1/2 flex items-center justify-center lg:border-r border-gray-200 mb-4 lg:mb-0">
+                  <h3 className="text-lg lg:text-[1.6vh] font-sans font-semibold text-gray-700 text-center lg:text-left">
                     {feature.title}
                   </h3>
                 </div>
                 
                 {/* Right half - Description */}
-                <div className="w-1/2 pl-4 flex flex-col justify-center">
+                <div className="w-full lg:w-1/2 lg:pl-4 flex flex-col justify-center">
                   <ul className="list-disc list-inside">
                     {feature.description.map((point, idx) => (
-                      <li key={idx} className="text-[1.4vh] opacity-70 text-gray-600 mb-1">
+                      <li key={idx} className="text-sm lg:text-[1.4vh] opacity-70 text-gray-600 mb-1">
                         {point}
                       </li>
                     ))}

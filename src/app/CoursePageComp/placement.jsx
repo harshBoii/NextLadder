@@ -35,26 +35,26 @@ const Placement = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen h-[60vh] overflow-hidden flex flex-col items-center justify-center" style={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}>
+    <div className="w-full min-h-screen lg:h-[60vh] overflow-hidden flex flex-col items-center justify-center py-8 lg:py-0" style={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}>
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <h1 className="text-[3.5vh] mb-[10vh] font-extrabold text-center mt-[5vh] text-black rounded-lg">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.5vh] mb-8 lg:mb-[10vh] font-extrabold text-center mt-4 lg:mt-[5vh] text-black rounded-lg">
           Placement Benefits
         </h1>
 
-        <div className="grid grid-cols-3 gap-x-16 gap-y-20 mt-[2vh] w-[80vw] justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-x-16 lg:gap-y-20 mt-4 lg:mt-[2vh] w-full lg:w-[80vw] justify-items-center">
           {benefits.map((benefit, index) => (
-            <div key={index} className="flex flex-col items-center text-center w-[20vw]">
-              <div className="w-[4vw] h-[4vw] mb-6 flex justify-center">
+            <div key={index} className="flex flex-col items-center text-center w-full lg:w-[20vw]">
+              <div className="w-16 h-16 lg:w-[4vw] lg:h-[4vw] mb-4 lg:mb-6 flex justify-center">
                 <img 
                   src={benefit.image} 
                   alt={benefit.title}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-[1.7vh] font-bold mb-3 text-black">
+              <h3 className="text-lg lg:text-[1.7vh] font-bold mb-2 lg:mb-3 text-black">
                 {benefit.title}
               </h3>
-              <p className="text-[1.5vh] text-gray-600">
+              <p className="text-sm lg:text-[1.5vh] text-gray-600">
                 {benefit.description}
               </p>
             </div>
@@ -62,9 +62,9 @@ const Placement = () => {
         </div>
 
         {/* Added buttons container */}
-        <div className="flex gap-8 mt-[12vh]">
+        <div className="flex flex-col sm:flex-row gap-4 lg:gap-8 mt-8 lg:mt-[12vh]">
           <button 
-            className="px-12 py-4 rounded-lg text-black font-extrabold text-[1.8vh] border-2 border-black hover:shadow-lg transition-shadow duration-300"
+            className="px-8 lg:px-12 py-3 lg:py-4 rounded-lg text-black font-extrabold text-base lg:text-[1.8vh] border-2 border-black hover:shadow-lg transition-shadow duration-300"
             style={{
               backgroundColor: 'white'
             }}
@@ -72,7 +72,7 @@ const Placement = () => {
             Request callback
           </button>
           <button 
-            className="px-12 py-4 rounded-lg text-white font-extrabold text-[1.8vh] hover:shadow-lg transition-shadow duration-300"
+            className="px-8 lg:px-12 py-3 lg:py-4 rounded-lg text-white font-extrabold text-base lg:text-[1.8vh] hover:shadow-lg transition-shadow duration-300"
             style={{
               backgroundColor: 'rgba(65, 175, 255, 1)'
             }}

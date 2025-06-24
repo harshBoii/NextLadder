@@ -105,7 +105,7 @@ const FooterComponent = () => {
   return (
     <div 
       ref={containerRef}
-      className="w-full bg-black text-white py-8 lg:py-16 min-h-screen lg:h-[60vh] relative overflow-hidden"
+      className="w-full bg-black text-white py-4 lg:py-12 lg:min-h-[50vh] lg:h-[10vh] relative overflow-hidden"
     >
       {/* Radial Neon Background */}
       <div 
@@ -131,7 +131,7 @@ const FooterComponent = () => {
       <div ref={contentRef} className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row">
           {/* Left Half */}
-          <div className="w-full lg:w-1/2 mt-8 lg:mt-[13vh] flex flex-col items-center justify-center">
+          <div className="w-full lg:w-1/2 mt-8 lg:mt-[0vh] flex flex-col items-center justify-center">
             {logoUrl && (
               <img 
                 src={logoUrl} 
@@ -156,7 +156,7 @@ const FooterComponent = () => {
           </div>
           
           {/* Right Half */}
-          <div className="w-full lg:w-1/2 flex flex-col lg:flex-row mt-8 lg:mt-[13vh]">
+          <div className="w-full lg:w-1/2 flex flex-col lg:flex-row mt-8 lg:mt-[3vh]">
             {/* First div with equal width */}
             <div className="w-full lg:w-1/2 p-4 lg:p-6">
               <h3 className="text-lg lg:text-xl font-bold text-cyan-400 mb-4 text-center lg:text-left">Our Company</h3>
