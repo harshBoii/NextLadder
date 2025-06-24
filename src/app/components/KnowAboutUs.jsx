@@ -47,7 +47,7 @@ const KnowAboutUs = ({daata}) => {
                 className="object-cover rounded-lg"
               />
             </div>
-            <div className="absolute top-0 right-0 h-20 lg:-mr-15 top-15 h-32 lg:h-[20vh] mr-5 w-20 w-32 lg:w-[14vw] lg:mr-[7vw] z-30">
+            <div className="absolute top-0 right-0 h-20 lg:-mr-15 top-7 h-32 lg:h-[20vh] mr-5 w-20 w-32 lg:w-[14vw] lg:mr-[7vw] z-30">
               <Image
                 src="/3d3.png"
                 alt="About Us Image 3"
