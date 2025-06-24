@@ -112,7 +112,7 @@ useEffect(() => {
     </div>
 
     {/* Mobile Logo */}
-    <div className='absolute  sm:ml-20 top-9 lg:top-[14.5vh] w-60 ml-34 lg:left-[0.7vw] lg:w-[100vw] z-1 lg:z-1'>
+    <div className='absolute sm:ml-20 top-9 lg:top-[14.5vh] w-60 ml-34 lg:left-[0.7vw] lg:w-[100vw] z-1 lg:z-1'>
       <img src="https://ik.imagekit.io/2ouowzy7v/Mask%20Group.png?updatedAt=1750753310344" alt="" className='w-60 h-10 lg:w-[23vw] h-8 lg:h-[5vh]' />
     </div>
 
