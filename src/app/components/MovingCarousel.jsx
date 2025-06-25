@@ -28,7 +28,7 @@ const MovingCarousel = () => {
         </div>
       </div>
 
-      <div className='text-2xl sm:text-3xl md:text-4xl lg:text-[5vh] my-8 lg:my-[5vh] mb-8 lg:mb-[10vh] font-sans text-center font-bold px-4'>
+      <div className='text-2xl sm:text-3xl md:text-4xl lg:text-4xl my-8 lg:my-[5vh] mb-8 lg:mb-[10vh] font-sans text-center font-bold px-4'>
       People like histudy education. No joking - here's the proof!
       </div>
 

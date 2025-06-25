@@ -83,7 +83,7 @@ const FourCards = ({data}) => {
 
       <div className="flex flex-col lg:mt-25 items-center gap-4 px-4">
         <TagContainer tag="WHY CHOOSE US" />
-        <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center max-w-4xl lg:mt-24">
+        <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-center max-w-4xl lg:mt-24">
           {data.WhyChooseUs}
         </h2>
       </div>
@@ -146,18 +146,18 @@ const FourCards = ({data}) => {
           <div
             ref={el => cardsRef.current[index] = el}
             key={index}
-            className="relative lg:mt-12 bg-white rounded-lg p-6 shadow-lg transition-all duration-300 cursor-pointer overflow-hidden w-72 h-90 transform hover:scale-105 border-b-2 border-purple-300"
+            className="relative lg:mt-12 bg-white rounded-lg p-6 shadow-lg transition-all duration-300 cursor-pointer overflow-hidden w-72 h-90 lg:h-95 lg:w-76 transform hover:scale-105 border-b-2 border-purple-300"
             style={{ transform: `translateY(${index % 2 === 0 ? '-16px' : '16px'})` }}
           >
-            <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-cover bg-center border border-white shadow-lg z-0"
+            <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-16 h-16 lg:-mt-3.5 rounded-full bg-cover bg-center border border-white shadow-lg z-0"
                  style={{ backgroundImage: `url(${card.image})` }}>
             </div>
 
-            <div className='absolute left-40 transform -translate-x-1/2 w-full'>
+            <div className='absolute left-40 transform lg:left-44 -translate-x-1/2 w-full'>
               <img src="/Background.png" alt="" />
             </div>
             
-            <div className="relative z-10 mt-64">
+            <div className="relative z-10 mt-64 lg:mt-68">
               <h3 className="text-2xl font-bold text-gray-800 text-center mb-2">{card.title}</h3>
               <p className="text-sm text-gray-600 text-center">{card.description}</p>
             </div>
