@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 import TagContainer from './TagContainer';
 
-const GuidanceCard = () => {
+const GuidanceCard = (data) => {
   const titleRefs = useRef([]);
   const descriptionRefs = useRef([]);
 
@@ -138,7 +138,7 @@ const GuidanceCard = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-4"></h2>
         <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-          Personalized guidance to prepare for your interview needs
+          {data.data.Personalized}
         </p>
       </div>
 
