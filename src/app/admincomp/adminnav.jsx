@@ -44,7 +44,9 @@ const AdminNavbar = () => {
       <div className="mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="ml-2 text-white text-xl font-bold font-orbitron">NextLadder</span>
+          <a href="/" className="ml-2 text-white text-4xl font-bold font-orbitron">
+            <Image src={logoUrl} alt="Logo" width={150} height={375} />
+          </a>
         </div>
 
         {/* Rest of the component remains unchanged */}
