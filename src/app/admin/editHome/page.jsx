@@ -187,9 +187,9 @@ export default function HomePageEditor() {
           {/* Animated Background Grid */}
           <div className="absolute inset-0 particle-bg opacity-10"></div>
           
-          <AdminNavbar/>
-          <div className={`w-full pt-[80px] lg:pt-[80px] relative z-10 min-h-screen transition-all duration-300 ${
-            isNavCollapsed ? 'lg:pl-[80px]' : 'lg:pl-[20vw]'
+          <AdminNavbar />
+          <div className={`w-full pt-[80px] lg:pt-[80px] relative z-10  min-h-screen transition-all duration-300 ${
+            isNavCollapsed ? 'lg:pl-[80px] w-90' : 'lg:pl-[20vw] w-100'
           }`}>
 
             {/* Header Section */}

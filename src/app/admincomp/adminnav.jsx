@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Bell, Plus } from 'lucide-react';
+import { Bell, Menu } from 'lucide-react';
 
-const AdminNavbar = () => {
+const AdminNavbar = ({ toggleLeftNav, isLeftNavOpen }) => {
   const [notifications, setNotifications] = useState([]);
   const [showNotifications, setShowNotifications] = useState(false);
   const [logoUrl, setLogoUrl] = useState('/logo.png'); // Default logo path
@@ -51,12 +51,6 @@ const AdminNavbar = () => {
 
         {/* Rest of the component remains unchanged */}
         <div className="flex items-center gap-6">
-          <button 
-            className="p-2 rounded-full bg-cyan-500/20 hover:bg-cyan-500/30 transition-colors border border-cyan-400/30"
-            onClick={() => {/* Add course logic */}}
-          >
-            <Plus className="w-5 h-5 text-cyan-300" />
-          </button>
 
           <div className="relative">
             <button 

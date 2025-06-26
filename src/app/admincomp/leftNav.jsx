@@ -57,7 +57,7 @@ const LeftNav = () => {
       {/* Mobile Menu Toggle Button */}
       <button
         onClick={toggleMobileMenu}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-cyan-500/20 hover:bg-cyan-500/30 transition-colors border border-cyan-400/30 rounded-lg"
+        className="lg:hidden fixed top-6 right-35 h-10 w-10 z-500 p-2 bg-cyan-500/20 hover:bg-cyan-500/30 transition-colors border border-cyan-400/30 rounded-full"
       >
         {isMobileMenuOpen ? (
           <FaTimes className="w-6 h-6 text-cyan-300" />
@@ -85,7 +85,7 @@ const LeftNav = () => {
         {/* Desktop Toggle Button - Inside sidebar */}
         <button
           onClick={toggleNavCollapse}
-          className="hidden lg:flex absolute top-4 right-2 z-50 p-2 bg-cyan-500/20 hover:bg-cyan-500/30 transition-all duration-300 border border-cyan-400/30 rounded-lg"
+          className="hidden bottom-22 left-5 lg:flex absolute z-500 p-2 bg-cyan-500/20 hover:bg-cyan-500/30 transition-all duration-300 border border-cyan-400/30 rounded-lg"
         >
           {isNavCollapsed ? (
             <FaChevronRight className="w-4 h-4 text-cyan-300" />
