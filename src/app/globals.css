@@ -88,6 +88,62 @@ body {
   }
 }
 
+/* Loading Animation Keyframes */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cursorBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loadingParticle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes progressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Animation Classes */
 .glow-on-focus:focus {
   animation: glow 2s ease-in-out infinite alternate;
@@ -127,6 +183,27 @@ body {
   animation: particleMove 12s ease-in-out infinite;
   pointer-events: none;
   will-change: transform;
+}
+
+/* Loading Animation Classes */
+.text-reveal {
+  animation: textReveal 0.8s ease-out forwards;
+}
+
+.cursor-blink {
+  animation: cursorBlink 1s infinite;
+}
+
+.loading-particle {
+  animation: loadingParticle 3s ease-in-out infinite;
+}
+
+.progress-fill {
+  animation: progressFill 2s ease-out forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
 @layer base {
