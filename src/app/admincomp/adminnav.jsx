@@ -44,7 +44,7 @@ const AdminNavbar = ({ toggleLeftNav, isLeftNavOpen }) => {
       <div className="mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="/" className="ml-2 text-white text-4xl font-bold font-orbitron">
+          <a href="/" className="ml-2 text-white h-12 w-50 text-4xl font-bold font-orbitron">
             <Image src={logoUrl} alt="Logo" width={150} height={375} />
           </a>
         </div>

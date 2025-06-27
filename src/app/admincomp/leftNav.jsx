@@ -31,6 +31,8 @@ const LeftNav = () => {
     { name: 'Student Enquiry List', icon: <FaUserGraduate className="w-5 h-5" />, path: '/admin/enquiry' },
     { name: 'Online Test', icon: <FaClipboardList className="w-5 h-5" />, path: '/admin/test' },
     { name: 'Profile', icon: <FaUser className="w-5 h-5" />, path: '/admin/profile' },
+  { name: 'Create Blog', icon: <FaPlus className="w-5 h-5" />, path: '/admin/blogs/add' },
+  { name: 'All Blogs', icon: <FaBook className="w-5 h-5" />, path: '/admin/blogs' },
   ];
 
   const handleNavigation = (path) => {

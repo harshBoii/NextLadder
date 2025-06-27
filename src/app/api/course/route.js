@@ -4,27 +4,33 @@ const prisma = new PrismaClient();
 
 export async function GET() {
   try {
-    // Get all courses and group them by category
-    const categoryStats = await prisma.course.groupBy({
-      by: ['category'],
-      _count: {
-        category: true
+    // Fetch all courses from the database with valid related data
+    const courses = await prisma.course.findMany({
+      include: {
+        professor: true,
+        enrollments: true,
+        reviews: true,
+        courseTags: {
+          include: {
+            tag: true
+          }
+        },
+        courseKeySkills: {
+          include: {
+            keySkill: true
+          }
+        }
       }
     });
 
-    // Transform the data into a more readable format
-    const categories = categoryStats.map(stat => ({
-      category: stat.category,
-      count: stat._count.category
-    }));
-
-    return NextResponse.json(categories);
+    return NextResponse.json(courses);
 
   } catch (error) {
-    console.error('Error fetching course categories:', error);
+    console.error('Error fetching courses:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch course categories' },
+      { error: 'Failed to fetch courses' },
       { status: 500 }
     );
   }
 }
+

@@ -100,13 +100,16 @@ model Enrollment {
 model Blog {
   id          Int        @id @default(autoincrement())
   title       String
-  content     String
+  content     String      
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
   studentId   Int?
   professorId Int?
   student     Student?   @relation("StudentBlogs",   fields: [studentId],   references: [id])
   professor   Professor? @relation("ProfessorBlogs", fields: [professorId], references: [id])
+  visitNumbers Int       @default(0)
+  upvote      Int        @default(0)
+  picture     String?
 
   @@index([createdAt])
   @@index([studentId])
