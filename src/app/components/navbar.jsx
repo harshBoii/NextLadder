@@ -15,7 +15,7 @@ export function NavbarDefault({icon}) {
         <NavbarLink className="text-black mx-2 lg:mx-7 text-base lg:text-lg font-poppins font-bold" href="/">Home</NavbarLink>
         <NavbarLink className="text-black mx-2 lg:mx-7 text-base lg:text-lg font-poppins font-bold" href="#">Courses</NavbarLink>
         <NavbarLink className="text-black mx-2 lg:mx-7 text-base lg:text-lg font-poppins font-bold" href="#">Compiler</NavbarLink>
-        <NavbarLink className="bg-[rgba(65,175,255,1)] lg:bg-transparent font-poppins font-bold lg:text-black lg:text-lg text-white text-sm lg:text-base px-3 lg:mr-2 lg:px-4 py-2 ml-2" href="/admin/editHome">Admin</NavbarLink>
+        <NavbarLink className="bg-[rgba(65,175,255,1)] lg:bg-transparent font-poppins lg:font-bold font-bold lg:mt-1 lg:text-black lg:text-lg text-white text-sm lg:text-base px-3 lg:mr-2 lg:px-4 ml-2" href="/admin/editHome">Admin</NavbarLink>
       </NavbarCollapse>
     </Navbar>
   );
