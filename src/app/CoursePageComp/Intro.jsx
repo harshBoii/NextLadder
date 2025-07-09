@@ -55,7 +55,7 @@ courseData
     <div 
       className="w-full min-h-screen lg:h-screen flex flex-col lg:flex-row"
       style={{
-        background: 'radial-gradient(circle at top, rgba(86, 159, 238, 0.28), rgba(163, 189, 255, 0.6), rgba(99, 158, 247, 0.49))'
+        background: 'radial-gradient(circle at top, rgba(122, 211, 243, 0.28), rgba(163, 221, 255, 0.6), rgba(99, 208, 247, 0.49))'
       }}
     >
       {/* Left side - Text content */}
@@ -110,7 +110,7 @@ courseData
                   <div className="text-sm lg:text-[1.7vh] font-mono font-bold rounded-lg text-center">
                     {segment.value}
                   </div>
-                  <div className="text-xs lg:text-[1.25vh] font-mono text-center mt-1 lg:mt-1.5 opacity-80">
+                  <div className="text-xs lg:text-[1.25vh] font-mono text-black text-center mt-1 lg:mt-1.5 opacity-100">
                     {segment.title}
                   </div>
                 </div>
@@ -123,7 +123,7 @@ courseData
         </div>
 
         {/* Webinar Text */}
-        <div className="mt-6 lg:mt-[6vh] text-white text-lg lg:text-[2.5vh] font-sans opacity-60 flex items-center">
+        <div className="mt-6 lg:mt-[6vh] text-zinc-800 text-lg lg:text-[2.5vh] font-sans opacity-90 flex items-center">
           Know in-depth details in our free webinar 
           <Image 
             src="/hand.png"
