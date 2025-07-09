@@ -150,7 +150,7 @@ const AddBlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-white text-black">
       <AdminNavbar />
       <LeftNav />
       
@@ -158,14 +158,14 @@ const AddBlogPage = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-cyan-300 mb-2">Add New Blog</h1>
-            <p className="text-gray-400">Create engaging content for your audience</p>
+            <h1 className=" mt-20 text-5xl font-bold text-zinc-800 mb-2">Add New Blog</h1>
+            <p className="text-zinc-9000">Create engaging content for your audience</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Title */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-zinc-9000 mb-2">
                 Blog Title *
               </label>
               <input
@@ -173,7 +173,7 @@ const AddBlogPage = () => {
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
+                className="w-full px-4 py-3 bg-zinc-100 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-black"
                 placeholder="Enter blog title..."
                 required
               />
@@ -181,12 +181,12 @@ const AddBlogPage = () => {
 
             {/* Blog Picture */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-zinc-9000 mb-2">
                 Blog Picture
               </label>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <label className="flex items-center space-x-2 px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors">
+                  <label className="flex items-center space-x-2 px-4 py-2 bg-white-800 border border-gray-600 rounded-lg cursor-pointer hover:bg-cyan-100 transition-colors">
                     <FaUpload className="w-4 h-4 text-cyan-400" />
                     <span>Choose Image</span>
                     <input
@@ -203,7 +203,7 @@ const AddBlogPage = () => {
                         setImagePreview(null);
                         setFormData(prev => ({ ...prev, picture: '' }));
                       }}
-                      className="px-3 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm transition-colors"
+                      className="px-3 py-2 bg-red-600 hover:bg-cyan-100 rounded-lg text-sm transition-colors"
                     >
                       Remove
                     </button>
@@ -228,7 +228,7 @@ const AddBlogPage = () => {
             {/* Author Selection */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-zinc-9000 mb-2">
                   Author Type *
                 </label>
                 <div className="flex space-x-4">
@@ -272,11 +272,11 @@ const AddBlogPage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-zinc-9000 mb-2">
                   Author *
                 </label>
                 {formData.authorType === 'admin' ? (
-                  <div className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-300">
+                  <div className="w-full px-4 py-3 bg-zinc-100 border border-gray-600 rounded-lg text-zinc-9000">
                     Admin (Default)
                   </div>
                 ) : (
@@ -284,7 +284,7 @@ const AddBlogPage = () => {
                     name="authorId"
                     value={formData.authorId}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
+                    className="w-full px-4 py-3 bg-white-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-zinc-900"
                   >
                     <option value="">Select an author...</option>
                     {formData.authorType === 'student' 
@@ -307,14 +307,14 @@ const AddBlogPage = () => {
             {/* Content Editor */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="block text-sm font-medium text-gray-300">
+                <label className="block text-sm font-medium text-zinc-9000">
                   Blog Content *
                 </label>
                 <div className="flex space-x-2">
                   <button
                     type="button"
                     onClick={() => setPreviewMode(!previewMode)}
-                    className="flex items-center space-x-2 px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors"
+                    className="flex items-center space-x-2 px-3 py-1 bg-white-700 hover:bg-cyan-100 rounded text-sm transition-colors"
                   >
                     <FaEye className="w-4 h-4" />
                     <span>{previewMode ? 'Edit' : 'Preview'}</span>
@@ -323,7 +323,7 @@ const AddBlogPage = () => {
               </div>
 
               {previewMode ? (
-                <div className="w-full min-h-[400px] p-4 bg-gray-800 border border-gray-600 rounded-lg overflow-y-auto">
+                <div className="w-full min-h-[400px] p-4 bg-white-800 border border-gray-600 rounded-lg overflow-y-auto">
                   {imagePreview && (
                     <div className="mb-4">
                       <img 
@@ -350,7 +350,7 @@ const AddBlogPage = () => {
                     name="content"
                     value={formData.content}
                     onChange={handleContentChange}
-                    className="w-full min-h-[400px] px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white resize-y"
+                    className="w-full min-h-[400px] px-4 py-3 bg-white-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-zinc-900 resize-y"
                     placeholder="Write your blog content here... You can use markdown-style formatting:
 # Heading 1
 ## Heading 2
@@ -360,7 +360,7 @@ const AddBlogPage = () => {
 1. Numbered item"
                     required
                   />
-                  <div className="absolute bottom-4 right-4 text-xs text-gray-500">
+                  <div className="absolute bottom-4 right-4 text-xs text-zinc-9000">
                     {formData.content.length} characters
                   </div>
                 </div>
@@ -372,7 +372,7 @@ const AddBlogPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex items-center space-x-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-700 disabled:bg-gray-600 rounded-lg font-medium transition-colors"
+                className="flex items-center space-x-2 px-6 py-3 bg-cyan-600 text-zinc-900 rounded-lg font-medium transition-colors"
               >
                 <FaSave className="w-4 h-4" />
                 <span>{loading ? 'Creating...' : 'Create Blog'}</span>
@@ -381,7 +381,7 @@ const AddBlogPage = () => {
               <button
                 type="button"
                 onClick={() => router.push('/admin/blogs')}
-                className="flex items-center space-x-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-medium transition-colors"
+                className="flex items-center space-x-2 px-6 py-3 bg-white-700 hover:bg-cyan-100 rounded-lg font-medium transition-colors"
               >
                 <FaTimes className="w-4 h-4" />
                 <span>Cancel</span>
@@ -391,28 +391,28 @@ const AddBlogPage = () => {
 
           {/* Preview Info */}
           {formData.authorId && (
-            <div className="mt-8 p-4 bg-gray-800 rounded-lg">
+            <div className="mt-8 p-4 bg-white-800 rounded-lg">
               <h3 className="text-lg font-medium text-cyan-300 mb-2">Blog Preview Info</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="text-gray-400">Title:</span>
-                  <span className="ml-2 text-white">{formData.title || 'Not set'}</span>
+                  <span className="text-zinc-9000">Title:</span>
+                  <span className="ml-2 text-zinc-900">{formData.title || 'Not set'}</span>
                 </div>
                 <div>
-                  <span className="text-gray-400">Author:</span>
-                  <span className="ml-2 text-white">{getAuthorName()}</span>
+                  <span className="text-zinc-9000">Author:</span>
+                  <span className="ml-2 text-zinc-900">{getAuthorName()}</span>
                 </div>
                 <div>
-                  <span className="text-gray-400">Author Type:</span>
-                  <span className="ml-2 text-white capitalize">{formData.authorType}</span>
+                  <span className="text-zinc-9000">Author Type:</span>
+                  <span className="ml-2 text-zinc-900 capitalize">{formData.authorType}</span>
                 </div>
                 <div>
-                  <span className="text-gray-400">Content Length:</span>
-                  <span className="ml-2 text-white">{formData.content.length} characters</span>
+                  <span className="text-zinc-9000">Content Length:</span>
+                  <span className="ml-2 text-zinc-900">{formData.content.length} characters</span>
                 </div>
                 <div>
-                  <span className="text-gray-400">Picture:</span>
-                  <span className="ml-2 text-white">{imagePreview ? 'Uploaded' : 'Not set'}</span>
+                  <span className="text-zinc-9000">Picture:</span>
+                  <span className="ml-2 text-zinc-900">{imagePreview ? 'Uploaded' : 'Not set'}</span>
                 </div>
               </div>
             </div>

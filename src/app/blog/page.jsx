@@ -137,41 +137,13 @@ const BlogPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-white text-black relative overflow-hidden">
       {/* Floating Particles */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {particles.map(particle => (
-          <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
-            style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              opacity: particle.opacity
-            }}
-          />
-        ))}
-      </div>
+      {/* Soft blue background accent, no particles */}
+      <div className="fixed inset-0 pointer-events-none z-0" style={{background: 'radial-gradient(circle at 60% 40%, rgba(65,175,255,0.08) 0%, transparent 70%)'}} />
 
       {/* Matrix Rain Effect */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-5">
-        {Array.from({ length: 50 }, (_, i) => (
-          <div
-            key={i}
-            className="absolute text-green-400 font-mono text-xs animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${Math.random() * 3 + 2}s`
-            }}
-          >
-            {['0', '1', 'A', 'B', 'C', '@', '#', '$', '%'][Math.floor(Math.random() * 9)]}
-          </div>
-        ))}
-      </div>
+      {/* No matrix rain effect in light theme */}
 
       <NavbarDefault icon={icon} />
 
@@ -203,7 +175,7 @@ const BlogPage = () => {
                   placeholder="Search blogs..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
+                  className="w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:ring-[#41afff] focus:border-[#41afff] text-black border border-[#41afff] bg-white placeholder-[#41afff]"
                 />
               </div>
               
@@ -212,7 +184,7 @@ const BlogPage = () => {
                 <select
                   value={filterType}
                   onChange={(e) => setFilterType(e.target.value)}
-                  className="px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
+                  className="px-4 py-3 rounded-lg focus:ring-2 focus:ring-[#41afff] focus:border-[#41afff] text-black border border-[#41afff] bg-white"
                 >
                   <option value="all">All Authors</option>
                   <option value="student">Students</option>
@@ -240,7 +212,8 @@ const BlogPage = () => {
                 return (
                   <div 
                     key={blog.id} 
-                    className="bg-gray-900/80 backdrop-blur-sm border border-cyan-500/20 rounded-lg overflow-hidden hover:border-cyan-500/40 transition-all duration-300 cursor-pointer group"
+                    className="rounded-lg overflow-hidden border border-[#41afff] hover:border-[#41afff] transition-all duration-300 cursor-pointer group"
+                    style={{ background: 'rgba(65,175,255,0.08)' }}
                     onClick={() => router.push(`/blog/${blog.id}`)}
                   >
                     {/* Blog Image */}
@@ -251,7 +224,7 @@ const BlogPage = () => {
                           alt={blog.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute inset-0" style={{background: 'linear-gradient(to top, rgba(65,175,255,0.13) 0%, transparent 100%)'}}></div>
                       </div>
                     )}
                     
@@ -260,23 +233,23 @@ const BlogPage = () => {
                       {/* Author Info */}
                       <div className="flex items-center space-x-2 mb-3">
                         {authorInfo.icon}
-                        <span className="text-sm text-gray-400">{authorInfo.type}</span>
-                        <span className="text-gray-500">•</span>
-                        <span className="text-sm text-gray-400">{authorInfo.name}</span>
+                        <span className="text-sm text-[#41afff]">{authorInfo.type}</span>
+                        <span className="text-[#41afff]">•</span>
+                        <span className="text-sm text-[#41afff]">{authorInfo.name}</span>
                       </div>
                       
                       {/* Title */}
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                      <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#41afff] transition-colors">
                         {blog.title}
                       </h3>
                       
                       {/* Content Preview */}
-                      <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                      <p className="text-[#171717] text-sm mb-4 line-clamp-3">
                         {truncateText(blog.content.replace(/<[^>]*>/g, ''), 120)}
                       </p>
                       
                       {/* Meta Info */}
-                      <div className="flex items-center justify-between text-xs text-gray-500">
+                      <div className="flex items-center justify-between text-xs text-[#41afff]">
                         <div className="flex items-center space-x-3">
                           <div className="flex items-center space-x-1">
                             <FaCalendar className="w-3 h-3" />
@@ -292,7 +265,7 @@ const BlogPage = () => {
                           </div>
                         </div>
                         
-                        <div className="flex items-center space-x-1 text-cyan-400">
+                        <div className="flex items-center space-x-1 text-[#41afff]">
                           <FaClock className="w-3 h-3" />
                           <span>Read</span>
                         </div>
@@ -306,27 +279,27 @@ const BlogPage = () => {
 
           {/* Stats Section */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/30 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-cyan-300 mb-2">{blogs.length}</div>
-              <div className="text-gray-400">Total Blogs</div>
+            <div className="rounded-lg p-6 text-center border border-[#41afff]" style={{ background: 'rgba(65,175,255,0.08)' }}>
+              <div className="text-3xl font-bold text-[#41afff] mb-2">{blogs.length}</div>
+              <div className="text-black">Total Blogs</div>
             </div>
-            <div className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 border border-green-500/30 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-green-300 mb-2">
+            <div className="rounded-lg p-6 text-center border border-[#41afff]" style={{ background: 'rgba(65,175,255,0.08)' }}>
+              <div className="text-3xl font-bold text-[#41afff] mb-2">
                 {blogs.filter(blog => blog.student).length}
               </div>
-              <div className="text-gray-400">Student Blogs</div>
+              <div className="text-black">Student Blogs</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/30 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-purple-300 mb-2">
+            <div className="rounded-lg p-6 text-center border border-[#41afff]" style={{ background: 'rgba(65,175,255,0.08)' }}>
+              <div className="text-3xl font-bold text-[#41afff] mb-2">
                 {blogs.filter(blog => blog.professor).length}
               </div>
-              <div className="text-gray-400">Professor Blogs</div>
+              <div className="text-black">Professor Blogs</div>
             </div>
-            <div className="bg-gradient-to-br from-yellow-900/20 to-orange-900/20 border border-yellow-500/30 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-yellow-300 mb-2">
+            <div className="rounded-lg p-6 text-center border border-[#41afff]" style={{ background: 'rgba(65,175,255,0.08)' }}>
+              <div className="text-3xl font-bold text-[#41afff] mb-2">
                 {blogs.reduce((total, blog) => total + blog.visitNumbers, 0).toLocaleString()}
               </div>
-              <div className="text-gray-400">Total Views</div>
+              <div className="text-black">Total Views</div>
             </div>
           </div>
         </div>

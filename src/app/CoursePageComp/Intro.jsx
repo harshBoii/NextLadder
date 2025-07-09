@@ -55,7 +55,7 @@ courseData
     <div 
       className="w-full min-h-screen lg:h-screen flex flex-col lg:flex-row"
       style={{
-        background: 'radial-gradient(circle at top, rgba(57, 73, 102, 1), rgba(27, 29, 34, 1), rgba(20, 20, 20, 1))'
+        background: 'radial-gradient(circle at top, rgba(86, 159, 238, 0.28), rgba(163, 189, 255, 0.6), rgba(99, 158, 247, 0.49))'
       }}
     >
       {/* Left side - Text content */}
@@ -86,7 +86,7 @@ courseData
           </h1>
         </div>
         <div className="mt-4 lg:mt-[5vh]">
-          <h1 className="text-sm sm:text-base lg:text-[1.8vh] font-sans opacity-50 text-white">
+          <h1 className="text-sm sm:text-base lg:text-[1.8vh] font-sans  opacity-70 text-black">
 {
   courseData.description
 }          </h1>
@@ -95,18 +95,18 @@ courseData
         {/* Tags Container */}
         <div className="mt-6 lg:mt-[6vh] grid grid-cols-2 sm:grid-cols-3 gap-3 lg:gap-4 w-full lg:w-auto">
           {tags.map((tag, index) => (
-            <div key={index} className="text-white">
+            <div key={index} className="text-black">
                 <CourseTag tag={tag.name} icon={tag.icon} />
             </div>
           ))}
         </div>
 
         {/* Segments Container with Vertical Lines */}
-        <div className="mt-6 lg:mt-[6vh] w-full lg:w-[40vw] bg-white/5 backdrop-blur-sm rounded-xl p-4 lg:p-[2vh] min-h-[5rem] lg:min-h-[8vh]">
+        <div className="mt-6 lg:mt-[6vh] w-full lg:w-[40vw] bg-black/5 backdrop-blur-sm rounded-xl p-4 lg:p-[2vh] min-h-[5rem] lg:min-h-[8vh]">
           <div className="flex items-center justify-between gap-2 lg:gap-[1vw]">
             {segments.map((segment, index) => (
               <div key={index} className="flex items-center flex-1">
-                <div className="flex flex-col items-center text-white w-full">
+                <div className="flex flex-col items-center text-zinc-500 w-full">
                   <div className="text-sm lg:text-[1.7vh] font-mono font-bold rounded-lg text-center">
                     {segment.value}
                   </div>

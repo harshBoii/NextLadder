@@ -5,6 +5,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-blue: rgba(65,175,255,1);
+  --subtle-blue: #eaf6fd;
+  --heading-blue: #2f57ef;
+  --link-blue: #41afff;
+  --link-hover: #2f57ef;
 }
 
 @theme inline {
@@ -223,30 +228,6 @@ body {
   will-change: transform;
 }
 
-.particle-bg {
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(0, 255, 255, 0.08) 0%, transparent 50%);
-  background-size: 150px 150px, 200px 200px;
-  animation: pulse 6s ease-in-out infinite;
-  will-change: opacity;
-}
-
-.particle-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 30%),
-    radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 30%);
-  background-size: 250px 250px, 300px 300px;
-  animation: particleMove 12s ease-in-out infinite;
-  pointer-events: none;
-  will-change: transform;
-}
 
 /* Loading Animation Classes */
 .text-reveal {
@@ -292,11 +273,11 @@ body {
 
 /* Dark mode utilities for blog */
 .dark-bg {
-  background-color: #0a0a0a;
+  background-color: #fff;
 }
 
 .dark-surface {
-  background-color: #1a1a1a;
+  background-color: var(--subtle-blue);
 }
 
 /* Blog specific styles */
@@ -310,7 +291,7 @@ body {
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-  color: #00ffff;
+  color: var(--heading-blue);
   font-family: var(--font-orbitron);
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -318,24 +299,24 @@ body {
 
 .blog-content h1 {
   font-size: 2.5rem;
-  border-bottom: 2px solid #00ffff;
+  border-bottom: 2px solid var(--accent-blue);
   padding-bottom: 0.5rem;
 }
 
 .blog-content h2 {
   font-size: 2rem;
-  border-left: 4px solid #00ffff;
+  border-left: 4px solid var(--accent-blue);
   padding-left: 1rem;
 }
 
 .blog-content h3 {
   font-size: 1.5rem;
-  color: #ff00ff;
+  color: var(--heading-blue);
 }
 
 .blog-content p {
   margin-bottom: 1.5rem;
-  color: #e0e0e0;
+  color: #333;
 }
 
 .blog-content ul,
@@ -346,25 +327,26 @@ body {
 
 .blog-content li {
   margin-bottom: 0.5rem;
-  color: #e0e0e0;
+  color: #333;
 }
 
 .blog-content blockquote {
-  border-left: 4px solid #00ffff;
+  border-left: 4px solid var(--accent-blue);
   padding-left: 1rem;
   margin: 2rem 0;
   font-style: italic;
-  color: #b0b0b0;
+  color: #666;
+  background: var(--subtle-blue);
 }
 
 .blog-content a {
-  color: #00ffff;
+  color: var(--link-blue);
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .blog-content a:hover {
-  color: #ff00ff;
+  color: var(--link-hover);
 }
 
 @layer base {
@@ -378,8 +360,8 @@ body {
   left: 0;
   pointer-events: none;
   border-radius: 50%;
-  background: #0ff;
-  filter: blur(2px);
+  background: var(--accent-blue);
+  filter: none;
   transform: translate(-50%, -50%);
   z-index: 9998;
 }
@@ -406,8 +388,8 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #0ff;
-  box-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
+  background: var(--accent-blue);
+  box-shadow: none;
   transform: translate(-50%, -50%);
 }
 
@@ -416,7 +398,7 @@ body {
   position: absolute;
   width: 28px;
   height: 28px;
-  border: 2px dotted #0ff;
+  border: 2px dotted var(--accent-blue);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: rotate-tech 8s linear infinite;

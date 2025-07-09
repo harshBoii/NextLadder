@@ -181,11 +181,11 @@ export default function HomePageEditor() {
       {/* Google Fonts CDN */}
       <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
       
-      <div className='flex min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900'>
+      <div className='flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100'>
         <LeftNav />
         <div className='flex-1 relative overflow-hidden'>
           {/* Animated Background Grid */}
-          <div className="absolute inset-0 particle-bg opacity-10"></div>
+
           
           <AdminNavbar />
           <div className={`w-full pt-[80px] lg:pt-[80px] relative z-10  min-h-screen transition-all duration-300 ${
@@ -196,9 +196,9 @@ export default function HomePageEditor() {
             <div className='flex flex-col lg:flex-row gap-6 mb-8 px-4 lg:px-6'>
               <div className="h-[20vh] w-full lg:w-[50vw] bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex flex-row items-start overflow-hidden justify-between p-4 lg:p-8 animated-border border-2 border-cyan-400/50">
                 <div className='flex flex-col'>
-                  <h1 className="text-white text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">Welcome Back, Admin!</h1>
-                  <p className="text-cyan-100 text-sm sm:text-base lg:text-[1vw] mt-[1vh] font-share-tech-mono">Practical HR solution positive Results</p>
-                  <button className="bg-white/10 backdrop-blur-sm text-white px-4 lg:px-6 py-2 lg:py-[0.7vh] my-[2vh] w-full sm:w-auto lg:w-[12.2vw] flex flex-row rounded-lg font-orbitron hover:bg-white/20 transition-all duration-300 border border-white/20 glow-on-focus">
+                  <h1 className="text-black text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">Welcome Back, Admin!</h1>
+                  <p className="text-zinc-900 text-sm sm:text-base lg:text-[1vw] mt-[1vh] font-share-tech-mono">Practical HR solution positive Results</p>
+                  <button className="bg-white/10 backdrop-blur-sm text-black px-4 lg:px-6 py-2 lg:py-[0.7vh] my-[2vh] w-full sm:w-auto lg:w-[12.2vw] flex flex-row rounded-lg font-orbitron hover:bg-white/20 transition-all duration-300 border border-white/20 glow-on-focus">
                     Explore Now <ArrowRight size={20} className='ml-2 lg:ml-[1vw] mt-[0.2vh]' />
                   </button>
                 </div>
@@ -206,15 +206,15 @@ export default function HomePageEditor() {
               </div>
               
               <div className="w-full lg:w-[20vw] h-[20vh]">
-                <h2 className="text-cyan-100 text-lg sm:text-xl lg:text-[1.5vw] text-center font-bold font-orbitron mb-[2vh]">Students Report</h2>
+                <h2 className="text-zinc-900 text-lg sm:text-xl lg:text-[1.5vw] text-center font-bold font-orbitron mb-[2vh]">Students Report</h2>
                 <div className="flex flex-row gap-4 lg:gap-[2vw] justify-center">
                   <div className="w-full sm:w-[8vw] h-[12vh] bg-white/10 backdrop-blur-sm rounded-xl flex flex-col items-center border-2 border-cyan-400/30 justify-center">
-                    <span className="text-cyan-400 text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">150</span>
-                    <span className="text-cyan-100 text-xs sm:text-sm lg:text-[0.8vw] font-share-tech-mono mt-[1vh] text-center">Enquired Student</span>
+                    <span className="text-cyan-700 text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">150</span>
+                    <span className="text-zinc-900 text-xs sm:text-sm lg:text-[0.8vw] font-share-tech-mono mt-[1vh] text-center">Enquired Student</span>
                   </div>
                   <div className="w-full sm:w-[8vw] h-[12vh] bg-white/10 backdrop-blur-sm rounded-xl flex flex-col items-center border-2 border-cyan-400/30 justify-center">
-                    <span className="text-cyan-400 text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">75</span>
-                    <span className="text-cyan-100 text-xs sm:text-sm lg:text-[0.8vw] font-share-tech-mono mt-[1vh] text-center">Onboarded Student</span>
+                    <span className="text-cyan-700 text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">75</span>
+                    <span className="text-zinc-900 text-xs sm:text-sm lg:text-[0.8vw] font-share-tech-mono mt-[1vh] text-center">Onboarded Student</span>
                   </div>
                 </div>
               </div>
@@ -224,8 +224,8 @@ export default function HomePageEditor() {
             <div className="px-4 lg:px-6">
               <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 lg:p-8 border border-cyan-400/20">
                 <div className="flex items-center gap-3 mb-6">
-                  <Settings className="text-cyan-400" size={28} />
-                  <h1 className="text-2xl lg:text-3xl font-bold text-white font-orbitron">Edit HomePage Data</h1>
+                  <Settings className="text-cyan-700" size={28} />
+                  <h1 className="text-2xl lg:text-3xl font-bold text-black font-orbitron">Edit HomePage Data</h1>
                 </div>
                 
                 {message && (
@@ -248,7 +248,7 @@ export default function HomePageEditor() {
 
                       return (
                         <div key={key} className="space-y-3 group">
-                          <label htmlFor={key} className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                          <label htmlFor={key} className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                             {getFieldIcon(key)}
                             <span className="text-xs lg:text-sm">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
                           </label>
@@ -261,7 +261,7 @@ export default function HomePageEditor() {
                                 type="file"
                                 accept="image/*"
                                 onChange={handleChange}
-                                className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-orbitron file:bg-cyan-500/20 file:text-cyan-300 hover:file:bg-cyan-500/30 transition-all duration-300 glow-on-focus"
+                                className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-zinc-900 font-share-tech-mono file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-orbitron file:bg-cyan-500/20 file:text-cyan-700 hover:file:bg-cyan-500/30 transition-all duration-300 glow-on-focus"
                               />
                               {formData[key] && (
                                 <div className="mt-3 p-3 bg-white/5 rounded-lg border border-cyan-400/20">
@@ -276,7 +276,7 @@ export default function HomePageEditor() {
                               value={formData[key]}
                               onChange={handleChange}
                               rows={4}
-                              className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 resize-none transition-all duration-300 glow-on-focus focus:bg-white/10"
+                              className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-zinc-900 font-share-tech-mono placeholder-cyan-300/50 resize-none transition-all duration-300 glow-on-focus focus:bg-white/10"
                               placeholder={`Enter ${key.toLowerCase()}...`}
                             />
                           ) : (
@@ -286,7 +286,7 @@ export default function HomePageEditor() {
                               type={inputType}
                               value={formData[key]}
                               onChange={handleChange}
-                              className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                              className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-zinc-900 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
                               placeholder={`Enter ${key.toLowerCase()}...`}
                             />
                           )}
@@ -299,7 +299,7 @@ export default function HomePageEditor() {
                     <button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="group relative px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-orbitron font-bold rounded-xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden w-full sm:w-auto"
+                      className="group relative px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-orbitron font-bold rounded-xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden w-full sm:w-auto"
                     >
                       <span className="relative z-10 flex items-center gap-2 justify-center">
                         {isSubmitting ? (

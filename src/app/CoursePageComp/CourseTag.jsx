@@ -6,8 +6,8 @@ const CourseTag = ({tag, icon}) => {
         <div
           className="px-3 py-1 text-[1.5vh] text-bold rounded-full transition-colors flex items-center gap-1.5"
           style={{
-            backgroundColor: 'rgba(172, 188, 254, 0.13)',
-            color: 'rgb(255, 255, 255)'
+            backgroundColor: 'rgba(4, 4, 4, 0.13)',
+            color: 'rgb(0, 0, 0)'
           }}
         >
           {/* {icon && <span className="text-base">{icon}</span>} */}

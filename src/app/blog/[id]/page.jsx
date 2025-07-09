@@ -171,41 +171,13 @@ const BlogPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-white text-black relative overflow-hidden">
       {/* Floating Particles */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {particles.map(particle => (
-          <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
-            style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              opacity: particle.opacity
-            }}
-          />
-        ))}
-      </div>
+      {/* Soft blue background accent, no particles */}
+      <div className="fixed inset-0 pointer-events-none z-0" style={{background: 'radial-gradient(circle at 60% 40%, rgba(65,175,255,0.08) 0%, transparent 70%)'}} />
 
       {/* Matrix Rain Effect */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-5">
-        {Array.from({ length: 50 }, (_, i) => (
-          <div
-            key={i}
-            className="absolute text-green-400 font-mono text-xs animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${Math.random() * 3 + 2}s`
-            }}
-          >
-            {['0', '1', 'A', 'B', 'C', '@', '#', '$', '%'][Math.floor(Math.random() * 9)]}
-          </div>
-        ))}
-      </div>
+      {/* No matrix rain effect in light theme */}
 
       <NavbarDefault icon={icon} />
 
@@ -226,14 +198,14 @@ const BlogPage = () => {
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
-                  <h1 className="text-3xl lg:text-4xl font-mono text-white">
+                  <h1 className="text-3xl lg:text-4xl font-mono text-black">
                     <span className="text-green-400">$</span> {blogData.title}
                   </h1>
                 </div>
-                <p className="text-gray-400 text-lg mb-6">{blogData.subtitle}</p>
+                <p className="text-gray-700 text-lg mb-6">{blogData.subtitle}</p>
                 
                 {/* Meta Info */}
-                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                   <div className="flex items-center space-x-1">
                     <FaEye className="w-4 h-4" />
                     <span>{blogData.views} views</span>
@@ -265,10 +237,10 @@ const BlogPage = () => {
 
               {/* Blog Content */}
               <div className="blog-content max-w-none">
-                <div className="space-y-8 text-white">
+                <div className="space-y-8 text-black">
                   <div 
                     dangerouslySetInnerHTML={{ __html: blogData.content }} 
-                    className="[&>h1]:text-3xl [&>h1]:font-bold [&>h1]:text-cyan-300 [&>h1]:mb-6 [&>h1]:mt-8 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-cyan-200 [&>h2]:mb-4 [&>h2]:mt-6 [&>p]:text-gray-300 [&>p]:mb-4 [&>p]:leading-relaxed [&>ol]:list-decimal [&>ol]:list-inside [&>ol]:space-y-2 [&>ol]:text-gray-300 [&>ol]:mb-4 [&>li]:text-gray-300 [&>hr]:border-gray-600 [&>hr]:my-8 [&>em]:italic [&>strong]:font-bold [&>strong]:text-cyan-300"
+                    className="[&>h1]:text-3xl [&>h1]:font-bold [&>h1]:text-cyan-700 [&>h1]:mb-6 [&>h1]:mt-8 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-cyan-800 [&>h2]:mb-4 [&>h2]:mt-6 [&>p]:text-gray-800 [&>p]:mb-4 [&>p]:leading-relaxed [&>ol]:list-decimal [&>ol]:list-inside [&>ol]:space-y-2 [&>ol]:text-gray-800 [&>ol]:mb-4 [&>li]:text-gray-800 [&>hr]:border-gray-400 [&>hr]:my-8 [&>em]:italic [&>strong]:font-bold [&>strong]:text-cyan-700"
                   />
                 </div>
               </div>
@@ -278,7 +250,7 @@ const BlogPage = () => {
             <div className="lg:w-80 space-y-6">
               
               {/* Author Card */}
-              <div className="bg-dark-surface border border-gray-700 rounded-lg p-6 sticky top-24">
+              <div className="bg-dark-surface border border-gray-300 rounded-lg p-6 sticky top-24">
                 <div className="flex items-center space-x-4 mb-4">
                   <img 
                     src={blogData.author.avatar} 
@@ -288,63 +260,63 @@ const BlogPage = () => {
                   <div>
                     <div className="flex items-center space-x-2 mb-1">
                       {getAuthorIcon(blogData.author.type)}
-                      <span className="text-xs text-gray-400">{blogData.author.type}</span>
+                      <span className="text-xs text-gray-600">{blogData.author.type}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-white">{blogData.author.name}</h3>
-                    <p className="text-sm text-gray-400">Full-stack Developer</p>
+                    <h3 className="text-lg font-bold text-black">{blogData.author.name}</h3>
+                    <p className="text-sm text-gray-700">Full-stack Developer</p>
                   </div>
                 </div>
-                <p className="text-gray-300 text-sm mb-4">{blogData.author.bio}</p>
+                <p className="text-gray-800 text-sm mb-4">{blogData.author.bio}</p>
                 <div className="flex space-x-3">
                   <a 
                     href={`https://github.com/${blogData.author.github}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    className="p-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors"
                   >
-                    <FaGithub className="w-5 h-5 text-gray-300" />
+                    <FaGithub className="w-5 h-5 text-gray-700" />
                   </a>
                   <a 
                     href={`https://twitter.com/${blogData.author.twitter}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    className="p-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors"
                   >
-                    <FaTwitter className="w-5 h-5 text-gray-300" />
+                    <FaTwitter className="w-5 h-5 text-gray-700" />
                   </a>
                   <a 
                     href={`https://linkedin.com/in/${blogData.author.linkedin}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    className="p-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors"
                   >
-                    <FaLinkedin className="w-5 h-5 text-gray-300" />
+                    <FaLinkedin className="w-5 h-5 text-gray-700" />
                   </a>
                 </div>
               </div>
 
               {/* Quick Stats */}
-              <div className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/30 rounded-lg p-4">
-                <h3 className="text-lg font-bold text-white mb-3 flex items-center space-x-2">
-                  <FaRocket className="w-5 h-5 text-cyan-400" />
+              <div className="bg-gradient-to-br from-cyan-100/20 to-blue-100/20 border border-cyan-500/30 rounded-lg p-4">
+                <h3 className="text-lg font-bold text-black mb-3 flex items-center space-x-2">
+                  <FaRocket className="w-5 h-5 text-cyan-700" />
                   <span>Quick Stats</span>
                 </h3>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="text-center">
-                    <span className="text-gray-400 block">Views</span>
-                    <span className="text-cyan-300 font-bold">{blogData.views.toLocaleString()}</span>
+                    <span className="text-gray-600 block">Views</span>
+                    <span className="text-cyan-700 font-bold">{blogData.views.toLocaleString()}</span>
                   </div>
                   <div className="text-center">
-                    <span className="text-gray-400 block">Likes</span>
-                    <span className="text-cyan-300 font-bold">{blogData.likes}</span>
+                    <span className="text-gray-600 block">Likes</span>
+                    <span className="text-cyan-700 font-bold">{blogData.likes}</span>
                   </div>
                 </div>
               </div>
 
               {/* Upvote Section */}
-              <div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border border-cyan-500/30 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-                  <FaRocket className="w-5 h-5 text-cyan-400" />
+              <div className="bg-gradient-to-r from-cyan-100/20 to-blue-100/20 border border-cyan-500/30 rounded-lg p-6">
+                <h3 className="text-lg font-bold text-black mb-4 flex items-center space-x-2">
+                  <FaRocket className="w-5 h-5 text-cyan-700" />
                   <span>Was this helpful?</span>
                 </h3>
                 <div className="flex flex-col space-y-3">
@@ -354,7 +326,7 @@ const BlogPage = () => {
                     className={`flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
                       userVote === 'upvote' 
                         ? 'bg-green-600 text-white' 
-                        : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                        : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
                     }`}
                   >
                     <FaThumbsUp className="w-4 h-4" />
@@ -367,7 +339,7 @@ const BlogPage = () => {
                     className={`flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
                       userVote === 'downvote' 
                         ? 'bg-red-600 text-white' 
-                        : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                        : 'bg-gray-200 hover:bg-gray-300 text-gray-800'
                     }`}
                   >
                     <FaThumbsDown className="w-4 h-4" />
@@ -392,12 +364,12 @@ const BlogPage = () => {
               </div> */}
 
               {/* Bug Report */}
-              <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 border border-red-500/30 rounded-lg p-4">
-                <h3 className="text-lg font-bold text-white mb-3 flex items-center space-x-2">
-                  <FaBug className="w-5 h-5 text-red-400" />
+              <div className="bg-gradient-to-br from-red-100/20 to-orange-100/20 border border-red-500/30 rounded-lg p-4">
+                <h3 className="text-lg font-bold text-black mb-3 flex items-center space-x-2">
+                  <FaBug className="w-5 h-5 text-red-700" />
                   <span>Have Suggestions?</span>
                 </h3>
-                <p className="text-gray-300 text-sm mb-3">
+                <p className="text-gray-800 text-sm mb-3">
                   Help improve this post by reporting issues or suggesting improvements.
                 </p>
                 <button className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-white text-sm transition-colors">

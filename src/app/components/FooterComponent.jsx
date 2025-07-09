@@ -105,14 +105,14 @@ const FooterComponent = () => {
   return (
     <div 
       ref={containerRef}
-      className="w-full bg-black text-white py-4 lg:py-12 lg:min-h-[50vh] lg:h-[10vh] relative overflow-hidden"
+      className="w-full bg-white text-[#171717] py-4 lg:py-12 lg:min-h-[50vh] lg:h-[10vh] relative overflow-hidden"
     >
       {/* Radial Neon Background */}
       <div 
         ref={radialLightRef}
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at center, rgba(0, 255, 255, 0.3) 0%, rgba(0, 255, 255, 0.1) 40%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 1) 100%)',
+          background: 'radial-gradient(circle at center, rgba(65,175,255,0.13) 0%, rgba(65,175,255,0.07) 40%, #fff 100%)',
           transition: 'all 0.8s ease'
         }}
       />
@@ -122,7 +122,7 @@ const FooterComponent = () => {
         ref={borderRef}
         className="absolute inset-0 pointer-events-none"
         style={{
-          border: '2px solid rgba(0, 255, 255, 0.3)',
+          border: '2px solid rgba(65,175,255,0.3)',
           borderRadius: '8px',
           transition: 'all 0.8s ease'
         }}
@@ -139,15 +139,15 @@ const FooterComponent = () => {
                 className="h-16 lg:h-[10vh] object-contain mb-6"
               />
             )}
-            <p className="text-center text-gray-300 max-w-md leading-relaxed mb-6 px-4 lg:px-0">
+            <p className="text-center text-[#171717] max-w-md leading-relaxed mb-6 px-4 lg:px-0">
               We're always in search for talented and motivated people. Don't be shy introduce yourself!
             </p>
             <Link 
               href="/signin"
-              className="px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/50 inline-block"
+              className="px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(65,175,255,0.3)] inline-block"
               style={{
-                border: '2px solid rgba(0, 255, 255, 0.8)',
-                color: 'rgba(0, 255, 255, 0.8)',
+                border: '2px solid rgba(65,175,255,0.8)',
+                color: 'rgba(65,175,255,0.8)',
                 backgroundColor: 'transparent'
               }}
             >
@@ -161,11 +161,11 @@ const FooterComponent = () => {
             <div className="w-full lg:w-1/2 p-4 lg:p-6">
               <h3 className="text-lg lg:text-xl font-bold text-cyan-400 mb-4 text-center lg:text-left">Our Company</h3>
               <div className="flex flex-col space-y-2 text-center lg:text-left">
-                <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Contact Us</a>
-                <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Placement</a>
-                <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Log</a>
-                <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Courses</a>
-                <a href="#" className="text-gray-300 hover:text-cyan-400 transition-colors">Terms and Conditions</a>
+                <a href="#" className="text-zinc-900 hover:text-cyan-400 transition-colors">Contact Us</a>
+                <a href="#" className="text-zinc-900 hover:text-cyan-400 transition-colors">Placement</a>
+                <a href="#" className="text-zinc-900 hover:text-cyan-400 transition-colors">Log</a>
+                <a href="#" className="text-zinc-900 hover:text-cyan-400 transition-colors">Courses</a>
+                <a href="#" className="text-zinc-900 hover:text-cyan-400 transition-colors">Terms and Conditions</a>
               </div>
             </div>
             
@@ -173,9 +173,9 @@ const FooterComponent = () => {
             <div className="w-full lg:w-1/2 p-4 lg:p-6">
               <h3 className="text-lg lg:text-xl font-bold text-cyan-400 mb-4 text-center lg:text-left">Get Contact</h3>
               <div className="flex flex-col space-y-2 text-center lg:text-left">
-                <p className="text-gray-300">Phone: +91 9876543210</p>
-                <p className="text-gray-300">Email: info@nextladder.com</p>
-                <p className="text-gray-300">Location: Mumbai, India</p>
+                <p className="text-zinc-900">Phone: +91 9876543210</p>
+                <p className="text-zinc-900">Email: info@nextladder.com</p>
+                <p className="text-zinc-900">Location: Mumbai, India</p>
               </div>
             </div>
           </div>

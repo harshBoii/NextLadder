@@ -41,9 +41,9 @@ const Review = () => {
     : reviews.filter(review => review.category === activeFilter);
 
   return (
-    <div className="w-full bg-black py-8 lg:py-[10vh] lg:-mt-[10vh] px-4 lg:px-[5vw]">
+    <div className="w-full bg-[#F6F4FB] py-8 lg:py-[10vh] lg:-mt-[10vh] px-4 lg:px-[5vw]">
       <h2 
-        className="text-2xl sm:text-3xl lg:text-[2.8vh] font-extrabold text-white text-center mb-6 lg:mb-[4vh]"
+        className="text-2xl sm:text-3xl lg:text-[2.8vh] font-extrabold text-zinc-900 text-center mb-6 lg:mb-[4vh]"
         style={{
           textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)'
         }}
@@ -72,14 +72,11 @@ const Review = () => {
           <div 
             key={index}
             className="flex flex-col items-center p-6 lg:p-8 mt-10 rounded-xl relative card-hover min-h-[55vh] lg:mt[5vh] lg:h-[60vh]"
-            style={{
-              background: 'radial-gradient(circle at center, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
-              boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
-            }}
+            style={{ background: 'rgba(255,255,255,0.9)' }}
           >
             {/* Shine effect border */}
             <div className="absolute inset-0 rounded-xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent shine-effect"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#41afff]/30 to-transparent shine-effect"></div>
             </div>
 
             <div className="relative z-10 flex flex-col items-center text-center">
@@ -97,11 +94,11 @@ const Review = () => {
               </div>
 
               {/* Name and Role */}
-              <h3 className="mt-8 lg:mt-[6vh] text-lg lg:text-[2vh] opacity-80 font-bold text-white">{review.name}</h3>
-              <p className="text-sm lg:text-[1.4vh] text-white opacity-80 mb-4">{review.role} at {review.company}</p>
+              <h3 className="mt-8 lg:mt-[6vh] text-lg lg:text-[2vh] opacity-80 font-bold text-black">{review.name}</h3>
+              <p className="text-sm lg:text-[1.4vh] text-black opacity-80 mb-4">{review.role} at {review.company}</p>
 
               {/* Review Text */}
-              <p className="text-xs lg:text-[1.6vh] font-sans rounded-lg mt-4 lg:mt-[5vh] text-white opacity-90 h-32 lg:h-[15vh] italic flex-grow">
+              <p className="text-xs lg:text-[1.6vh] font-sans rounded-lg mt-4 lg:mt-[5vh] text-black opacity-90 h-32 lg:h-[15vh] italic flex-grow">
                 "{review.review}"
               </p>
 
@@ -110,10 +107,10 @@ const Review = () => {
               {/* Post, Coding Ninjas, Arrow and Company Logo */}
               <div className="relative bottom-[-13vh] lg:bottom-[-12vh] mt-[-5vh] lg:mt-[-1vh] left-0 lg:left-[2vw] w-full lg:w-[25vw] flex items-center justify-between">
                 <div className="text-left">
-                  <p className="text-xs lg:text-[0.8vw] text-white opacity-70">Post</p>
-                  <p className="text-xs lg:text-[0.8vw] font-semibold text-white mt-1">Coding Ninjas</p>
+                  <p className="text-xs lg:text-[0.8vw] text-black opacity-70">Post</p>
+                  <p className="text-xs lg:text-[0.8vw] font-semibold text-black mt-1">Coding Ninjas</p>
                 </div>
-                <div className="text-lg lg:text-[2vh] h-6 lg:h-[2vh] font-semibold text-white">
+                <div className="text-lg lg:text-[2vh] h-6 lg:h-[2vh] font-semibold text-black">
                  <img src="/arrow.png" alt="" className="w-full h-full" />
                 </div>
                 <div className="h-12 lg:h-[5vh] w-16 lg:w-[20vh] rounded-md overflow-hidden flex items-center justify-center">
@@ -137,12 +134,12 @@ const Review = () => {
       </div>
       <div className="flex flex-col sm:flex-row gap-4 lg:ml-[23vw] mt-6 lg:mt-[4vh] justify-center lg:justify-start">
               <button 
-                className="px-6 py-3 lg:py-2 w-full sm:w-auto lg:w-[23vw] h-12 lg:h-[8vh] rounded-lg border-2 border-white text-white font-semibold hover:bg-gray-800 transition-colors duration-200"
+                className="px-6 py-3 lg:py-2 w-full sm:w-auto lg:w-[23vw] h-12 lg:h-[8vh] rounded-lg border-2 border-zinc-600 text-zinc-900 font-semibold hover:bg-cyan-400/30 transition-colors duration-200"
               >
                 Read All Success Stories
               </button>
               <button 
-                className="px-6 py-3 lg:py-2 w-full sm:w-auto lg:w-[15vw] h-12 lg:h-[8vh] rounded-lg bg-[rgba(65,175,255,1)] text-white font-semibold hover:bg-[rgba(197, 197, 197, 0.9)] transition-colors duration-200"
+                className="px-6 py-3 lg:py-2 w-full sm:w-auto lg:w-[15vw] h-12 lg:h-[8vh] rounded-lg bg-[rgba(65,175,255,1)] text-zinc-900 font-semibold hover:bg-[rgba(197, 197, 197, 0.9)] transition-colors duration-200"
               >
                 Book a free webinar
               </button>

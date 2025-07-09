@@ -112,14 +112,14 @@ const BlogsPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-500"></div>
+      <div className="min-h-screen bg-white text-black flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#41afff]"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-white text-black">
       <AdminNavbar />
       <LeftNav />
       
@@ -127,13 +127,13 @@ const BlogsPage = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="flex items-center justify-between mb-8">
-            <div>
-              <h1 className="text-3xl font-bold text-cyan-300 mb-2">Blog Management</h1>
-              <p className="text-gray-400">Manage your blog posts and content</p>
+            <div mt-10>
+              <h1 className="text-5xl font-bold text-black mb-2">Blog Management</h1>
+              <p className="text-[#41afff]">Manage your blog posts and content</p>
             </div>
             <button
               onClick={() => router.push('/admin/blogs/add')}
-              className="flex items-center space-x-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg font-medium transition-colors"
+              className="flex items-center space-x-2 px-6 py-3 bg-[#41afff] hover:bg-[rgba(65,175,255,0.8)] text-white rounded-lg font-medium transition-colors"
             >
               <FaPlus className="w-4 h-4" />
               <span>Add New Blog</span>
@@ -144,10 +144,10 @@ const BlogsPage = () => {
           <div className="grid gap-6">
             {blogs.length === 0 ? (
               <div className="text-center py-12">
-                <div className="text-gray-400 text-lg mb-4">No blogs found</div>
+                <div className="text-[#41afff] text-lg mb-4">No blogs found</div>
                 <button
                   onClick={() => router.push('/admin/blogs/add')}
-                  className="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg font-medium transition-colors"
+                  className="px-6 py-3 bg-[#41afff] hover:bg-[rgba(65,175,255,0.8)] text-white rounded-lg font-medium transition-colors"
                 >
                   Create Your First Blog
                 </button>
@@ -156,14 +156,14 @@ const BlogsPage = () => {
               blogs.map((blog) => {
                 const authorInfo = getAuthorInfo(blog);
                 return (
-                  <div key={blog.id} className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                  <div key={blog.id} className="rounded-lg p-6 border border-[#41afff]" style={{ background: 'rgba(65,175,255,0.08)' }}>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-3">
                           {authorInfo.icon}
-                          <span className="text-sm text-gray-400">{authorInfo.type}</span>
-                          <span className="text-sm text-gray-500">•</span>
-                          <span className="text-sm text-gray-400">{authorInfo.name}</span>
+                          <span className="text-sm text-[#41afff]">{authorInfo.type}</span>
+                          <span className="text-[#41afff]">•</span>
+                          <span className="text-sm text-[#41afff]">{authorInfo.name}</span>
                         </div>
                         
                         <div className="flex space-x-4">
@@ -172,19 +172,19 @@ const BlogsPage = () => {
                               <img 
                                 src={blog.picture} 
                                 alt={blog.title}
-                                className="w-24 h-24 object-cover rounded-lg border border-gray-600"
+                                className="w-24 h-24 object-cover rounded-lg border border-[#41afff]"
                               />
                             </div>
                           )}
                           
                           <div className="flex-1">
-                            <h3 className="text-xl font-bold text-white mb-2">{blog.title}</h3>
+                            <h3 className="text-xl font-bold text-black mb-2">{blog.title}</h3>
                             
-                            <p className="text-gray-300 mb-4">
+                            <p className="text-black mb-4">
                               {truncateText(blog.content.replace(/<[^>]*>/g, ''), 150)}
                             </p>
                             
-                            <div className="flex items-center space-x-4 text-sm text-gray-500">
+                            <div className="flex items-center space-x-4 text-sm text-[#41afff]">
                               <div className="flex items-center space-x-1">
                                 <FaCalendar className="w-4 h-4" />
                                 <span>{formatDate(blog.createdAt)}</span>
@@ -241,27 +241,27 @@ const BlogsPage = () => {
 
           {/* Stats */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-              <div className="text-2xl font-bold text-cyan-300">{blogs.length}</div>
-              <div className="text-gray-400">Total Blogs</div>
+            <div className="bg-[rgba(47, 168, 255, 0.67)] rounded-lg p-6 border border-gray-700">
+              <div className="text-2xl font-bold text-cyan-800">{blogs.length}</div>
+              <div className="text-gray-900">Total Blogs</div>
             </div>
-            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-              <div className="text-2xl font-bold text-green-300">
+            <div className="bg-[rgba(44, 130, 191, 0.67)] rounded-lg p-6 border border-gray-700">
+              <div className="text-2xl font-bold text-green-800">
                 {blogs.filter(blog => blog.student).length}
               </div>
-              <div className="text-gray-400">Student Blogs</div>
+              <div className="text-gray-900">Student Blogs</div>
             </div>
-            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-              <div className="text-2xl font-bold text-purple-300">
+            <div className="bg-[rgba(44, 130, 191, 0.67)] rounded-lg p-6 border border-gray-700">
+              <div className="text-2xl font-bold text-purple-800">
                 {blogs.filter(blog => blog.professor).length}
               </div>
-              <div className="text-gray-400">Professor Blogs</div>
+              <div className="text-gray-900">Professor Blogs</div>
             </div>
-            <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-              <div className="text-2xl font-bold text-yellow-300">
+            <div className="bg-[rgba(44, 130, 191, 0.67)] rounded-lg p-6 border border-gray-700">
+              <div className="text-2xl font-bold text-yellow-800">
                 {blogs.reduce((total, blog) => total + blog.visitNumbers, 0).toLocaleString()}
               </div>
-              <div className="text-gray-400">Total Views</div>
+              <div className="text-gray-900">Total Views</div>
             </div>
           </div>
         </div>

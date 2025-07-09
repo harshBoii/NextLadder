@@ -62,9 +62,9 @@ const LeftNav = () => {
         className="lg:hidden fixed top-6 right-35 h-10 w-10 z-500 p-2 bg-cyan-500/20 hover:bg-cyan-500/30 transition-colors border border-cyan-400/30 rounded-full"
       >
         {isMobileMenuOpen ? (
-          <FaTimes className="w-6 h-6 text-cyan-300" />
+          <FaTimes className="w-6 h-6 text-black-600" />
         ) : (
-          <FaBars className="w-6 h-6 text-cyan-300" />
+          <FaBars className="w-6 h-6 text-black-600" />
         )}
       </button>
 
@@ -78,7 +78,7 @@ const LeftNav = () => {
 
       {/* Navigation Sidebar */}
       <div className={`
-        fixed h-screen bg-gray-900/95 backdrop-blur-md text-white p-4 flex flex-col shadow-lg border-r border-cyan-400/20 z-40
+        fixed h-screen bg-gray-100 backdrop-blur-md text-black p-4 flex flex-col shadow-lg border-r border-cyan-400/20 z-40
         transition-all duration-300 ease-in-out
         lg:w-[20vw] lg:translate-x-0
         ${isMobileMenuOpen ? 'w-[280px] translate-x-0' : 'w-[280px] -translate-x-full lg:translate-x-0'}
@@ -90,9 +90,9 @@ const LeftNav = () => {
           className="hidden bottom-22 left-5 lg:flex absolute z-500 p-2 bg-cyan-500/20 hover:bg-cyan-500/30 transition-all duration-300 border border-cyan-400/30 rounded-lg"
         >
           {isNavCollapsed ? (
-            <FaChevronRight className="w-4 h-4 text-cyan-300" />
+            <FaChevronRight className="w-4 h-4 text-black-600" />
           ) : (
-            <FaChevronLeft className="w-4 h-4 text-cyan-300" />
+            <FaChevronLeft className="w-4 h-4 text-black-600" />
           )}
         </button>
 
@@ -102,7 +102,7 @@ const LeftNav = () => {
             <img src={logoUrl} alt="Logo" className={`object-contain ${isNavCollapsed ? 'lg:h-8' : 'h-12'}`} />
           ) : (
             <div className={`flex items-center ${isNavCollapsed ? 'lg:justify-center' : ''}`}>
-              <span className={`font-bold font-orbitron text-cyan-300 ${isNavCollapsed ? 'lg:text-lg' : 'text-xl'}`}>
+              <span className={`font-bold font-orbitron text-black-600 ${isNavCollapsed ? 'lg:text-lg' : 'text-xl'}`}>
                 {isNavCollapsed ? 'NL' : 'Loading...'}
               </span>
             </div>
@@ -117,8 +117,8 @@ const LeftNav = () => {
               onClick={() => handleNavigation(item.path)}
               className={`w-full flex items-center gap-3 px-4 py-3 mb-2 rounded-lg transition-all duration-300 font-share-tech-mono ${
                 pathname === item.path 
-                  ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/50' 
-                  : 'hover:bg-cyan-500/10 text-gray-300 hover:text-cyan-300 border border-transparent hover:border-cyan-400/30'
+                  ? 'bg-cyan-500/20 text-black-600 border border-cyan-400/50' 
+                  : 'hover:bg-cyan-500/10 text-black-300 hover:text-black-600 border border-transparent hover:border-cyan-400/30'
               } ${isNavCollapsed ? 'lg:justify-center lg:px-2' : ''}`}
               title={isNavCollapsed ? item.name : ''}
             >
@@ -134,8 +134,8 @@ const LeftNav = () => {
             onClick={() => handleNavigation('/admin/settings')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 font-share-tech-mono ${
               pathname === '/admin/settings'
-                ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/50'
-                : 'hover:bg-cyan-500/10 text-gray-300 hover:text-cyan-300 border border-transparent hover:border-cyan-400/30'
+                ? 'bg-cyan-500/20 text-black-600 border border-cyan-400/50'
+                : 'hover:bg-cyan-500/10 text-black-300 hover:text-black-600 border border-transparent hover:border-cyan-400/30'
             } ${isNavCollapsed ? 'lg:justify-center lg:px-2' : ''}`}
             title={isNavCollapsed ? 'Settings' : ''}
           >

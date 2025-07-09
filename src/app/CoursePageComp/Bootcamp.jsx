@@ -30,10 +30,10 @@ const Bootcamp = ({courseData}) => {
 
 
   return (
-    <div className="w-full min-h-screen" style={{ backgroundColor: 'black' }}>
+    <div className="w-full min-h-screen" style={{ backgroundColor: 'rgba(246, 244, 251, 1)' }}>
       <div className="container mx-auto px-4 pt-8 lg:pt-[5vh]">
         <h1 
-          className="text-2xl sm:text-3xl lg:text-[2.8vh] font-extrabold rounded-lg mt-8 lg:mt-[10vh] text-white text-center"
+          className="text-4xl sm:text-3xl lg:text-[4.8vh] font-bold rounded-lg mt-8 lg:mt-[10vh] text-zinc-900 text-center"
           style={{
             textShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)'
           }}
@@ -49,13 +49,12 @@ const Bootcamp = ({courseData}) => {
             <div 
               className="w-full lg:w-[67%] h-48 lg:h-[25vh] rounded-xl p-4 lg:p-6 relative card-hover"
               style={{
-                background: 'linear-gradient(to bottom, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
-                boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
+                background: 'rgba(255,255,255,0.9)'
               }}
             >
               {/* Shine effect border */}
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent shine-effect"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#41afff]/30 to-transparent shine-effect"></div>
               </div>
               <div className="flex flex-col h-full relative z-10">
                 <img 
@@ -64,14 +63,14 @@ const Bootcamp = ({courseData}) => {
                   className="w-12 h-12 lg:w-[3vw] lg:h-[3vw] mb-3 lg:mb-4 object-contain"
                 />
                 <h3 
-                  className="text-lg lg:text-[2vh] font-bold text-white mb-2"
+                  className="text-lg lg:text-[2vh] font-bold text-zinc-900 mb-2"
                   style={{
                     textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)'
                   }}
                 >
                   {cardData[0].title}
                 </h3>
-                <p className="text-sm lg:text-[1.6vh] text-white opacity-70">{cardData[0].description}</p>
+                <p className="text-sm lg:text-[1.6vh] text-zinc-900 opacity-70">{cardData[0].description}</p>
               </div>
             </div>
 
@@ -79,13 +78,12 @@ const Bootcamp = ({courseData}) => {
             <div 
               className="w-full lg:w-[33%] h-48 lg:h-[25vh] rounded-xl p-4 lg:p-6 relative card-hover"
               style={{
-                background: 'linear-gradient(to bottom, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
-                boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
+                background: 'rgba(255,255,255,0.9)'
               }}
             >
               {/* Shine effect border */}
               <div className="absolute inset-0 rounded-xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent shine-effect"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#41afff]/30 to-transparent shine-effect"></div>
               </div>
               <div className="flex flex-col h-full relative z-10">
                 <img 
@@ -94,14 +92,14 @@ const Bootcamp = ({courseData}) => {
                   className="w-12 h-12 lg:w-[3vw] lg:h-[3vw] mb-3 lg:mb-4 object-contain"
                 />
                 <h3 
-                  className="text-lg lg:text-[2vh] font-bold text-white mb-2"
+                  className="text-lg lg:text-[2vh] font-bold text-zinc-900 mb-2"
                   style={{
                     textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)'
                   }}
                 >
                   {cardData[1].title}
                 </h3>
-                <p className="text-sm lg:text-[1.6vh] text-white opacity-70">{cardData[1].description}</p>
+                <p className="text-sm lg:text-[1.6vh] text-zinc-900 opacity-70">{cardData[1].description}</p>
               </div>
             </div>
           </div>
@@ -114,13 +112,12 @@ const Bootcamp = ({courseData}) => {
                 key={index}
                 className="w-full lg:w-[33%] h-48 lg:h-[25vh] rounded-xl p-4 lg:p-6 relative card-hover"
                 style={{
-                  background: 'linear-gradient(to bottom, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
-                  boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
+                  background: 'rgba(255,255,255,0.9)'
                 }}
               >
                 {/* Shine effect border */}
                 <div className="absolute inset-0 rounded-xl overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent shine-effect"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#41afff]/30 to-transparent shine-effect"></div>
                 </div>
                 <div className="flex flex-col h-full relative z-10">
                   <img 
@@ -129,14 +126,14 @@ const Bootcamp = ({courseData}) => {
                     className="w-12 h-12 lg:w-[3vw] lg:h-[3vw] mb-3 lg:mb-4 object-contain"
                   />
                   <h3 
-                    className="text-lg lg:text-[2vh] font-bold text-white mb-2"
+                    className="text-lg lg:text-[2vh] font-bold text-zinc-900 mb-2"
                     style={{
                       textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)'
                     }}
                   >
                     {cardData[index].title}
                   </h3>
-                  <p className="text-sm lg:text-[1.6vh] text-white opacity-70">{cardData[index].description}</p>
+                  <p className="text-sm lg:text-[1.6vh] text-zinc-900 opacity-70">{cardData[index].description}</p>
                 </div>
               </div>
             ))}
@@ -205,19 +202,18 @@ const Bootcamp = ({courseData}) => {
             key={index}
             className="p-4 lg:p-6 rounded-xl relative overflow-hidden card-hover"
             style={{
-              background: 'radial-gradient(circle at center, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
-              boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
+              background: 'rgba(255,255,255,0.9)'
             }}
           >
             {/* Shine effect border */}
             <div className="absolute inset-0 rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent shine-effect"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#41afff]/30 to-transparent shine-effect"></div>
             </div>
 
             <div className="relative z-10">
               <div className="text-2xl lg:text-[3vh] mb-3 lg:mb-4">{benefit.icon}</div>
-              <h3 className="text-lg lg:text-[2vh] font-bold text-white mb-2 lg:mb-3">{benefit.title}</h3>
-              <p className="text-sm lg:text-[1.6vh] text-white opacity-70">{benefit.description}</p>
+              <h3 className="text-lg lg:text-[2vh] font-bold text-zinc-900 mb-2 lg:mb-3">{benefit.title}</h3>
+              <p className="text-sm lg:text-[1.6vh] text-zinc-900 opacity-70">{benefit.description}</p>
             </div>
           </div>
         ))}
@@ -241,19 +237,18 @@ const Bootcamp = ({courseData}) => {
             key={index}
             className="w-full lg:w-1/2 p-4 lg:p-6 rounded-xl relative overflow-hidden card-hover"
             style={{
-              background: 'radial-gradient(circle at center, rgba(31, 31, 31, 1), rgba(20, 20, 20, 1))',
-              boxShadow: '5px 25px 24px rgba(0, 0, 0, 0.21)'
+              background: 'rgba(255,255,255,0.9)'
             }}
           >
             {/* Shine effect border */}
             <div className="absolute inset-0 rounded-xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent shine-effect"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#41afff]/30 to-transparent shine-effect"></div>
             </div>
 
             <div className="relative z-10">
               <div className="text-2xl lg:text-[3vh] mb-3 lg:mb-4">{benefit.icon}</div>
-              <h3 className="text-lg lg:text-[2vh] font-bold text-white mb-2 lg:mb-3">{benefit.title}</h3>
-              <p className="text-sm lg:text-[1.6vh] text-white opacity-70">{benefit.description}</p>
+              <h3 className="text-lg lg:text-[2vh] font-bold text-zinc-900 mb-2 lg:mb-3">{benefit.title}</h3>
+              <p className="text-sm lg:text-[1.6vh] text-zinc-900 opacity-70">{benefit.description}</p>
             </div>
           </div>
         ))}

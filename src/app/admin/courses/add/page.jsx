@@ -199,7 +199,7 @@ export default function NewCoursePage() {
   }
 
   return (
-    <div className='flex min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900'>
+    <div className='flex min-h-screen bg-gradient-to-br from-gray-100 via-blue-50 to-gray-100'>
       <LeftNav />
       <div className='flex-1 relative overflow-hidden'>
         {/* Animated Background Grid */}
@@ -211,11 +211,11 @@ export default function NewCoursePage() {
         }`}>
           
           {/* Header Section */}
-          <div className="mb-8 px-4 lg:px-6 lg:ml-53">
-            <div className="h-[20vh] w-full lg:w-[50vw] bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex flex-row items-start overflow-hidden justify-between p-4 lg:p-8 animated-border border-2 border-cyan-400/50">
+          <div className="mb-8 px-4 lg:px-6 lg:ml-58">
+            <div className="h-[20vh] w-full lg:w-[50vw] bg-gradient-to-r from-text-cyan-700 to-blue-600 rounded-2xl flex flex-row items-start overflow-hidden justify-between p-4 lg:p-8 animated-border border-2 border-cyan-700/50">
               <div className='flex flex-col'>
-                <h1 className="text-white text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">Add New Course</h1>
-                <p className="text-cyan-100 text-sm sm:text-base lg:text-[1vw] mt-[1vh] font-share-tech-mono">Create a new course for learners</p>
+                <h1 className="border-cyan-700 text-lg sm:text-xl lg:text-[2vw] font-orbitron font-bold">Add New Course</h1>
+                <p className="text-cyan-700 text-sm sm:text-base lg:text-[1vw] mt-[1vh] font-share-tech-mono">Create a new course for learners</p>
               </div>
               <div className='hidden lg:block h-50 w-50 -mt-[11vh] mr-[-4vw] rounded-full bg-gradient-to-br from-cyan-400 to-blue-500'></div>
             </div>
@@ -223,10 +223,10 @@ export default function NewCoursePage() {
 
           {/* Main Form Section */}
           <div className="px-4 lg:px-6">
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 lg:p-8 border border-cyan-400/20 max-w-4xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 lg:p-8 border border-cyan-700/20 max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-6">
-                <BookOpen className="text-cyan-400" size={28} />
-                <h1 className="text-2xl lg:text-3xl font-bold text-white font-orbitron">Create New Course</h1>
+                <BookOpen className="text-cyan-700" size={28} />
+                <h1 className="text-2xl lg:text-3xl font-bold border-cyan-700 font-orbitron">Create New Course</h1>
               </div>
 
               {error && (
@@ -240,7 +240,7 @@ export default function NewCoursePage() {
                 {/* Basic Information */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <FileText size={20} />
                       Course Title
                     </label>
@@ -250,16 +250,16 @@ export default function NewCoursePage() {
                       placeholder="Enter course title"
                       onChange={handleChange}
                       required
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <BookOpen size={20} />
                       Category
                     </label>
-                    <div className="max-h-40 overflow-y-auto p-3 bg-white/5 border border-cyan-400/30 rounded-lg">
+                    <div className="max-h-40 overflow-y-auto p-3 bg-white/5 border border-cyan-700/30 rounded-lg">
                       <div className="grid grid-cols-1 gap-2">
                         {CATEGORIES.map((category) => (
                           <label key={category} className="flex items-center space-x-2 p-2 hover:bg-cyan-500/10 rounded transition-colors">
@@ -269,9 +269,9 @@ export default function NewCoursePage() {
                               value={category}
                               checked={formData.category === category}
                               onChange={handleChange}
-                              className="form-radio h-4 w-4 text-cyan-400 bg-transparent border-cyan-400"
+                              className="form-radio h-4 w-4 text-cyan-700 bg-transparent border-cyan-700"
                             />
-                            <span className="text-sm text-cyan-100 font-share-tech-mono">{category}</span>
+                            <span className="text-sm text-cyan-700 font-share-tech-mono">{category}</span>
                           </label>
                         ))}
                       </div>
@@ -281,7 +281,7 @@ export default function NewCoursePage() {
 
                 {/* Description */}
                 <div className="space-y-3">
-                  <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                  <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                     <FileText size={20} />
                     Description
                   </label>
@@ -290,14 +290,14 @@ export default function NewCoursePage() {
                     placeholder="Enter course description"
                     onChange={handleChange}
                     rows={4}
-                    className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 resize-none transition-all duration-300 glow-on-focus focus:bg-white/10"
+                    className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 resize-none transition-all duration-300 glow-on-focus focus:bg-white/10"
                   />
                 </div>
 
                 {/* Professor Information */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <User size={20} />
                       Professor ID
                     </label>
@@ -307,12 +307,12 @@ export default function NewCoursePage() {
                       placeholder="Enter professor ID"
                       onChange={handleChange}
                       required
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <User size={20} />
                       Professor Name
                     </label>
@@ -322,7 +322,7 @@ export default function NewCoursePage() {
                       placeholder="Enter professor name"
                       onChange={handleChange}
                       required
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
                 </div>
@@ -330,7 +330,7 @@ export default function NewCoursePage() {
                 {/* Course Statistics */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <Users size={20} />
                       No. of Students
                     </label>
@@ -339,12 +339,12 @@ export default function NewCoursePage() {
                       name="noOfStudents"
                       placeholder="0"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <Clock size={20} />
                       Hours
                     </label>
@@ -353,12 +353,12 @@ export default function NewCoursePage() {
                       name="hours"
                       placeholder="0"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <TrendingUp size={20} />
                       Placement Rate (%)
                     </label>
@@ -367,7 +367,7 @@ export default function NewCoursePage() {
                       name="placementRate"
                       placeholder="0"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
                 </div>
@@ -375,7 +375,7 @@ export default function NewCoursePage() {
                 {/* More Statistics */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <Briefcase size={20} />
                       Companies Hiring
                     </label>
@@ -384,12 +384,12 @@ export default function NewCoursePage() {
                       name="companiesHiring"
                       placeholder="0"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <TrendingUp size={20} />
                       Average Hike (%)
                     </label>
@@ -398,12 +398,12 @@ export default function NewCoursePage() {
                       name="averageHike"
                       placeholder="0"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <Users size={20} />
                       Number of Learners
                     </label>
@@ -412,7 +412,7 @@ export default function NewCoursePage() {
                       name="learner"
                       placeholder="0"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
                 </div>
@@ -420,7 +420,7 @@ export default function NewCoursePage() {
                 {/* Additional Information */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <Star size={20} />
                       Highlighted On
                     </label>
@@ -429,12 +429,12 @@ export default function NewCoursePage() {
                       name="highlightedOn"
                       placeholder="Enter highlight information"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <User size={20} />
                       Expert From
                     </label>
@@ -443,14 +443,14 @@ export default function NewCoursePage() {
                       name="ExpertFrom"
                       placeholder="Enter expert information"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
                 </div>
 
                 {/* Tags Selection */}
                 <div className="space-y-3">
-                  <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                  <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                     <Search size={20} />
                     Course Tags
                   </label>
@@ -459,9 +459,9 @@ export default function NewCoursePage() {
                     placeholder="Search tags..."
                     value={tagSearch}
                     onChange={(e) => setTagSearch(e.target.value)}
-                    className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10 mb-3"
+                    className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10 mb-3"
                   />
-                  <div className="max-h-40 overflow-y-auto p-3 bg-white/5 border border-cyan-400/30 rounded-lg">
+                  <div className="max-h-40 overflow-y-auto p-3 bg-white/5 border border-cyan-700/30 rounded-lg">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                       {filteredTags.map((tag) => (
                         <label key={tag.id} className="flex items-center space-x-2 p-2 hover:bg-cyan-500/10 rounded transition-colors">
@@ -469,9 +469,9 @@ export default function NewCoursePage() {
                             type="checkbox"
                             checked={formData.selectedTags.includes(tag.id)}
                             onChange={() => handleTagChange(tag.id)}
-                            className="form-checkbox h-4 w-4 text-cyan-400 bg-transparent border-cyan-400"
+                            className="form-checkbox h-4 w-4 text-cyan-700 bg-transparent border-cyan-700"
                           />
-                          <span className="text-sm text-cyan-100 font-share-tech-mono">{tag.name}</span>
+                          <span className="text-sm text-cyan-700 font-share-tech-mono">{tag.name}</span>
                         </label>
                       ))}
                     </div>
@@ -480,7 +480,7 @@ export default function NewCoursePage() {
 
                 {/* Course Type Selection */}
                 <div className="space-y-3">
-                  <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                  <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                     <BookOpen size={20} />
                     Course Type
                   </label>
@@ -489,9 +489,9 @@ export default function NewCoursePage() {
                     placeholder="Search course types..."
                     value={courseTypeSearch}
                     onChange={(e) => setCourseTypeSearch(e.target.value)}
-                    className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10 mb-3"
+                    className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10 mb-3"
                   />
-                  <div className="max-h-40 overflow-y-auto p-3 bg-white/5 border border-cyan-400/30 rounded-lg">
+                  <div className="max-h-40 overflow-y-auto p-3 bg-white/5 border border-cyan-700/30 rounded-lg">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                       {filteredCourseTypes.map((courseType) => (
                         <label key={courseType.id} className="flex items-center space-x-2 p-2 hover:bg-cyan-500/10 rounded transition-colors">
@@ -499,9 +499,9 @@ export default function NewCoursePage() {
                             type="checkbox"
                             checked={formData.selectedCourseTypes.includes(courseType.id)}
                             onChange={() => handleCourseTypeChange(courseType.id)}
-                            className="form-checkbox h-4 w-4 text-cyan-400 bg-transparent border-cyan-400"
+                            className="form-checkbox h-4 w-4 text-cyan-700 bg-transparent border-cyan-700"
                           />
-                          <span className="text-sm text-cyan-100 font-share-tech-mono">{courseType.name}</span>
+                          <span className="text-sm text-cyan-700 font-share-tech-mono">{courseType.name}</span>
                         </label>
                       ))}
                     </div>
@@ -511,7 +511,7 @@ export default function NewCoursePage() {
                 {/* File Upload and Projects */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <ImageIcon size={20} />
                       Course Image
                     </label>
@@ -519,12 +519,12 @@ export default function NewCoursePage() {
                       type="file"
                       accept="image/*"
                       onChange={handleFileChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-orbitron file:bg-cyan-500/20 file:text-cyan-300 hover:file:bg-cyan-500/30 transition-all duration-300 glow-on-focus"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-orbitron file:bg-cyan-500/20 file:text-cyan-700 hover:file:bg-cyan-500/30 transition-all duration-300 glow-on-focus"
                     />
                   </div>
 
                   <div className="space-y-3">
-                    <label className="flex items-center gap-2 text-cyan-300 font-orbitron font-semibold text-sm uppercase tracking-wider">
+                    <label className="flex items-center gap-2 text-cyan-700 font-orbitron font-semibold text-sm uppercase tracking-wider">
                       <Briefcase size={20} />
                       Projects
                     </label>
@@ -533,7 +533,7 @@ export default function NewCoursePage() {
                       name="projects"
                       placeholder="0"
                       onChange={handleChange}
-                      className="w-full p-3 bg-white/5 border border-cyan-400/30 rounded-lg text-cyan-100 font-share-tech-mono placeholder-cyan-300/50 transition-all duration-300 glow-on-focus focus:bg-white/10"
+                      className="w-full p-3 bg-white/5 border border-cyan-700/30 rounded-lg text-cyan-700 font-share-tech-mono placeholder-cyan-700/30 transition-all duration-300 glow-on-focus focus:bg-white/10"
                     />
                   </div>
                 </div>
@@ -550,7 +550,7 @@ export default function NewCoursePage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="group relative px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-orbitron font-bold rounded-xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden w-full sm:w-auto"
+                    className="group relative px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 border-cyan-700 font-orbitron font-bold rounded-xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden w-full sm:w-auto"
                   >
                     <span className="relative z-10 flex items-center gap-2 justify-center">
                       {loading ? (

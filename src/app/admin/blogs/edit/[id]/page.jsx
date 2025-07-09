@@ -195,197 +195,111 @@ const EditBlogPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-500"></div>
+      <div className="min-h-screen bg-white text-black flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#41afff]"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-white text-black">
       <AdminNavbar />
       <LeftNav />
       
       <div className="lg:ml-[20vw] pt-20 p-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-cyan-300 mb-2">Edit Blog</h1>
-            <p className="text-gray-400">Update your blog content and settings</p>
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h1 className="text-3xl font-bold text-[#41afff] mb-2">Edit Blog</h1>
+            <button
+              onClick={handleDelete}
+              className="flex items-center space-x-2 px-6 py-3 bg-red-500 hover:bg-red-700 text-white rounded-lg font-medium transition-colors"
+              disabled={deleting}
+            >
+              <FaTrash className="w-4 h-4" />
+              <span>{deleting ? 'Deleting...' : 'Delete Blog'}</span>
+            </button>
           </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Title */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Blog Title *
-              </label>
+          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-8 border border-[#41afff]" style={{ background: 'rgba(65,175,255,0.08)' }}>
+            <div className="mb-6">
+              <label htmlFor="title" className="block text-lg font-bold text-[#41afff] mb-2">Title</label>
               <input
                 type="text"
+                id="title"
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
-                placeholder="Enter blog title..."
+                className="w-full px-4 py-3 rounded-lg border border-[#41afff] focus:ring-2 focus:ring-[#41afff] text-black bg-white placeholder-[#41afff]"
+                placeholder="Enter blog title"
                 required
               />
             </div>
-
-            {/* Blog Picture */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Blog Picture
-              </label>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <label className="flex items-center space-x-2 px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition-colors">
-                    <FaUpload className="w-4 h-4 text-cyan-400" />
-                    <span>Choose Image</span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handlePictureChange}
-                      className="hidden"
-                    />
-                  </label>
-                  {imagePreview && (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setImagePreview(null);
-                        setFormData(prev => ({ ...prev, picture: '' }));
-                      }}
-                      className="px-3 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm transition-colors"
-                    >
-                      Remove
-                    </button>
-                  )}
-                </div>
-                
-                {imagePreview && (
-                  <div className="relative">
-                    <img 
-                      src={imagePreview} 
-                      alt="Preview" 
-                      className="w-full max-w-md h-48 object-cover rounded-lg border border-cyan-500/30"
-                    />
-                    <div className="absolute top-2 right-2 bg-black/50 rounded-full p-1">
-                      <FaImage className="w-4 h-4 text-cyan-400" />
-                    </div>
-                  </div>
-                )}
-              </div>
+            <div className="mb-6">
+              <label htmlFor="content" className="block text-lg font-bold text-[#41afff] mb-2">Content</label>
+              <textarea
+                id="content"
+                name="content"
+                value={formData.content}
+                onChange={handleContentChange}
+                className="w-full px-4 py-3 rounded-lg border border-[#41afff] focus:ring-2 focus:ring-[#41afff] text-black bg-white placeholder-[#41afff]"
+                placeholder="Enter blog content"
+                rows={8}
+                required
+              />
             </div>
-
-            {/* Author Selection (Read-only for editing) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Author Type
-                </label>
-                <div className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-300">
-                  {formData.authorType === 'admin' && <FaUserShield className="w-4 h-4 inline mr-2" />}
-                  {formData.authorType === 'student' && <FaUserGraduate className="w-4 h-4 inline mr-2" />}
-                  {formData.authorType === 'professor' && <FaChalkboardTeacher className="w-4 h-4 inline mr-2" />}
-                  {formData.authorType.charAt(0).toUpperCase() + formData.authorType.slice(1)}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Author
-                </label>
-                <div className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-300">
-                  {getAuthorName()}
-                </div>
-              </div>
-            </div>
-
-            {/* Content Editor */}
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <label className="block text-sm font-medium text-gray-300">
-                  Blog Content *
-                </label>
-                <div className="flex space-x-2">
-                  <button
-                    type="button"
-                    onClick={() => setPreviewMode(!previewMode)}
-                    className="flex items-center space-x-2 px-3 py-1 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors"
-                  >
-                    <FaEye className="w-4 h-4" />
-                    <span>{previewMode ? 'Edit' : 'Preview'}</span>
-                  </button>
-                </div>
-              </div>
-
-              {previewMode ? (
-                <div className="w-full min-h-[400px] p-4 bg-gray-800 border border-gray-600 rounded-lg overflow-y-auto">
-                  {imagePreview && (
-                    <div className="mb-4">
-                      <img 
-                        src={imagePreview} 
-                        alt="Blog preview" 
-                        className="w-full h-48 object-cover rounded-lg"
-                      />
-                    </div>
-                  )}
-                  <div 
-                    className="prose prose-invert max-w-none"
-                    dangerouslySetInnerHTML={{ 
-                      __html: formData.content 
-                        .replace(/\n/g, '<br/>')
-                        .replace(/#{1,6}\s+(.+)/g, '<h1>$1</h1>')
-                        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-                        .replace(/\*(.+?)\*/g, '<em>$1</em>')
-                    }} 
-                  />
-                </div>
-              ) : (
-                <div className="relative">
-                  <textarea
-                    name="content"
-                    value={formData.content}
-                    onChange={handleContentChange}
-                    className="w-full min-h-[400px] px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white resize-y"
-                    placeholder="Write your blog content here..."
-                    required
-                  />
-                  <div className="absolute bottom-4 right-4 text-xs text-gray-500">
-                    {formData.content.length} characters
-                  </div>
+            <div className="mb-6">
+              <label className="block text-lg font-bold text-[#41afff] mb-2">Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handlePictureChange}
+                className="w-full px-4 py-2 rounded-lg border border-[#41afff] focus:ring-2 focus:ring-[#41afff] text-black bg-white"
+              />
+              {imagePreview && (
+                <div className="mt-4">
+                  <img src={imagePreview} alt="Preview" className="w-48 h-32 object-cover rounded-lg border border-[#41afff]" />
                 </div>
               )}
             </div>
-
-            {/* Action Buttons */}
-            <div className="flex space-x-4 pt-6">
+            <div className="mb-6">
+              <label className="block text-lg font-bold text-[#41afff] mb-2">Author</label>
+              <select
+                name="authorType"
+                value={formData.authorType}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 rounded-lg border border-[#41afff] focus:ring-2 focus:ring-[#41afff] text-black bg-white"
+              >
+                <option value="admin">Admin</option>
+                <option value="student">Student</option>
+                <option value="professor">Professor</option>
+              </select>
+              {formData.authorType !== 'admin' && (
+                <select
+                  name="authorId"
+                  value={formData.authorId}
+                  onChange={handleInputChange}
+                  className="w-full mt-2 px-4 py-3 rounded-lg border border-[#41afff] focus:ring-2 focus:ring-[#41afff] text-black bg-white"
+                >
+                  <option value="">Select {formData.authorType}</option>
+                  {(formData.authorType === 'student' ? students : professors).map((author) => (
+                    <option key={author.id} value={author.id}>{author.name}</option>
+                  ))}
+                </select>
+              )}
+            </div>
+            <div className="flex items-center justify-end">
               <button
                 type="submit"
+                className="px-6 py-3 bg-[#41afff] hover:bg-[rgba(65,175,255,0.8)] text-white rounded-lg font-medium transition-colors mr-4"
                 disabled={saving}
-                className="flex items-center space-x-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-700 disabled:bg-gray-600 rounded-lg font-medium transition-colors"
               >
-                <FaSave className="w-4 h-4" />
-                <span>{saving ? 'Saving...' : 'Save Changes'}</span>
+                {saving ? 'Saving...' : 'Save Changes'}
               </button>
-              
-              <button
-                type="button"
-                onClick={handleDelete}
-                disabled={deleting}
-                className="flex items-center space-x-2 px-6 py-3 bg-red-600 hover:bg-red-700 disabled:bg-gray-600 rounded-lg font-medium transition-colors"
-              >
-                <FaTrash className="w-4 h-4" />
-                <span>{deleting ? 'Deleting...' : 'Delete Blog'}</span>
-              </button>
-              
               <button
                 type="button"
                 onClick={() => router.push('/admin/blogs')}
-                className="flex items-center space-x-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-medium transition-colors"
+                className="px-6 py-3 bg-gray-300 hover:bg-gray-400 text-black rounded-lg font-medium transition-colors"
               >
-                <FaTimes className="w-4 h-4" />
-                <span>Cancel</span>
+                Cancel
               </button>
             </div>
           </form>
