@@ -14,7 +14,6 @@ export function NavbarDefault({icon}) {
       <NavbarCollapse className="px-4 lg:px-20">
         <NavbarLink className="text-black mx-2 lg:mx-7 text-base lg:text-lg font-poppins font-bold" href="/">Home</NavbarLink>
         <NavbarLink className="text-black mx-2 lg:mx-7 text-base lg:text-lg font-poppins font-bold" href="#">Courses</NavbarLink>
-        <NavbarLink className="text-black mx-2 lg:mx-7 text-base lg:text-lg font-poppins font-bold" href="#">Compiler</NavbarLink>
         <NavbarLink className="text-black mx-2 lg:mx-7 bg-[rgba(65,175,255,1)] lg:bg-transparent text-base lg:text-lg font-poppins font-bold" href="/admin/editHome">Admin</NavbarLink>
       </NavbarCollapse>
     </Navbar>
