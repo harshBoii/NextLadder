@@ -90,7 +90,7 @@ export default function HomePageDisplay() {
     {/* <TechNicalCategories/> */}
 
     <div style={{ height: '600px',fontFamily:"sans-serif", position: 'relative' }}>
-      <CircularGallery bend={1} textColor="black" className="border-black border-10 backdrop-blur-md" borderRadius={0.05} scrollEase={0.02}/>
+      <CircularGallery bend={1} className="border-black border-10 backdrop-blur-md" borderRadius={0.05} scrollEase={0.02}/>
     </div>
 
     <TopPopularCourses data={data}/>

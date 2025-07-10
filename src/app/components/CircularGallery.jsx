@@ -24,7 +24,7 @@ function autoBind(instance) {
   });
 }
 
-function createTextTexture(gl, text, font = "bold 30px monospace", color = "black") {
+function createTextTexture(gl, text, font = "bold 20px sans-serif", color = "black") {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
   context.font = font;
@@ -45,7 +45,7 @@ function createTextTexture(gl, text, font = "bold 30px monospace", color = "blac
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = "#545050", font = "30px sans-serif" }) {
+  constructor({ gl, plane, renderer, text, textColor = "#545050", font = "60px sans-serif" }) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -284,9 +284,9 @@ class App {
     {
       items,
       bend,
-      textColor = "#ffffff",
+      textColor = "black",
       borderRadius = 0,
-      font = "bold 30px Figtree",
+      font = "bold 10px monospace",
       scrollSpeed = 2,
       scrollEase = 0.05,
     } = {}
@@ -321,31 +321,27 @@ class App {
   }
   createGeometry() {
     this.planeGeometry = new Plane(this.gl, {
-      heightSegments: 50,
-      widthSegments: 100,
+      heightSegments: 40,
+      widthSegments: 80,
     });
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
       { 
         text: "Frontend Development", 
-        image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=200&h=400&fit=crop&crop=center" 
+        image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=400&fit=crop&crop=center" 
       },
       { 
         text: "Backend Development", 
-        image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=200&h=400&fit=crop&crop=center" 
-      },
-      { 
-        text: "Mobile Development", 
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=200&h=400&fit=crop&crop=center" 
+        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=400&fit=crop&crop=center" 
       },
       { 
         text: "Data Science", 
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=400&fit=crop&crop=center" 
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop&crop=center" 
       },
       { 
         text: "DevOps", 
-        image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=200&h=400&fit=crop&crop=center" 
+        image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&h=400&fit=crop&crop=center" 
       }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
@@ -459,9 +455,9 @@ class App {
 export default function CircularGallery({
   items,
   bend = 3,
-  textColor = "#black",
+  textColor = "black",
   borderRadius = 0.05,
-  font = "bold 50px",
+  font = "20px",
   scrollSpeed = 2,
   scrollEase = 0.05,
 }) {
