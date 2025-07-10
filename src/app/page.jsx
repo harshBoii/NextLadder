@@ -1,5 +1,6 @@
 'use client';
 import { NavbarDefault } from './components/navbar';
+
 import Hero from './components/Hero';
 import Categories from './components/Categories';
 import TopPopularCourses from './components/topPopularCourses';
@@ -12,6 +13,7 @@ import TechNicalCategories from './components/TechNicalCategories';
 import { useState, useEffect, useCallback } from 'react';
 import FooterComponent from './components/FooterComponent';
 import LoadingAnimation from './components/LoadingAnimation';
+import CircularGallery from './components/CircularGallery'
 
 export default function HomePageDisplay() {
   const [data, setData] = useState(null);
@@ -85,7 +87,12 @@ export default function HomePageDisplay() {
     <NavbarDefault icon={data.LogoUrl}/>
     <Hero/>
     {/* <Categories/> */}
-    <TechNicalCategories/>
+    {/* <TechNicalCategories/> */}
+
+    <div style={{ height: '600px',fontFamily:"sans-serif", position: 'relative' }}>
+      <CircularGallery bend={4} textColor="black" className="border-black border-10 backdrop-blur-md" borderRadius={0.05} scrollEase={0.02}/>
+    </div>
+
     <TopPopularCourses data={data}/>
     <FourCards data={data}/>
     <KnowAboutUs daata={data}/>

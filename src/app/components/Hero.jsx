@@ -1,6 +1,7 @@
 'use client';
 import TagContainer from './TagContainer';
 
+
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import SwipeableCardDeck from './SwipeableCards';
@@ -177,7 +178,11 @@ useEffect(() => {
           <TagContainer tag={"Categories"}/>
         </div>
         <div className='text-lg sm:text-xl md:text-2xl lg:text-5xl font-sans text-center font-bold mt-2 lg:mt-[7vh] mb-2 lg:mb-[2vh] px-4 lg:px-0'>
-          Explore Top Courses Categories That Change Yourself
+
+        
+            Explore Top Courses Categories That Change Yourself
+
+
         </div>
       </div>
     </div>
