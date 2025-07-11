@@ -89,7 +89,7 @@ export default function HomePageDisplay() {
     {/* <Categories/> */}
     {/* <TechNicalCategories/> */}
 
-    <div style={{ height: '500px',fontFamily:"sans-serif", position: 'relative' , marginBottom:"-50px",marginTop:"50px",}}>
+    <div style={{ height: '500px',fontFamily:"sans-serif", position: 'relative'}} className='mt-5 mb-20'>
       <CircularGallery bend={1} className="border-black border-10 backdrop-blur-md" borderRadius={0.05} scrollEase={0.02}/>
     </div>
 
