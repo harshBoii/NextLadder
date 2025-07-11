@@ -24,7 +24,7 @@ const MovingCarousel = () => {
             color: 'rgba(47, 87, 239, 1)'
           }}
         >
-          Student Reviews
+          Students Reviews
         </div>
       </div>
 
