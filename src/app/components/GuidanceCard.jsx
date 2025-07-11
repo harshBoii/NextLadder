@@ -122,7 +122,7 @@ const GuidanceCard = (data) => {
   };
 
   return (
-    <div className="container mx-auto mt-50 px-4 py-16">
+    <div className="container mx-auto mt-15 px-4 py-16 mb-15">
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         <div
           className="px-3 py-1 text-xl font-mono rounded-full transition-colors"

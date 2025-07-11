@@ -79,11 +79,11 @@ const FourCards = ({data}) => {
   }, []);
 
   return (
-    <div className='flex flex-col min-h-screen lg:h-[40vh] py-8 lg:py-0'>
+    <div className='flex flex-col min-h-screen lg:h-[40vh] mt-17 py-8 lg:py-0 mb-50'>
 
       <div className="flex flex-col lg:mt-25 items-center gap-4 px-4">
         <TagContainer tag="WHY CHOOSE US" />
-        <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-center max-w-4xl lg:mt-24">
+        <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-extrabold text-center max-w-4xl lg:mt-10">
           {data.WhyChooseUs}
         </h2>
       </div>

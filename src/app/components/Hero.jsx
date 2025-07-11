@@ -125,12 +125,12 @@ useEffect(() => {
     </h1>
 
     {/* Hero Subtitle */}
-    <div className="pl-4 lg:pl-[4.1vw] mt-4 lg:mt-[5vh] text-zinc-600 w-[70%] lg:w-[37vw] text-sm sm:text-base lg:text-[2vh] h-auto lg:h-[12vh] sm:h-80 pr-4 lg:pr-0 mx-auto  lg:mx-0 text-center lg:text-left">
+    <div className="pl-4 lg:pl-[4.1vw] mt-4 lg:mt-[5vh] text-zinc-600 w-[70%] lg:w-[37vw] text-sm sm:text-base lg:text-[2vh] h-80lg:h-[12vh] sm:h-80 pr-4 lg:pr-0 mx-auto  lg:mx-0 text-center lg:text-left">
     {heroData.heroSubtitle}    
     </div>
 
     {/* Hero Images - Hidden on mobile, shown on desktop */}
-    <div className='hidden lg:block -mt-[35.8vh]'>
+    <div className='hidden lg:block -mt-[54.8vh]'>
     {/* Container for the first two overlapping images */}
     <div className="relative w-[40vw] h-[40vh] ml-[30vw] z-10">
       <img

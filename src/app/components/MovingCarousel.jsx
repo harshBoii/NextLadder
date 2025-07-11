@@ -15,7 +15,7 @@ const MovingCarousel = () => {
   }));
 
   return (
-    <div className="container mx-auto px-4 py-16 overflow-hidden">
+    <div className="container mx-auto px-4 py-16 overflow-hidden mb-25">
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         <div
           className="px-3 py-1 text-xl font-mono rounded-full transition-colors"
@@ -28,7 +28,7 @@ const MovingCarousel = () => {
         </div>
       </div>
 
-      <div className='text-2xl sm:text-3xl md:text-4xl lg:text-4xl my-8 lg:my-[5vh] mb-8 lg:mb-[10vh] font-sans text-center font-bold px-4'>
+      <div className='text-2xl sm:text-3xl md:text-4xl lg:text-4xl my-8 lg:my-[5vh] mb-8 lg:mb-25 font-sans text-center font-bold px-4'>
       People like histudy education. No joking - here's the proof!
       </div>
 
